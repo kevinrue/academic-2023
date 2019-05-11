@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Academic</title>
-      <link>/tags/academic/</link>
+      <title>Bioconductor</title>
+      <link>/tags/bioconductor/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/academic/</guid>
+      <guid>/tags/bioconductor/</guid>
       <description></description>
     </item>
     
@@ -44,6 +44,15 @@
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic</title>
+      <link>/tags/academic/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/academic/</guid>
       <description></description>
     </item>
     

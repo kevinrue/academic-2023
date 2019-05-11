@@ -6,19 +6,10 @@
     <description>Recent content in Academic on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/academic/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>iSEE workshop at Bioc2019</title>
-      <link>/post/isee-at-bioc2019/</link>
-      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/isee-at-bioc2019/</guid>
-      <description>iSEE will be presented as a workshop at the Bioconductor 2019 conference in New York City!</description>
-    </item>
     
     <item>
       <title>Academic: the website builder for Hugo</title>
