@@ -430,6 +430,174 @@
   
 
   
+    
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  <section id="hero" class="home-section wg-hero dark  " style="background-image: linear-gradient(#4bb4e3, #2b94c3);">
+    <div class="container">
+      
+
+
+
+
+<div class="row">
+  <div class="col-md-6 order-md-1 text-center text-md-left">
+
+
+    <h1 class="hero-title" itemprop="headline">
+      Academic
+    </h1>
+
+    
+    <div class="hero-lead"><p><strong>The Best Way to Create the Website You Want from Markdown (or Jupyter/RStudio)</strong></p>
+
+<p>Build <strong>Anything</strong> with Widgets</p>
+
+<p><span style="text-shadow: none;"><a class="github-button" href="https://github.com/gcushen/hugo-academic" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span></p>
+</div>
+    
+
+    
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+    <p class="cta-btns">
+      <a href="https://sourcethemes.com/academic/docs/install/" target="_blank" rel="noopener" class="btn btn-light btn-lg"><i class="fas fa-download" aria-hidden="true"></i> Get Started</a>
+
+      
+      
+        
+        
+        
+        
+          
+        
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener" class="hero-cta-alt pl-4">View Documentation <i class="fas fa-angle-right"></i></a>
+      
+    </p>
+    
+
+    
+    
+    <p class="hero-note text-muted mb-0">
+      <a id="academic-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release <!-- V --></a>
+    </p>
+    
+
+  
+  
+  </div>
+  <div class="col-6 mx-auto col-md-6 order-md-2 hero-media">
+    <img src="/img/hero-academic.png" alt="">
+  </div>
+</div>
+
+
+    </div>
+  </section>
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+    
+    
+      
+    
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  <section id="demo" class="home-section wg-blank dark parallax " style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&#39;/img/headers/bubbles-wide.jpg&#39;);padding: 20px 0 20px 0;">
+    <div class="container">
+      
+
+
+<div class="row">
+  
+    <div class="col-lg-12">
+      <h1>Demos</h1>
+      
+      <p>Welcome to the <strong>personal demo</strong> of Academic. Other demos available include:</p>
+
+<ul>
+<li><a href="https://sourcethemes.com/academic/" target="_blank"><strong>Project Demo</strong> (Academic&rsquo;s actual site)</a></li>
+</ul>
+
+<p><strong>Over 100,000 <a href="https://sourcethemes.com/academic/#expo" target="_blank">Amazing Websites</a> have Already Been Built with Academic</strong></p>
+
+<p><strong><a href="https://sourcethemes.com/academic/docs/install/" target="_blank">Join</a> the Most Empowered Hugo Community</strong></p>
+
+<div class="alert alert-note">
+  <div>
+    <p>This homepage section is an example of adding <a href="https://sourcethemes.com/academic/docs/writing-markdown-latex/" target="_blank">elements</a> to the <a href="https://sourcethemes.com/academic/docs/widgets/" target="_blank"><em>Blank</em> widget</a>.</p>
+
+<p>Backgrounds can be applied to any section. Here, the <em>background</em> option is set give an <em>image parallax</em> effect.</p>
+
+  </div>
+</div>
+
+    </div>
+  
+</div>
+
+    </div>
+  </section>
+  
+
+  
+  
+  
+
+  
+
+  
 
   
 
@@ -685,17 +853,6 @@ His research explores the immune response to infection, disease, and self antige
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-laptop-code"></i></div>
-    <h3>Software carpentry</h3>
-    <p>90%</p>
-  </div>
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
     <div class="featurette-icon"><i class="fas fa-chart-line"></i></div>
     <h3>Statistics</h3>
     <p>70%</p>
@@ -707,20 +864,9 @@ His research explores the immune response to infection, disease, and self antige
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-syringe"></i></div>
-    <h3>Immunology</h3>
-    <p>70%</p>
-  </div>
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-bug"></i></div>
-    <h3>Infectious diseases</h3>
-    <p>70%</p>
+    <div class="featurette-icon"><i class="fas fa-laptop-code"></i></div>
+    <h3>Software carpentry</h3>
+    <p>100%</p>
   </div>
   
 </div>
@@ -788,68 +934,24 @@ His research explores the immune response to infection, disease, and self antige
       <div class="col py-2">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Postdoctoral Researcher - Computational Genomics</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.ox.ac.uk" target="_blank" rel="noopener">University of Oxford</a></h4>
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">CEO</h4>
+            <h4 class="card-title exp-company text-muted my-0">GenCoin</h4>
             <div class="text-muted exp-meta">
-              Sep 2017 –
+              Jan 2017 –
               
                 Present
               
               
                 <span class="middot-divider"></span>
-                <span>Oxford</span>
+                <span>California</span>
               
             </div>
             <div class="card-text">Responsibilities include:</p>
 
 <ul>
-<li>Study the role of thymic epithelial cells (TEC) in shaping the T vell receptor (TCR) repertoire (consortium funded by <a href="https://www.sanger.ac.uk/science/projects/wellcome-trust-strategic-award-homunculus-our-thymus-cellular-genomics-approach" target="_blank">Wellcome Trust Strategic Award</a>)</li>
-<li>Study contest-specific changes in immune cell abundance and phenotype that underlie chronic inflammation (collaboration with the <a href="https://www.kennedy.ox.ac.uk/research/mucosal-immunology" target="_blank">Powrie group</a>)</li>
-<li>Write and maintain software pipelines and programs for data analysis
-<br /></li>
-</ul></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Postdoctoral Researcher - Computational Biology</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.ox.ac.uk" target="_blank" rel="noopener">University of Oxford</a></h4>
-            <div class="text-muted exp-meta">
-              Dec 2016 –
-              
-                Sep 2017
-              
-              
-                <span class="middot-divider"></span>
-                <span>Oxford</span>
-              
-            </div>
-            <div class="card-text">Responsibilities include:</p>
-
-<ul>
-<li>Management, quality control, and integration of pan-genomic datasets encompassingn RNA-seq, ChIP-seq, DNAse/FAIRE/ATAC-seq, Capture-C,  microarrays, whole-genome sequencing and targeted re-sequencing</li>
-<li>Study transcriptional and epigenetic responses to hypoxia and their relation to cancer biology</li>
-<li>Experimental design, pipeline development, and publication
+<li>Analysing</li>
+<li>Modelling</li>
+<li>Deploying
 <br /></li>
 </ul></div>
           </div>
@@ -876,26 +978,19 @@ His research explores the immune response to infection, disease, and self antige
       <div class="col py-2">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Research Associate - Bioinformatics / Biostatistics</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">Imperial College London</a></h4>
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Professor</h4>
+            <h4 class="card-title exp-company text-muted my-0">University X</h4>
             <div class="text-muted exp-meta">
-              Sep 2015 –
+              Jan 2016 –
               
-                Nov 2016
+                Dec 2016
               
               
                 <span class="middot-divider"></span>
-                <span>London</span>
+                <span>California</span>
               
             </div>
-            <div class="card-text">Responsibilities include:</p>
-
-<ul>
-<li>Analyze genetic, proteomic and metabolomics data and associated phenotype data</li>
-<li>Integrate and analysis of large-scale, complex, multi-sources medical data and multi-variate data</li>
-<li>Generate new knowledge on idiopathic pulmonary arterial hypertension (IPAH) disease aetiology, underlying biochemical pathways and mechanisms, to improve patient stratification, preventive strategies and treatments
-<br /></li>
-</ul></div>
+            <div class="card-text">Taught electronic engineering and researched semiconductor physics.</div>
           </div>
         </div>
       </div>
