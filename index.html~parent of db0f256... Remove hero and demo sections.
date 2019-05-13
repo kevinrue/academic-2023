@@ -101,8 +101,8 @@
   
 
   
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
-  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Academic">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Academic">
   
 
   <link rel="manifest" href="/site.webmanifest">
@@ -120,9 +120,9 @@
   
   <meta property="twitter:card" content="summary">
   
-  <meta property="og:site_name" content="Kevin Rue-Albrecht">
+  <meta property="og:site_name" content="Academic">
   <meta property="og:url" content="/">
-  <meta property="og:title" content="Kevin Rue-Albrecht">
+  <meta property="og:title" content="Academic">
   <meta property="og:description" content="Postdoctoral Researcher"><meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
@@ -133,7 +133,7 @@
 
   
 
-  <title>Kevin Rue-Albrecht</title>
+  <title>Academic</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
@@ -174,7 +174,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Kevin Rue-Albrecht</a>
+      <a class="navbar-brand" href="/">Academic</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -348,6 +348,39 @@
         
         
 
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact" data-target="#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
       
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -389,6 +422,174 @@
 
 
 
+
+  
+  
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  <section id="hero" class="home-section wg-hero dark  " style="background-image: linear-gradient(#4bb4e3, #2b94c3);">
+    <div class="container">
+      
+
+
+
+
+<div class="row">
+  <div class="col-md-6 order-md-1 text-center text-md-left">
+
+
+    <h1 class="hero-title" itemprop="headline">
+      Academic
+    </h1>
+
+    
+    <div class="hero-lead"><p><strong>The Best Way to Create the Website You Want from Markdown (or Jupyter/RStudio)</strong></p>
+
+<p>Build <strong>Anything</strong> with Widgets</p>
+
+<p><span style="text-shadow: none;"><a class="github-button" href="https://github.com/gcushen/hugo-academic" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span></p>
+</div>
+    
+
+    
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+    <p class="cta-btns">
+      <a href="https://sourcethemes.com/academic/docs/install/" target="_blank" rel="noopener" class="btn btn-light btn-lg"><i class="fas fa-download" aria-hidden="true"></i> Get Started</a>
+
+      
+      
+        
+        
+        
+        
+          
+        
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener" class="hero-cta-alt pl-4">View Documentation <i class="fas fa-angle-right"></i></a>
+      
+    </p>
+    
+
+    
+    
+    <p class="hero-note text-muted mb-0">
+      <a id="academic-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release <!-- V --></a>
+    </p>
+    
+
+  
+  
+  </div>
+  <div class="col-6 mx-auto col-md-6 order-md-2 hero-media">
+    <img src="/img/hero-academic.png" alt="">
+  </div>
+</div>
+
+
+    </div>
+  </section>
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+    
+    
+      
+    
+    
+    
+  
+
+  
+    
+    
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  <section id="demo" class="home-section wg-blank dark parallax " style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&#39;/img/headers/bubbles-wide.jpg&#39;);padding: 20px 0 20px 0;">
+    <div class="container">
+      
+
+
+<div class="row">
+  
+    <div class="col-lg-12">
+      <h1>Demos</h1>
+      
+      <p>Welcome to the <strong>personal demo</strong> of Academic. Other demos available include:</p>
+
+<ul>
+<li><a href="https://sourcethemes.com/academic/" target="_blank"><strong>Project Demo</strong> (Academic&rsquo;s actual site)</a></li>
+</ul>
+
+<p><strong>Over 100,000 <a href="https://sourcethemes.com/academic/#expo" target="_blank">Amazing Websites</a> have Already Been Built with Academic</strong></p>
+
+<p><strong><a href="https://sourcethemes.com/academic/docs/install/" target="_blank">Join</a> the Most Empowered Hugo Community</strong></p>
+
+<div class="alert alert-note">
+  <div>
+    <p>This homepage section is an example of adding <a href="https://sourcethemes.com/academic/docs/writing-markdown-latex/" target="_blank">elements</a> to the <a href="https://sourcethemes.com/academic/docs/widgets/" target="_blank"><em>Blank</em> widget</a>.</p>
+
+<p>Backgrounds can be applied to any section. Here, the <em>background</em> option is set give an <em>image parallax</em> effect.</p>
+
+  </div>
+</div>
+
+    </div>
+  
+</div>
+
+    </div>
+  </section>
+  
 
   
   
@@ -445,7 +646,7 @@
 
         
         <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          <a href="https://www.kennedy.ox.ac.uk/team/kevin-rue-albrecht" target="_blank" itemprop="url" rel="noopener">
+          <a href="https://github.com/kevinrue" target="_blank" itemprop="url" rel="noopener">
           <span itemprop="name">University of Oxford</span>
           </a>
         </h3>
@@ -465,9 +666,11 @@
         
         
         
+          
+        
         <li>
-          <a itemprop="sameAs" href="mailto:kevin.rue-albrecht@kennedy.ox.ac.uk" >
-            <i class="fas fa-at big-icon"></i>
+          <a itemprop="sameAs" href="/#contact" >
+            <i class="fas fa-envelope big-icon"></i>
           </a>
         </li>
         
@@ -650,17 +853,6 @@ His research explores the immune response to infection, disease, and self antige
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-laptop-code"></i></div>
-    <h3>Software carpentry</h3>
-    <p>90%</p>
-  </div>
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
     <div class="featurette-icon"><i class="fas fa-chart-line"></i></div>
     <h3>Statistics</h3>
     <p>70%</p>
@@ -672,20 +864,9 @@ His research explores the immune response to infection, disease, and self antige
     
   
   <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-syringe"></i></div>
-    <h3>Immunology</h3>
-    <p>70%</p>
-  </div>
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
-    <div class="featurette-icon"><i class="fas fa-bug"></i></div>
-    <h3>Infectious diseases</h3>
-    <p>70%</p>
+    <div class="featurette-icon"><i class="fas fa-laptop-code"></i></div>
+    <h3>Software carpentry</h3>
+    <p>100%</p>
   </div>
   
 </div>
@@ -753,68 +934,24 @@ His research explores the immune response to infection, disease, and self antige
       <div class="col py-2">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Postdoctoral Researcher - Computational Genomics</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.ox.ac.uk" target="_blank" rel="noopener">University of Oxford</a></h4>
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">CEO</h4>
+            <h4 class="card-title exp-company text-muted my-0">GenCoin</h4>
             <div class="text-muted exp-meta">
-              Sep 2017 –
+              Jan 2017 –
               
                 Present
               
               
                 <span class="middot-divider"></span>
-                <span>Oxford</span>
+                <span>California</span>
               
             </div>
             <div class="card-text">Responsibilities include:</p>
 
 <ul>
-<li>Study the role of thymic epithelial cells (TEC) in shaping the T vell receptor (TCR) repertoire (consortium funded by <a href="https://www.sanger.ac.uk/science/projects/wellcome-trust-strategic-award-homunculus-our-thymus-cellular-genomics-approach" target="_blank">Wellcome Trust Strategic Award</a>)</li>
-<li>Study contest-specific changes in immune cell abundance and phenotype that underlie chronic inflammation (collaboration with the <a href="https://www.kennedy.ox.ac.uk/research/mucosal-immunology" target="_blank">Powrie group</a>)</li>
-<li>Write and maintain software pipelines and programs for data analysis
-<br /></li>
-</ul></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Postdoctoral Researcher - Computational Biology</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.ox.ac.uk" target="_blank" rel="noopener">University of Oxford</a></h4>
-            <div class="text-muted exp-meta">
-              Dec 2016 –
-              
-                Sep 2017
-              
-              
-                <span class="middot-divider"></span>
-                <span>Oxford</span>
-              
-            </div>
-            <div class="card-text">Responsibilities include:</p>
-
-<ul>
-<li>Management, quality control, and integration of pan-genomic datasets encompassingn RNA-seq, ChIP-seq, DNAse/FAIRE/ATAC-seq, Capture-C,  microarrays, whole-genome sequencing and targeted re-sequencing</li>
-<li>Study transcriptional and epigenetic responses to hypoxia and their relation to cancer biology</li>
-<li>Experimental design, pipeline development, and publication
+<li>Analysing</li>
+<li>Modelling</li>
+<li>Deploying
 <br /></li>
 </ul></div>
           </div>
@@ -841,26 +978,19 @@ His research explores the immune response to infection, disease, and self antige
       <div class="col py-2">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Research Associate - Bioinformatics / Biostatistics</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener">Imperial College London</a></h4>
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Professor</h4>
+            <h4 class="card-title exp-company text-muted my-0">University X</h4>
             <div class="text-muted exp-meta">
-              Sep 2015 –
+              Jan 2016 –
               
-                Nov 2016
+                Dec 2016
               
               
                 <span class="middot-divider"></span>
-                <span>London</span>
+                <span>California</span>
               
             </div>
-            <div class="card-text">Responsibilities include:</p>
-
-<ul>
-<li>Analyze genetic, proteomic and metabolomics data and associated phenotype data</li>
-<li>Integrate and analysis of large-scale, complex, multi-sources medical data and multi-variate data</li>
-<li>Generate new knowledge on idiopathic pulmonary arterial hypertension (IPAH) disease aetiology, underlying biochemical pathways and mechanisms, to improve patient stratification, preventive strategies and treatments
-<br /></li>
-</ul></div>
+            <div class="card-text">Taught electronic engineering and researched semiconductor physics.</div>
           </div>
         </div>
       </div>
@@ -914,130 +1044,54 @@ His research explores the immune response to infection, disease, and self antige
     
     
       <div class="card experience course">
-        <div class="card-body"><a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Machine Learning</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
+        <div class="card-body"><h4 class="card-title exp-title text-muted my-0">Neural Networks and Deep Learning</h4><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
+
+            Oct 2018
+            
+          </div>
+
+          
+
+          
+            <a class="card-link" href="https://www.coursera.org" target="_blank" rel="noopener">
+              See certificate
+            </a>
+          
+        </div>
+      </div>
+    
+      <div class="card experience course">
+        <div class="card-body"><a href="https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Blockchain Fundamentals</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.edx.org" target="_blank" rel="noopener">edX</a><span class="middot-divider"></span>
+
+            Mar 2018
+            
+          </div>
+
+          
+            <div class="card-text">Formulated informed blockchain models, hypotheses, and use cases.</div>
+          
+
+          
+            <a class="card-link" href="https://www.edx.org" target="_blank" rel="noopener">
+              See certificate
+            </a>
+          
+        </div>
+      </div>
+    
+      <div class="card experience course">
+        <div class="card-body"><h4 class="card-title exp-title text-muted my-0">Object-Oriented Programming in R: S3 and R6 Course</h4><div class="card-subtitle my-0 article-metadata"><a href="https://www.datacamp.com" target="_blank" rel="noopener">DataCamp</a><span class="middot-divider"></span>
 
             Jul 2017
             
-            – Sep 2017
+            – Dec 2017
             
           </div>
 
           
-            <div class="card-text">Machine learning is the science of getting computers to act without being explicitly programmed.</div>
-          
 
           
-            <a class="card-link" href="https://www.coursera.org/accomplishments" target="_blank" rel="noopener">
-              See certificate
-            </a>
-          
-        </div>
-      </div>
-    
-      <div class="card experience course">
-        <div class="card-body"><a href="https://www.coursera.org/learn/python-genomics" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Python for Genomic Data Science</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
-
-            Oct 2015
-            
-            – Nov 2015
-            
-          </div>
-
-          
-            <div class="card-text">This class provides an introduction to the Python programming language and the iPython notebook.
-  This is the third course in the Genomic Big Data Science Specialization from Johns Hopkins University.</div>
-          
-
-          
-            <a class="card-link" href="https://www.coursera.org/accomplishments" target="_blank" rel="noopener">
-              See certificate
-            </a>
-          
-        </div>
-      </div>
-    
-      <div class="card experience course">
-        <div class="card-body"><a href="https://www.coursera.org/learn/genomic-tools" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Command Line Tools for Genomic Data Science</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
-
-            Oct 2015
-            
-            – Nov 2015
-            
-          </div>
-
-          
-            <div class="card-text">Introduces to the commands that you need to manage and analyze directories, files, and large sets of genomic data.
-  This is the fourth course in the Genomic Big Data Science Specialization from Johns Hopkins University.</div>
-          
-
-          
-            <a class="card-link" href="https://www.coursera.org/accomplishments" target="_blank" rel="noopener">
-              See certificate
-            </a>
-          
-        </div>
-      </div>
-    
-      <div class="card experience course">
-        <div class="card-body"><a href="https://www.coursera.org/learn/bioconductor" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Bioconductor for Genomic Data Science</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
-
-            Oct 2015
-            
-            – Nov 2015
-            
-          </div>
-
-          
-            <div class="card-text">Learn to use tools from the Bioconductor project to perform analysis of genomic data.
-  This is the fifth course in the Genomic Big Data Specialization from Johns Hopkins University.</div>
-          
-
-          
-            <a class="card-link" href="https://www.coursera.org/accomplishments" target="_blank" rel="noopener">
-              See certificate
-            </a>
-          
-        </div>
-      </div>
-    
-      <div class="card experience course">
-        <div class="card-body"><a href="https://www.coursera.org/learn/statistical-genomics" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Statistics for Genomic Data Science</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
-
-            Oct 2015
-            
-            – Nov 2015
-            
-          </div>
-
-          
-            <div class="card-text">An introduction to the statistics behind the most popular genomic data science projects.
-  This is the sixth course in the Genomic Big Data Science Specialization from Johns Hopkins University.</div>
-          
-
-          
-            <a class="card-link" href="https://www.coursera.org/accomplishments" target="_blank" rel="noopener">
-              See certificate
-            </a>
-          
-        </div>
-      </div>
-    
-      <div class="card experience course">
-        <div class="card-body"><a href="https://www.coursera.org/learn/network-biology" target="_blank" rel="noopener"><h4 class="card-title exp-title text-muted my-0">Network Analysis in Systems Biology</h4></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
-
-            Aug 2013
-            
-            – Dec 2013
-            
-          </div>
-
-          
-            <div class="card-text">An introduction to data integration and statistical methods used in contemporary Systems Biology, Bioinformatics and Systems Pharmacology research.
-  The course covers methods to process raw data from genome-wide mRNA expression studies (microarrays and RNA-seq) including data normalization, differential expression, clustering, enrichment analysis and network construction.</div>
-          
-
-          
-            <a class="card-link" href="https://www.coursera.org/accomplishments" target="_blank" rel="noopener">
+            <a class="card-link" href="https://www.datacamp.com" target="_blank" rel="noopener">
               See certificate
             </a>
           
@@ -1128,108 +1182,6 @@ His research explores the immune response to infection, disease, and self antige
 
     
 
-    
-      
-        
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/isee-at-bioc2019/isee-at-bioc2019/" itemprop="url">iSEE workshop at Bioc2019!</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      The iSEE package will be presented as a workshop at the Bioconductor 2019 conference in New York City!
-What to expect Charlotte Soneson …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2019-05-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-05-11 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>May 11, 2019</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder"></i>
-    <a href="/categories/r/">R</a></span>
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/isee-at-bioc2019/isee-at-bioc2019/">
-      <img src="/post/isee-at-bioc2019/isee-at-bioc2019/featured_hu09781feb34ad999f223f4b9240727289_696261_150x0_resize_lanczos_2.png" itemprop="image">
-    </a>
-    
-  </div>
-</div>
-
-      
     
       
         
@@ -1720,6 +1672,143 @@ What to expect Charlotte Soneson …
     </div>
 
   </div>
+</div>
+
+    </div>
+  </section>
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  <section id="gallery" class="home-section wg-blank   " >
+    <div class="container">
+      
+
+
+<div class="row">
+  
+    <div class="col-12 col-lg-4 section-heading">
+      <h1>Gallery</h1>
+      
+    </div>
+    <div class="col-12 col-lg-8">
+      
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="gallery">
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-1950s.png" >
+  <img src="/home/gallery/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-apogee.png" >
+  <img src="/home/gallery/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-coffee-playfair.png" >
+  <img src="/home/gallery/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-cupcake.png" >
+  <img src="/home/gallery/gallery/theme-cupcake_hueba8cfa8cfbc7543924fcbf387a99e92_23986_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-dark.png" >
+  <img src="/home/gallery/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-default.png" >
+  <img src="/home/gallery/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-forest.png" >
+  <img src="/home/gallery/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+    
+    
+    
+    
+    
+  <a data-fancybox="gallery-gallery" href="/home/gallery/gallery/theme-ocean.png" >
+  <img src="/home/gallery/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png" alt="">
+  </a>
+  
+
+  
+</div>
+
+    </div>
+  
 </div>
 
     </div>
@@ -2826,11 +2915,6 @@ What to expect Charlotte Soneson …
           
           
           
-          <a href="/tags/bioconductor/" style="font-size:0.8rem">Bioconductor</a>
-        
-          
-          
-          
           <a href="/tags/deep-learning/" style="font-size:0.8rem">Deep Learning</a>
         
           
@@ -2868,9 +2952,187 @@ What to expect Charlotte Soneson …
   </section>
   
 
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  <section id="contact" class="home-section wg-contact   " >
+    <div class="container">
+      
+
+
+
+
+<div class="row contact-widget">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Contact</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    
+
+    
+
+    
+    
+      
+      
+    
+
+    <div class="mb-3">
+      <form name="contact" method="POST" action="https://formspree.io/test@example.org">
+        <div class="form-group form-inline">
+          <label class="sr-only" for="inputName">Name</label>
+          <input type="text" name="name" class="form-control w-100" id="inputName" placeholder="Name" required>
+        </div>
+        <div class="form-group form-inline">
+          <label class="sr-only" for="inputEmail">Email</label>
+          <input type="email" name="email" class="form-control w-100" id="inputEmail" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="inputMessage">Message</label>
+          <textarea name="message" class="form-control" id="inputMessage" rows="5" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary px-3 py-2">Send</button>
+      </form>
+    </div>
+    
+
+    <ul class="fa-ul" itemscope>
+
+      
+
+      
+      <li>
+        <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
+        <span id="person-telephone" itemprop="telephone"><a href="tel:888%20888%2088%2088">888 888 88 88</a></span>
+      </li>
+      
+
+      
+      <li>
+        <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
+        <span id="person-address" itemprop="address">Building 1 Room 1, Stanford University, California, 90210, USA</span>
+      </li>
+      
+
+      
+      <li>
+        <i class="fa-li fas fa-clock fa-2x" aria-hidden="true"></i>
+        <span>Monday 10:00 to 13:00<br>
+                  Wednesday 09:00 to 10:00</span>
+      </li>
+      
+
+      
+      <li>
+        <i class="fa-li fas fa-calendar-check fa-2x" aria-hidden="true"></i>
+        <a href="https://calendly.com" target="_blank" rel="noopener">Book an appointment</a>
+      </li>
+      
+
+      
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <i class="fa-li fab fa-twitter fa-2x" aria-hidden="true"></i>
+        <a href="https://twitter.com/Twitter" target="_blank" rel="noopener">DM Me</a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <i class="fa-li fab fa-skype fa-2x" aria-hidden="true"></i>
+        <a href="skype:echo123?call" >Skype Me</a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <i class="fa-li fab fa-keybase fa-2x" aria-hidden="true"></i>
+        <a href="https://keybase.io/" target="_blank" rel="noopener">Chat on Keybase</a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <i class="fa-li fas fa-comments fa-2x" aria-hidden="true"></i>
+        <a href="https://discourse.gohugo.io" target="_blank" rel="noopener">Discuss on Forum</a>
+      </li>
+      
+
+    </ul>
+
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+  
+
 
 <div class="container">
   <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
   
 
   <p class="powered-by">

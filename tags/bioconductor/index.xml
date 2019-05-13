@@ -12,12 +12,15 @@
     
     
     <item>
-      <title>iSEE workshop at Bioc2019</title>
-      <link>/post/isee-at-bioc2019/</link>
+      <title>iSEE workshop at Bioc2019!</title>
+      <link>/post/isee-at-bioc2019/isee-at-bioc2019/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/isee-at-bioc2019/</guid>
-      <description>iSEE will be presented as a workshop at the Bioconductor 2019 conference in New York City!</description>
+      <guid>/post/isee-at-bioc2019/isee-at-bioc2019/</guid>
+      <description>The iSEE package will be presented as a workshop at the Bioconductor 2019 conference in New York City!
+What to expect Charlotte Soneson and I will be conducting a workshop that demonstrates the many features and usages of the iSEE package.
+With the help of the iSEE team, we have prepared a vignette demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.
+The workshop was designed to cater for the needs of users at all levels of familiarity with R and the Bioconductor projects.</description>
     </item>
     
   </channel>

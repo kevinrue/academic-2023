@@ -108,12 +108,56 @@
     </item>
     
     <item>
-      <title>iSEE workshop at Bioc2019</title>
-      <link>/post/isee-at-bioc2019/</link>
+      <title>iSEE workshop at Bioc2019!</title>
+      <link>/post/isee-at-bioc2019/isee-at-bioc2019/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/isee-at-bioc2019/</guid>
-      <description>&lt;p&gt;iSEE will be presented as a workshop at the Bioconductor 2019 conference in New York City!&lt;/p&gt;
+      <guid>/post/isee-at-bioc2019/isee-at-bioc2019/</guid>
+      <description>
+
+
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;div id=&#34;what-to-expect&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What to expect&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
+&lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Workshop content&lt;/h1&gt;
+&lt;p&gt;We will first take time to introduce users to the various components of the graphical user interface (GUI).
+Then, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+&lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomic data modalities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
+&lt;li&gt;Point selections using &lt;a href=&#34;https://shiny.rstudio.com&#34;&gt;shiny&lt;/a&gt; brushes or lasso polygons drawn by consecutive clicks.
+&lt;ul&gt;
+&lt;li&gt;Multiple concurrent selections supported in versions ≥ 1.3.8.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Dynamic linking between plot and table panels, allowing users to transmit information across multiple panels via point selection.&lt;/li&gt;
+&lt;li&gt;Dynamic addition, removal, reordering, and resizing of panels.&lt;/li&gt;
+&lt;li&gt;Automatic tracking, storage, and rendering of the exact R code in a &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=shinyAce&#34;&gt;shinyAce&lt;/a&gt;&lt;/em&gt; editor to allow regeneration of all visible plots in a given application instance.&lt;/li&gt;
+&lt;li&gt;Intelligent density-dependent downsampling of data points shown for large data sets.&lt;/li&gt;
+&lt;li&gt;Custom colour scale specification for individual and groups of discrete and continuous variables.&lt;/li&gt;
+&lt;li&gt;Construction of bespoke interactive guided tours using &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=rintrojs&#34;&gt;rintrojs&lt;/a&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Dynamic detection of discrete and continuous covariates, switching individual plot panels between scatter plots, violin plots, and “square” plots.&lt;/li&gt;
+&lt;li&gt;Ability for users to programmatically define additional custom panels based on any number of user-defined functions performing on-the-fly calculations.&lt;/li&gt;
+&lt;li&gt;Ability to preconfigure app instances, including point selections and state of collapsible panels, to launch individual app instances in any predefined state.&lt;/li&gt;
+&lt;li&gt;Retrieval of gene annotations on the fly by using either user-defined functions or the built-in annotateEntrez or annotateEnsembl functions.&lt;/li&gt;
+&lt;li&gt;Hands-free control of the app using voice recognition by &lt;a href=&#34;https://www.talater.com/annyang/&#34;&gt;annyang&lt;/a&gt; in versions ≥ 1.3.2.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;where-and-when-to-find-us&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Where and when to find us&lt;/h1&gt;
+&lt;p&gt;This workshop will take place during the workshop &lt;a href=&#34;https://bioc2019.bioconductor.org/schedule#day-2-wednesday-june-26&#34;&gt;sessions 6a and 6b&lt;/a&gt; on Wednesday June 26 between between 15:10 and 17:00.&lt;/p&gt;
+&lt;p&gt;You can also come and find us between sessions!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;access-to-the-workshop-materials&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Access to the workshop materials&lt;/h1&gt;
+&lt;p&gt;The workshop materials are being prepared as the vignette of a freely available R package hosted on a &lt;a href=&#34;https://github.com/kevinrue/Bioc2019-iSEE-workshop&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, workshops will become part of a book similar to the &lt;a href=&#34;https://bioconductor.github.io/BiocWorkshops/&#34;&gt;Bioconductor 2018 Workshop Compilation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We look forward to seeing&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
