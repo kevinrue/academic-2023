@@ -121,13 +121,14 @@
 &lt;h1&gt;What to expect&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
 &lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
-&lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; projects.&lt;/p&gt;
+&lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Workshop content&lt;/h1&gt;
-&lt;p&gt;We will first take time to introduce users to the various components of the graphical user interface (GUI).
-Then, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
-&lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomic data modalities:&lt;/p&gt;
+&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
+Next, we will walk participants through the various components of the graphical user interface (GUI).
+Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+&lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomics data modalities:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
 &lt;li&gt;Point selections using &lt;a href=&#34;https://shiny.rstudio.com&#34;&gt;shiny&lt;/a&gt; brushes or lasso polygons drawn by consecutive clicks.
@@ -150,13 +151,13 @@ Then, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;
 &lt;div id=&#34;where-and-when-to-find-us&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Where and when to find us&lt;/h1&gt;
 &lt;p&gt;This workshop will take place during the workshop &lt;a href=&#34;https://bioc2019.bioconductor.org/schedule#day-2-wednesday-june-26&#34;&gt;sessions 6a and 6b&lt;/a&gt; on Wednesday June 26 between between 15:10 and 17:00.&lt;/p&gt;
-&lt;p&gt;You can also come and find us between sessions!&lt;/p&gt;
+&lt;p&gt;You can also come and find us between sessions if you have more questions!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;access-to-the-workshop-materials&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Access to the workshop materials&lt;/h1&gt;
 &lt;p&gt;The workshop materials are being prepared as the vignette of a freely available R package hosted on a &lt;a href=&#34;https://github.com/kevinrue/Bioc2019-iSEE-workshop&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In addition, workshops will become part of a book similar to the &lt;a href=&#34;https://bioconductor.github.io/BiocWorkshops/&#34;&gt;Bioconductor 2018 Workshop Compilation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We look forward to seeing&lt;/p&gt;
+&lt;p&gt;We look forward to seeing participants at the workshop!&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
