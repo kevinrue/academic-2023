@@ -424,12 +424,39 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <title>iSEE workshop | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-workshop/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+      <guid>/slides/bioc2019-workshop/</guid>
+      <description>
+
+&lt;!-- Prevent capitalization of titles --&gt;
+
+&lt;style&gt;
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+          }
+&lt;/style&gt;
+
+&lt;h1 id=&#34;isee-package-and-functionality&#34;&gt;iSEE package and functionality&lt;/h1&gt;
+
+&lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/iSEE/biocstickers.JPG&#34; height=600&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;the-isee-verse&#34;&gt;The iSEE-verse&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;Bioconductor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
