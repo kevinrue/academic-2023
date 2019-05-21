@@ -346,35 +346,38 @@
   <div class="article-style" itemprop="articleBody">
 
 
+<!-- Show img inline -->
+<style> 
+.article-style img {
+    display: inline-block;
+}
+</style>
 <div id="r-packages" class="section level1">
 <h1>R packages</h1>
-<p>I maintain and co-develop the following R packages:</p>
-<table>
-<colgroup>
-<col width="38%" />
-<col width="61%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Badges</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><a href="http://bioconductor.org/packages/iSEE/"><img src="https://img.shields.io/badge/iSEE-1.5.1-blue.svg" /></a><br/><img src="https://bioconductor.org/shields/years-in-bioc/iSEE.svg"></td>
-<td align="left">iSEE provides functions for creating an interactive Shiny-based graphical user interface for exploring data stored in SummarizedExperiment objects, including row- and column-level metadata. Particular attention is given to single-cell data in a <em><a href="https://bioconductor.org/packages/3.10/SingleCellExperiment">SingleCellExperiment</a></em> object with visualization of dimensionality reduction results.</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="http://bioconductor.org/packages/TVTB/"><img src="https://img.shields.io/badge/TVTB-1.11.0-blue.svg" /></a><br/><img src="https://bioconductor.org/shields/years-in-bioc/TVTB.svg"></td>
-<td align="left">TVTB provides S4 classes and methods to filter, summarise and visualise genetic variation data stored in VCF files.</td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="http://bioconductor.org/packages/GOexpress/"><img src="https://img.shields.io/badge/GOexpress-1.19.0-blue.svg" /></a><br/><img src="https://bioconductor.org/shields/years-in-bioc/GOexpress.svg"></td>
-<td align="left">GOexpress contains methods to visualise the expression profile of genes from transcriptomics experiments, and offers a supervised clustering approach to identify GO terms containing genes with expression levels that best classify two or more predefined groups of samples.</td>
-</tr>
-</tbody>
-</table>
+<p>I maintain or co-develop the following R packages.</p>
+<p><a href="http://bioconductor.org/packages/BiocCheck/"><img src="https://img.shields.io/badge/Bioconductor-BiocCheck-blue.svg" /></a> <img src="https://bioconductor.org/shields/years-in-bioc/BiocCheck.svg"></p>
+<p><em><a href="https://bioconductor.org/packages/3.10/BiocCheck">BiocCheck</a></em> executes Bioconductor-specific package checks.</p>
+<p><a href="https://github.com/kevinrue/deeperTools"><img src="https://img.shields.io/badge/GitHub-deeperTools-c9510c.svg" /></a> <a href="https://travis-ci.org/kevinrue/deeperTools"><img src="https://travis-ci.org/kevinrue/deeperTools.svg?branch=master" alt="Travis build status" /></a>
+<a href="https://codecov.io/github/kevinrue/deeperTools?branch=master"><img src="https://codecov.io/gh/kevinrue/deeperTools/branch/master/graph/badge.svg" alt="Coverage status" /></a></p>
+<p><em><a href="https://github.com/kevinrue/deeperTools">deeperTools</a></em> provides convenience functions to process files produced by <a href="https://deeptools.readthedocs.io/en/develop/">deepTools</a>.</p>
+<p><a href="http://bioconductor.org/packages/GOexpress/"><img src="https://img.shields.io/badge/Bioconductor-GOexpress-blue.svg" /></a> <img src="https://bioconductor.org/shields/years-in-bioc/GOexpress.svg"></p>
+<p><em><a href="https://bioconductor.org/packages/3.10/GOexpress">GOexpress</a></em> contains methods to visualise the expression profile of genes from transcriptomics experiments, and offers a supervised clustering approach to identify GO terms containing genes with expression levels that best classify two or more predefined groups of samples.</p>
+<p><a href="https://github.com/kevinrue/hancock"><img src="https://img.shields.io/badge/GitHub-hancock-c9510c.svg" /></a> <a href="https://travis-ci.org/kevinrue/hancock"><img src="https://travis-ci.org/kevinrue/hancock.svg?branch=master" alt="Travis build status" /></a>
+<a href="https://codecov.io/github/kevinrue/hancock?branch=master"><img src="https://codecov.io/gh/kevinrue/hancock/branch/master/graph/badge.svg" alt="Coverage status" /></a></p>
+<p><em><a href="https://github.com/kevinrue/hancock">hancock</a></em> aims to provide a collection of methods for learning and applying gene signatures associated with cellular phenotypes and identities.</p>
+<p><a href="http://bioconductor.org/packages/iSEE/"><img src="https://img.shields.io/badge/Bioconductor-iSEE-blue.svg" /></a> <img src="https://bioconductor.org/shields/years-in-bioc/iSEE.svg"></p>
+<p><em><a href="https://bioconductor.org/packages/3.10/iSEE">iSEE</a></em> provides functions for creating an interactive Shiny-based graphical user interface for exploring data stored in <em><a href="https://bioconductor.org/packages/3.10/SummarizedExperiment">SummarizedExperiment</a></em> objects, including row- and column-level metadata. Particular attention is given to single-cell data in a <em><a href="https://bioconductor.org/packages/3.10/SingleCellExperiment">SingleCellExperiment</a></em> object with visualization of dimensionality reduction results.</p>
+<p><a href="https://github.com/kevinrue/sqlighter"><img src="https://img.shields.io/badge/GitHub-sqlighter-c9510c.svg" /></a> <a href="https://travis-ci.org/kevinrue/sqlighter"><img src="https://travis-ci.org/kevinrue/sqlighter.svg?branch=master" alt="Travis build status" /></a>
+<a href="https://codecov.io/github/kevinrue/sqlighter?branch=master"><img src="https://codecov.io/gh/kevinrue/sqlighter/branch/master/graph/badge.svg" alt="Coverage status" /></a></p>
+<p><em><a href="https://github.com/kevinrue/sqlighter">sqlighter</a></em> is a convenient wrapper functions around the <em><a href="https://CRAN.R-project.org/package=RSQLite">RSQLite</a></em> package.</p>
+<p><a href="http://bioconductor.org/packages/TVTB/"><img src="https://img.shields.io/badge/Bioconductor-TVTB-blue.svg" /></a> <img src="https://bioconductor.org/shields/years-in-bioc/TVTB.svg"></p>
+<p><em><a href="https://bioconductor.org/packages/3.10/TVTB">TVTB</a></em> provides S4 classes and methods to filter, summarise and visualise genetic variation data stored in VCF files.</p>
+<p><a href="https://github.com/kevinrue/unisets"><img src="https://img.shields.io/badge/GitHub-unisets-c9510c.svg" /></a> <a href="https://travis-ci.org/kevinrue/unisets"><img src="https://travis-ci.org/kevinrue/unisets.svg?branch=master" alt="Travis build status" /></a>
+<a href="https://codecov.io/github/kevinrue/unisets?branch=master"><img src="https://codecov.io/gh/kevinrue/unisets/branch/master/graph/badge.svg" alt="Coverage status" /></a></p>
+<p><em><a href="https://github.com/kevinrue/unisets">unisets</a></em> provides a collection of S4 classes to store relationships between elements and sets, with a particular emphasis on gene sets.</p>
+<p><a href="https://github.com/kevinrue/xCellData"><img src="https://img.shields.io/badge/GitHub-xCellData-c9510c.svg" /></a> <a href="https://travis-ci.org/kevinrue/xCellData"><img src="https://travis-ci.org/kevinrue/xCellData.svg?branch=master" alt="Travis build status" /></a>
+<a href="https://codecov.io/github/kevinrue/xCellData?branch=master"><img src="https://codecov.io/gh/kevinrue/xCellData/branch/master/graph/badge.svg" alt="Coverage status" /></a></p>
+<p><em><a href="https://github.com/kevinrue/xCellData">xCellData</a></em> uses the <code>BaseSets</code> class defined in the <em><a href="https://bioconductor.org/packages/3.10/unisets">unisets</a></em> package (see above) to represent 489 cell type gene signatures from <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1349-1" title="Aran et al., 2017">Aran et al., 2017</a>.</p>
 </div>
 </div>
   
