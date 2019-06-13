@@ -447,6 +447,8 @@ $$&lt;/p&gt;
 
 &lt;hr /&gt;
 
+&lt;!-- This was a team effort ! --&gt;
+
 &lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
 
 &lt;table&gt;
@@ -460,21 +462,37 @@ $$&lt;/p&gt;
 
 &lt;hr /&gt;
 
+&lt;!-- Integration with bioconductor --&gt;
+
 &lt;p&gt;&lt;img src=&#34;/img/iSEE/biocstickers.jpg&#34; height=600&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
+&lt;!-- iSEE focuses on the SingleCellExperiment class --&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
+&lt;!-- A typical single-cell analysis workflow --&gt;
+
 &lt;p&gt;&lt;img src=&#34;/img/OSCA/bioc-figures_v2-03.png&#34; height=600&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=500&gt;&lt;/p&gt;
+&lt;!-- Don&#39;t try this at home --&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=500&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
+&lt;!-- How iSEE dissects SCE objects --&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- F1000 Twitter teaser --&gt;
 
 
 
@@ -508,6 +526,16 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;Bioconductor&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
