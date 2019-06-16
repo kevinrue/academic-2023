@@ -437,6 +437,9 @@ $$&lt;/p&gt;
     .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
                   text-transform: none;
           }
+    .reveal fs80 {
+                  font-size: 80%;
+          }
 &lt;/style&gt;
 
 &lt;h1 id=&#34;isee-http-bioconductor-org-packages-isee-package-and-functionality&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;iSEE&lt;/code&gt;&lt;/a&gt; package and functionality&lt;/h1&gt;
@@ -445,9 +448,12 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;!--
+Welcome to the iSEE workshop.
+In this presentation, we will introduce the concepts and functionality of the iSEE package.
+--&gt;
 
-&lt;!-- This was a team effort ! --&gt;
+&lt;hr /&gt;
 
 &lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
 
@@ -460,43 +466,134 @@ $$&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;hr /&gt;
+&lt;!--
+This was a team effort!
+--&gt;
 
-&lt;!-- Integration with bioconductor --&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/iSEE/biocstickers.jpg&#34; height=600&gt;&lt;/p&gt;
 
+&lt;!--
+iSEE tightly integrates with other packages of the Bioconductor project.
+--&gt;
+
 &lt;hr /&gt;
 
-&lt;!-- iSEE focuses on the SingleCellExperiment class --&gt;
+&lt;h1 id=&#34;fs80-original-wishlist-1-2-fs80&#34;&gt;&lt;fs80&gt;Original wishlist (1 / 2)&lt;/fs80&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;fs80&gt;An interactive user interface for exploring data in &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/release/SummarizedExperiment&#34; target=&#34;_blank&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; objects&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Particular focus given to single-cell data in the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/release/SingleCellExperiment&#34; target=&#34;_blank&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; derived class&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Cell-based visualizations&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Feature-base visualizations&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Heat maps (cells &lt;em&gt;and&lt;/em&gt; features)&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Selectable points&lt;/fs80&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;fs80-original-wishlist-2-2-fs80&#34;&gt;&lt;fs80&gt;Original wishlist (2 / 2)&lt;/fs80&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;fs80&gt;Colouring of samples by metadata or assayed values&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Hover/click&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Zoom&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Box plots stratified by metadata.&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Transmission of points selections between plots&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Code tracking for reproducibility and batch generation of figures&lt;/fs80&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+--&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+--&gt;
 
-&lt;!-- A typical single-cell analysis workflow --&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/OSCA/bioc-figures_v2-03.png&#34; height=600&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;!-- 
+The SingleCellExperiment class is designed to accomodate all the information produced along a typical single-cell analysis workflow.
+Those data include raw data:
+- raw assay data
+- experimental metadata
+Processed data:
+- quality control metrics
+- normalized data
+- dimensionality reduction results
+Downstream analyses:
+- cluster labels
+- differential expression results
+- downstream cell and feature annotations
+--&gt;
 
-&lt;!-- Don&#39;t try this at home --&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=500&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;!--
+Don&#39;t try this at home.
+The wealth of information produced by single-cell analysis workflows has motivated the development of many interactive applications to help researchers explore their data sets.
+Each of those applications has its own strengths and limitations.
+It is very tempting to develop new applications to with their own strengths and limitations.
+Before you decide to do so, we encourage you to test iSEE.
+You may find that it already does everything you would like!
+--&gt;
 
-&lt;!-- How iSEE dissects SCE objects --&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;&lt;/p&gt;
 
+&lt;!--
+Here we demonstrate how iSEE dissects SCE objects to produce figures.
+--&gt;
+
 &lt;hr /&gt;
 
-&lt;!-- Speech recognition --&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png&#34; height=600&gt;&lt;/p&gt;
+
+&lt;!--
+iSEE provides a powerful yet flexible user interface that includes 8 predefined panel types.
+That said, it also gives the freedom to define any number custom panel types, both plots and tables.
+--&gt;
+
+&lt;hr /&gt;
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+
+&lt;!--
+iSEE can be extended using third-party JavaScript libraries.
+Here we demonstrate how speech recognition was integrated to support a number of predefined vocal commands.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;the-isee-verse&#34;&gt;The iSEE-verse&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;http://bioconductor.org/packages/iSEE/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34; target=&#34;_blank&#34;&gt;https://github.com/csoneson/iSEE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEE_custom&#34; target=&#34;_blank&#34;&gt;https://github.com/kevinrue/iSEE_custom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/federicomarini/iSEE_instances&#34; target=&#34;_blank&#34;&gt;https://github.com/federicomarini/iSEE_instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kevinrue.github.io/iSEEWorkshop2019/index.html&#34; target=&#34;_blank&#34;&gt;https://kevinrue.github.io/iSEEWorkshop2019/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;!-- F1000 Twitter teaser --&gt;
 
@@ -523,17 +620,16 @@ $$&lt;/p&gt;
 &lt;video controls &gt;
   &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;the-isee-verse&#34;&gt;The iSEE-verse&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;http://bioconductor.org/packages/iSEE/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34; target=&#34;_blank&#34;&gt;https://github.com/csoneson/iSEE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEE_custom&#34; target=&#34;_blank&#34;&gt;https://github.com/kevinrue/iSEE_custom&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/federicomarini/iSEE_instances&#34; target=&#34;_blank&#34;&gt;https://github.com/federicomarini/iSEE_instances&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
