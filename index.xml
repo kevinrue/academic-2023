@@ -595,6 +595,15 @@ Here we demonstrate how speech recognition was integrated to support a number of
 &lt;li&gt;&lt;a href=&#34;https://kevinrue.github.io/iSEEWorkshop2019/index.html&#34; target=&#34;_blank&#34;&gt;https://kevinrue.github.io/iSEEWorkshop2019/index.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;!--
+The growing funtionality of the iSEE package is demonstrated in various places:
+- The Bioconductor website is the primary source of information for the latest release and development package versions.
+- The package GitHub repository is the place to monitor the latest developments, open issues, and contribute pull requests (consider the Bioconductor support website for general questions)
+- kevinrue/iSEE_custom demonstrates the development of custom panels through a gallery of examples
+- federicomarini/iSEE_instances demonstrates the integration of iSEE with entire analyses of publicly available datasets through a gallery of examples
+- Finally, the iSEE workshop was written for the Bioconductor conference 2019 to showcase the functionality of the iSEE package for both newcomers and experienced R users.
+--&gt;
+
 &lt;!-- F1000 Twitter teaser --&gt;
 
 &lt;!-- 
