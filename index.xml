@@ -502,9 +502,9 @@ See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097e
 
 &lt;ul&gt;
 &lt;li&gt;&lt;fs80&gt;Colouring of samples by metadata or assayed values&lt;/fs80&gt;&lt;/li&gt;
-&lt;li&gt;&lt;fs80&gt;Hover/click&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Stratify axes and facets by metadata (e.g. violin plots)&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Hover and click&lt;/fs80&gt;&lt;/li&gt;
 &lt;li&gt;&lt;fs80&gt;Zoom&lt;/fs80&gt;&lt;/li&gt;
-&lt;li&gt;&lt;fs80&gt;Box plots stratified by metadata.&lt;/fs80&gt;&lt;/li&gt;
 &lt;li&gt;&lt;fs80&gt;Transmission of points selections between plots&lt;/fs80&gt;&lt;/li&gt;
 &lt;li&gt;&lt;fs80&gt;Code tracking for reproducibility and batch generation of figures&lt;/fs80&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -629,16 +629,6 @@ The growing funtionality of the iSEE package is demonstrated in various places:
 &lt;video controls &gt;
   &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
