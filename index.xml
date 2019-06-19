@@ -475,7 +475,7 @@ This was a team effort!
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/iSEE/biocstickers.jpg&#34; height=600&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bioconductor.org&#34;&gt;&lt;img src=&#34;/img/iSEE/biocstickers.jpg&#34; height=600&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;!--
 iSEE tightly integrates with other packages of the Bioconductor project.
