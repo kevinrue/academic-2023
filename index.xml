@@ -440,6 +440,9 @@ $$&lt;/p&gt;
     .reveal fs80 {
                   font-size: 80%;
           }
+    .reveal fs60 {
+                  font-size: 60%;
+          }
 &lt;/style&gt;
 
 &lt;h1 id=&#34;isee-http-bioconductor-org-packages-isee-package-and-functionality&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;iSEE&lt;/code&gt;&lt;/a&gt; package and functionality&lt;/h1&gt;
@@ -480,7 +483,7 @@ iSEE tightly integrates with other packages of the Bioconductor project.
 
 &lt;hr /&gt;
 
-&lt;h1 id=&#34;fs80-original-wishlist-1-2-fs80&#34;&gt;&lt;fs80&gt;Original wishlist (1 / 2)&lt;/fs80&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;fs60-original-wishlist-1-2-fs60&#34;&gt;&lt;fs60&gt;Original wishlist (1 / 2)&lt;/fs60&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;fs80&gt;An interactive user interface for exploring data in &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/release/SummarizedExperiment&#34; target=&#34;_blank&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; objects&lt;/fs80&gt;&lt;/li&gt;
@@ -498,7 +501,7 @@ See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097e
 
 &lt;hr /&gt;
 
-&lt;h1 id=&#34;fs80-original-wishlist-2-2-fs80&#34;&gt;&lt;fs80&gt;Original wishlist (2 / 2)&lt;/fs80&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;fs60-original-wishlist-2-2-fs60&#34;&gt;&lt;fs60&gt;Original wishlist (2 / 2)&lt;/fs60&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;fs80&gt;Colouring of samples by metadata or assayed values&lt;/fs80&gt;&lt;/li&gt;
@@ -574,6 +577,14 @@ That said, it also gives the freedom to define any number custom panel types, bo
 
 &lt;hr /&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.shinyapps.io/magick-profile/&#34;&gt;&lt;img src=&#34;/img/workshop.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--
+With that introduction to the user interface, let us head into the workshop!
+--&gt;
+
+&lt;hr /&gt;
+
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
@@ -585,14 +596,26 @@ Here we demonstrate how speech recognition was integrated to support a number of
 
 &lt;hr /&gt;
 
-&lt;h1 id=&#34;the-isee-verse&#34;&gt;The iSEE-verse&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/iSEE/shiny-contest.png&#34; height=600&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--
+iSEE won the RStudio Shiny Contest in April 2019 with mention for &#34;Most technically impressive&#34;.
+See https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/ for more details.
+In particular:
+- There were 136 submissions from 122 unique app developers!
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;fs60-the-isee-verse-fs60&#34;&gt;&lt;fs60&gt;The iSEE-verse&lt;/fs60&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;http://bioconductor.org/packages/iSEE/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34; target=&#34;_blank&#34;&gt;https://github.com/csoneson/iSEE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEE_custom&#34; target=&#34;_blank&#34;&gt;https://github.com/kevinrue/iSEE_custom&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/federicomarini/iSEE_instances&#34; target=&#34;_blank&#34;&gt;https://github.com/federicomarini/iSEE_instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://kevinrue.github.io/iSEEWorkshop2019/index.html&#34; target=&#34;_blank&#34;&gt;https://kevinrue.github.io/iSEEWorkshop2019/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;http://bioconductor.org/packages/iSEE/&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/LTLA/iSEE2018&#34; target=&#34;_blank&#34;&gt;https://github.com/LTLA/iSEE2018&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34; target=&#34;_blank&#34;&gt;https://github.com/csoneson/iSEE&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEE_custom&#34; target=&#34;_blank&#34;&gt;https://github.com/kevinrue/iSEE_custom&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/federicomarini/iSEE_instances&#34; target=&#34;_blank&#34;&gt;https://github.com/federicomarini/iSEE_instances&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34; target=&#34;_blank&#34;&gt;https://github.com/kevinrue/iSEEWorkshop2019&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--
