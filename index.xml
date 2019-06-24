@@ -108,6 +108,144 @@
     </item>
     
     <item>
+      <title>iSEE flashtalk | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-flashtalk/</link>
+      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/slides/bioc2019-flashtalk/</guid>
+      <description>
+
+&lt;!-- Prevent capitalization of titles --&gt;
+
+&lt;style&gt;
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+          }
+&lt;/style&gt;
+
+&lt;h1 id=&#34;the-isee-http-bioconductor-org-packages-isee-package&#34;&gt;The &lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;iSEE&lt;/code&gt;&lt;/a&gt; package&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Interactive and reproducible visualization of &lt;code&gt;SummarizedExperiment&lt;/code&gt; objects.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--
+This flashtalk introduces the iSEE package
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://kevinrue.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/kevin-rue.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/charlotte-soneson.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://federicomarini.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/federico-marini.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-3564-4813&#34;&gt;&lt;img src=&#34;/img/iSEE/aaron-lun.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;!--
+The story begins with 4 postdocs  and a shared dream at EuroBioc2017.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code&gt;&lt;ins&gt;i&lt;/ins&gt;nteractive &lt;ins&gt;S&lt;/ins&gt;ummarized&lt;ins&gt;E&lt;/ins&gt;xperiment &lt;ins&gt;E&lt;/ins&gt;xplorer&lt;/code&gt;&lt;/p&gt;
+
+&lt;!--
+The name stands for.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;&lt;/p&gt;
+
+&lt;!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code&gt;iSEE(sce)&lt;/code&gt;&lt;/p&gt;
+
+&lt;!--
+Given any SCE object, repeat after me the magic formula.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png&#34; height=600&gt;&lt;/p&gt;
+
+&lt;!--
+A typical iSEE interface includes up to 8 different predefined panels types.
+In addition, it is possible to implement custom panels (not shown here).
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;&lt;/p&gt;
+
+&lt;!--
+Here we demonstrate how iSEE dissects SCE objects to produce different panel types.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=400&gt;&lt;/p&gt;
+
+&lt;!--
+With its diverse feature set, iSEE reduces the need for bespoke shiny applications.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.shinyapps.io/magick-profile/&#34;&gt;&lt;img src=&#34;/img/workshop.png&#34; height=500&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--
+iSEE will be presented as a workshop
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;workshop&#34;&gt;Workshop&lt;/h1&gt;
+
+&lt;p&gt;Wednesday 26 June&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3:10 - 4:00 – Workshops Session 6a&lt;/li&gt;
+&lt;li&gt;4:10 - 5:00 – Workshops Session 6b&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--
+The date and times of the workshop.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!--
+If you come to the workshop, we&#39;ll even show you how iSEE integrates voice recognition to interact with the application.
+--&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/2019-01-07-shiny-contest.png&#34; height=400&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--
+If you don&#39;t believe me, you can trust the RStudio team who declared iSEE winner and most technical impressive application submitted to the first Shiny contest.
+--&gt;
+</description>
+    </item>
+    
+    <item>
       <title>iSEE workshop at Bioc2019!</title>
       <link>/post/isee-at-bioc2019/isee-at-bioc2019/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
@@ -652,6 +790,16 @@ The growing funtionality of the iSEE package is demonstrated in various places:
 &lt;video controls &gt;
   &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/kevin-rue-albrecht/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iSEE flashtalk | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-flashtalk/</link>
+      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/slides/bioc2019-flashtalk/</guid>
+      <description>A brief introduction to the iSEE package.</description>
+    </item>
     
     <item>
       <title>iSEE workshop | Bioconductor conference 2019</title>
