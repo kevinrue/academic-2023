@@ -214,12 +214,11 @@ iSEE will be presented as a workshop
 
 &lt;h1 id=&#34;workshop&#34;&gt;Workshop&lt;/h1&gt;
 
-&lt;p&gt;Wednesday 26 June&lt;/p&gt;
+&lt;p&gt;Wednesday 26 June 2019&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;3:10 - 4:00 – Workshops Session 6a&lt;/li&gt;
-&lt;li&gt;4:10 - 5:00 – Workshops Session 6b&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;3:10 - 4:00 – Workshops Session 6a&lt;/p&gt;
+
+&lt;p&gt;4:10 - 5:00 – Workshops Session 6b&lt;/p&gt;
 
 &lt;!--
 The date and times of the workshop.
@@ -790,16 +789,6 @@ The growing funtionality of the iSEE package is demonstrated in various places:
 &lt;video controls &gt;
   &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
