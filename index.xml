@@ -220,14 +220,22 @@ iSEE will be presented as a workshop
 
 &lt;p&gt;4:10 - 5:00 – Workshops Session 6b&lt;/p&gt;
 
+&lt;p&gt;Carson Auditorium&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Interactive visualization of SummarizedExperiment objects&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
+
 &lt;!--
 The date and times of the workshop.
 --&gt;
 
 &lt;hr /&gt;
 
+&lt;h2 id=&#34;you-will-learn&#34;&gt;You will learn &amp;hellip;&lt;/h2&gt;
+
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 80%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;!--
@@ -235,6 +243,10 @@ If you come to the workshop, we&#39;ll even show you how iSEE integrates voice r
 --&gt;
 
 &lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Most technically impressive&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/2019-01-07-shiny-contest.png&#34; height=400&gt;&lt;/a&gt;&lt;/p&gt;
 
