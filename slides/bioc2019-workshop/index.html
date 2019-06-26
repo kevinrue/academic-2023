@@ -351,6 +351,58 @@ In particular:
     
       
 
+<p>Creating an <code>ExperimentColorMap</code></p>
+
+<pre><code>qc_color_fun &lt;- function(n){
+    qc_colors &lt;- c(&quot;forestgreen&quot;, &quot;firebrick1&quot;)
+    names(qc_colors) &lt;- c(&quot;Y&quot;, &quot;N&quot;)
+    qc_colors
+}
+</code></pre>
+
+<pre><code>ExperimentColorMap(
+    assays = list(
+        counts = heat.colors,
+        logcounts = logcounts_color_fun,
+        cufflinks_fpkm = fpkm_color_fun
+    ),
+    colData = list(
+        passes_qc_checks_s = qc_color_fun
+    ),
+    all_continuous = list(
+        assays = viridis::plasma
+    ),
+    global_continuous = viridis::viridis
+)
+</code></pre>
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p>Using the <code>ExperimentColorMap</code></p>
+
+<pre><code>colDataColorMap(ecm, &quot;passes_qc_checks_s&quot;, discrete=TRUE)
+</code></pre>
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
 <h1 id="fs60-the-isee-verse-fs60"><fs60>The iSEE-verse</fs60></h1>
 
 <ul>

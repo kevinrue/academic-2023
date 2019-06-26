@@ -758,6 +758,40 @@ In particular:
 
 &lt;hr /&gt;
 
+&lt;p&gt;Creating an &lt;code&gt;ExperimentColorMap&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qc_color_fun &amp;lt;- function(n){
+    qc_colors &amp;lt;- c(&amp;quot;forestgreen&amp;quot;, &amp;quot;firebrick1&amp;quot;)
+    names(qc_colors) &amp;lt;- c(&amp;quot;Y&amp;quot;, &amp;quot;N&amp;quot;)
+    qc_colors
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;ExperimentColorMap(
+    assays = list(
+        counts = heat.colors,
+        logcounts = logcounts_color_fun,
+        cufflinks_fpkm = fpkm_color_fun
+    ),
+    colData = list(
+        passes_qc_checks_s = qc_color_fun
+    ),
+    all_continuous = list(
+        assays = viridis::plasma
+    ),
+    global_continuous = viridis::viridis
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Using the &lt;code&gt;ExperimentColorMap&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;colDataColorMap(ecm, &amp;quot;passes_qc_checks_s&amp;quot;, discrete=TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&#34;fs60-the-isee-verse-fs60&#34;&gt;&lt;fs60&gt;The iSEE-verse&lt;/fs60&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -803,16 +837,6 @@ The growing funtionality of the iSEE package is demonstrated in various places:
 &lt;video controls &gt;
   &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
