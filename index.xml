@@ -594,7 +594,7 @@ $$&lt;/p&gt;
           }
 &lt;/style&gt;
 
-&lt;h1 id=&#34;isee-http-bioconductor-org-packages-isee-package-and-functionality&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;iSEE&lt;/code&gt;&lt;/a&gt; package and functionality&lt;/h1&gt;
+&lt;h1 id=&#34;isee-http-bioconductor-org-packages-isee-package-and-functionality&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;iSEE&lt;/a&gt; package and functionality&lt;/h1&gt;
 
 &lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
 
@@ -785,10 +785,16 @@ In particular:
 
 &lt;hr /&gt;
 
-&lt;p&gt;Using the &lt;code&gt;ExperimentColorMap&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Using an &lt;code&gt;ExperimentColorMap&lt;/code&gt; object&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;colDataColorMap(ecm, &amp;quot;passes_qc_checks_s&amp;quot;, discrete=TRUE)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;How &lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34;&gt;iSEE&lt;/a&gt; uses the &lt;code&gt;ExperimentColorMap&lt;/code&gt; object&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/iSEE/Use-ExperimentColorMap.png&#34;&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
