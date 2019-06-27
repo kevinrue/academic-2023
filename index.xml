@@ -317,8 +317,14 @@ Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/getting-started/getting-started/</guid>
-      <description>&lt;p&gt;Refer to the post the example site for the academic theme (written by the theme author):
-&lt;a href=&#34;https://academic-demo.netlify.com/post/getting-started/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Create a beautifully simple website in under 10 minutes&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Refer to the posts of the example site for the academic theme (written by the theme author):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://academic-demo.netlify.com/post/getting-started/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Create a beautifully simple website in under 10 minutes&amp;rdquo;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://academic-demo.netlify.com/post/jupyter/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Learn how to blog in Academic using Jupyter notebooks&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See also &lt;a href=&#34;https://github.com/rstudio/blogdown/blob/master/inst/resources/2015-07-23-r-rmarkdown.Rmd&#34; target=&#34;_blank&#34;&gt;an example R Markdown document&lt;/a&gt; that compiles to a blog post if stored directly in &lt;code&gt;content/post/&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
