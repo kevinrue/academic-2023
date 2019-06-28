@@ -6,19 +6,10 @@
     <description>Recent content in R on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>iSEE flashtalk | Bioconductor conference 2019</title>
-      <link>/slides/bioc2019-flashtalk/</link>
-      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/bioc2019-flashtalk/</guid>
-      <description>A brief introduction to the iSEE package.</description>
-    </item>
     
     <item>
       <title>iSEE workshop at Bioc2019!</title>
@@ -30,15 +21,6 @@
 What to expect Charlotte Soneson and I will be conducting a workshop that demonstrates the many features and usages of the iSEE package.
 With the help of the iSEE team, we have prepared a vignette demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.
 The workshop was designed to cater for the needs of users at all levels of familiarity with R and the Bioconductor project.</description>
-    </item>
-    
-    <item>
-      <title>iSEE workshop | Bioconductor conference 2019</title>
-      <link>/slides/bioc2019-workshop/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/bioc2019-workshop/</guid>
-      <description>An introduction to the iSEE package and functionality.</description>
     </item>
     
   </channel>

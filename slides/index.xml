@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Slides on Kevin Rue-Albrecht</title>
+    <title>Teaching on Kevin Rue-Albrecht</title>
     <link>/slides/</link>
-    <description>Recent content in Slides on Kevin Rue-Albrecht</description>
+    <description>Recent content in Teaching on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
@@ -36,6 +36,15 @@
       
       <guid>/slides/bioc2019-workshop/</guid>
       <description>An introduction to the iSEE package and functionality.</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/slides/</guid>
+      <description> Conferences  Bioc2019  r BiocStyle::Biocpkg(&amp;quot;iSEE&amp;quot;) package and functionality (flashtalk, slides)   </description>
     </item>
     
   </channel>
