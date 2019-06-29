@@ -274,15 +274,18 @@ Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#
       <guid>/slides/</guid>
       <description>
 
-&lt;h1 id=&#34;conferences&#34;&gt;Conferences&lt;/h1&gt;
 
-&lt;h2 id=&#34;bioconductor-2019-https-bioc2019-bioconductor-org&#34;&gt;&lt;a href=&#34;https://bioc2019.bioconductor.org&#34; target=&#34;_blank&#34;&gt;Bioconductor 2019&lt;/a&gt;&lt;/h2&gt;
-
+&lt;div id=&#34;conferences&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conferences&lt;/h1&gt;
+&lt;div id=&#34;bioconductor-2019&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/slides/bioc2019-flashtalk/#/&#34;&gt;Flashtalk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/slides/bioc2019-workshop/#/&#34;&gt;Workshop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;See &lt;a href=&#34;/teaching&#34;&gt;Teaching&lt;/a&gt; for workshop materials&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/slides/bioc2019-flashtalk/#/&#34;&gt;Flashtalk: The &lt;em&gt;iSEE&lt;/em&gt; package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/slides/bioc2019-workshop/#/&#34;&gt;Workshop: &lt;em&gt;iSEE&lt;/em&gt; package and functionality&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;See the &lt;a href=&#34;/teaching&#34;&gt;Teaching&lt;/a&gt; section for the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.10/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; workshop materials&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
