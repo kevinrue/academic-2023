@@ -13,10 +13,10 @@
     
     <item>
       <title>Getting started with Academic: the website builder for Hugo</title>
-      <link>/post/getting-started/getting-started/</link>
+      <link>/post/getting-started/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/getting-started/getting-started/</guid>
+      <guid>/post/getting-started/</guid>
       <description>Refer to the posts of the example site for the academic theme (written by the theme author):
  &amp;ldquo;Create a beautifully simple website in under 10 minutes&amp;rdquo;. &amp;ldquo;Learn how to blog in Academic using Jupyter notebooks&amp;rdquo;  See also an example R Markdown document that compiles to a blog post if stored directly in content/post/.</description>
     </item>
