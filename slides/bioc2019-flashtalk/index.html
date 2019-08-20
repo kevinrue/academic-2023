@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.0">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/slides/bioc2019-flashtalk/">
+
+  <title>iSEE flashtalk | Bioconductor conference 2019 | Kevin Rue-Albrecht</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/reveal_custom.min.css">
+
+  
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/css/print/pdf.css' : 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+</head>
+<body>
+
+  
+<div class="reveal">
+  <div class="slides">
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<!-- Prevent capitalization of titles -->
+
+<style>
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+          }
+</style>
+
+<h1 id="the-isee-http-bioconductor-org-packages-isee-package">The <a href="http://bioconductor.org/packages/iSEE/" target="_blank"><code>iSEE</code></a> package</h1>
+
+<p><strong>Interactive and reproducible visualization of <code>SummarizedExperiment</code> objects.</strong></p>
+
+<p>Bioconductor conference 2019</p>
+
+<p><a href="https://kevinrue.github.io" target="_blank">Kevin Rue-Albrecht</a></p>
+
+<!--
+This flashtalk introduces the iSEE package
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<h1 id="the-team">The team</h1>
+
+<table>
+<tr>
+<td width="25%"><a href="https://kevinrue.github.io"><img src="/img/iSEE/kevin-rue.png"></a></td>
+<td width="25%"><a href="https://csoneson.github.io"><img src="/img/iSEE/charlotte-soneson.png"></a></td>
+<td width="25%"><a href="https://federicomarini.github.io"><img src="/img/iSEE/federico-marini.png"></a></td>
+<td width="25%"><a href="https://orcid.org/0000-0002-3564-4813"><img src="/img/iSEE/aaron-lun.png"></a></td>
+</tr>
+</table>
+
+<!--
+The story begins with 4 postdocs  and a shared dream at EuroBioc2017.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><code><ins>i</ins>nteractive <ins>S</ins>ummarized<ins>E</ins>xperiment <ins>E</ins>xplorer</code></p>
+
+<!--
+The name stands for.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><img src="/img/OSCA/bioc-figures_v2-02.png" height=500></p>
+
+<!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><code>iSEE(sce)</code></p>
+
+<!--
+Given any SCE object, repeat after me the magic formula.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><img src="https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png" height=600></p>
+
+<!--
+A typical iSEE interface includes up to 8 different predefined panels types.
+In addition, it is possible to implement custom panels (not shown here).
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><img src="/img/OSCA/OSCA-figure-4.png" height=600></p>
+
+<!--
+Here we demonstrate how iSEE dissects SCE objects to produce different panel types.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><img src="/img/iSEE/batman-robin.png" height=400></p>
+
+<!--
+With its diverse feature set, iSEE reduces the need for bespoke shiny applications.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<p><a href="https://kevinrue.shinyapps.io/magick-profile/"><img src="/img/workshop.png" height=500></a></p>
+
+<!--
+iSEE will be presented as a workshop
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<h1 id="workshop">Workshop</h1>
+
+<p><strong>Wednesday 26 June 2019</strong></p>
+
+<p><strong>3:10 - 4:00 – Workshops Session 6a</strong></p>
+
+<p><strong>4:10 - 5:00 – Workshops Session 6b</strong></p>
+
+<p><strong>Carson Auditorium</strong></p>
+
+<p><em>Interactive visualization of SummarizedExperiment objects</em></p>
+
+<p><a href="https://kevinrue.github.io" target="_blank">Kevin Rue-Albrecht</a> &amp; <a href="https://csoneson.github.io" target="_blank">Charlotte Soneson</a></p>
+
+<!--
+The date and times of the workshop.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<h2 id="you-will-learn">You will learn &hellip;</h2>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/0crFZLwAJOE?autoplay=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 80%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<!--
+If you come to the workshop, we'll even show you how iSEE integrates voice recognition to interact with the application.
+-->
+
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+
+<blockquote>
+<p>&ldquo;Most technically impressive&rdquo;</p>
+</blockquote>
+
+<p><a href="https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/"><img src="/img/2019-01-07-shiny-contest.png" height=400></a></p>
+
+<!--
+If you don't believe me, you can trust the RStudio team who declared iSEE winner and most technically impressive application submitted to the first Shiny contest.
+-->
+
+    </section>
+    
+
+    
+    
+  </div>
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+
+  <script>
+    window.revealPlugins = { dependencies: [
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/zoom-js/zoom.js', async: true },
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/math/math.js', async: true },
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/print-pdf/print-pdf.js', async: true },
+      
+      { src: '\/js\/vendor\/reveal.js\/plugin\/notes\/notes.js', async: true }
+    ]};
+
+    let revealDefaults = { center: true, controls: true, history: true, progress: true, transition: 'slide', mouseWheel: true };
+    let revealOptions = Object.assign({}, revealDefaults, revealPlugins);
+    Reveal.initialize(revealOptions);
+  </script>
+
+</body>
+</html>

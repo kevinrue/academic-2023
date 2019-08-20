@@ -33,13 +33,48 @@
   </url>
   
   <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/bioconductor/</loc>
-    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/isee/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/slides/bioc2019-flashtalk/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/kevin-rue-albrecht/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/slides/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -49,16 +84,6 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-05-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,12 +103,12 @@
   </url>
   
   <url>
-    <loc>/categories/hugo-academic/</loc>
+    <loc>/tags/hugo-academic/</loc>
     <lastmod>2019-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/hugo-academic/</loc>
+    <loc>/categories/hugo-academic/</loc>
     <lastmod>2019-05-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -103,11 +128,6 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication_types/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
@@ -120,6 +140,21 @@
   <url>
     <loc>/tags/source-themes/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/charlotte-soneson/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/slides/bioc2019-workshop/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/slides/example/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -178,10 +213,6 @@
   
   <url>
     <loc>/resources/</loc>
-  </url>
-  
-  <url>
-    <loc>/slides/</loc>
   </url>
   
   <url>
