@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to datapasta</title>
+      <link>/post/how-to-datapasta/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how-to-datapasta/</guid>
+      <description> I was recently told about datapasta, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.
+Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html  GitHub https://github.com/MilesMcBain/datapasta  MetaCRAN https://www.r-pkg.org/pkg/datapasta     </description>
+    </item>
     
     <item>
       <title>iSEE workshop at Bioc2019!</title>
@@ -21,16 +31,6 @@
 What to expect Charlotte Soneson and I will be conducting a workshop that demonstrates the many features and usages of the iSEE package.
 With the help of the iSEE team, we have prepared a vignette demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.
 The workshop was designed to cater for the needs of users at all levels of familiarity with R and the Bioconductor project.</description>
-    </item>
-    
-    <item>
-      <title>Getting started with Academic: the website builder for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>Refer to the posts of the example site for the academic theme (written by the theme author):
- &amp;ldquo;Create a beautifully simple website in under 10 minutes&amp;rdquo;. &amp;ldquo;Learn how to blog in Academic using Jupyter notebooks&amp;rdquo;  See also an example R Markdown document that compiles to a blog post if stored directly in content/post/.</description>
     </item>
     
   </channel>

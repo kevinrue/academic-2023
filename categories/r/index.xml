@@ -6,10 +6,20 @@
     <description>Recent content in R on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to datapasta</title>
+      <link>/post/how-to-datapasta/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how-to-datapasta/</guid>
+      <description> I was recently told about datapasta, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.
+Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html  GitHub https://github.com/MilesMcBain/datapasta  MetaCRAN https://www.r-pkg.org/pkg/datapasta     </description>
+    </item>
     
     <item>
       <title>iSEE flashtalk | Bioconductor conference 2019</title>
