@@ -6,15 +6,24 @@
     <description>Recent content in Authors on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 15:10:00 +0000</lastBuildDate>
     
 	<atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Charlotte Soneson</title>
+      <link>/authors/charlotte-soneson/</link>
+      <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
+      
+      <guid>/authors/charlotte-soneson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Kevin Rue-Albrecht</title>
       <link>/authors/kevin-rue-albrecht/</link>
-      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
       
       <guid>/authors/kevin-rue-albrecht/</guid>
       <description></description>
@@ -27,15 +36,6 @@
       
       <guid>/authors/admin/</guid>
       <description>Kevin Rue-Albrecht is a postdoctoral researcher of computational biology in the Sansom Lab at the University of Oxford. His research interests include computational biology, software development and single-cell genomics. His research explores the immune response to infection, disease, and self antigens.</description>
-    </item>
-    
-    <item>
-      <title>Charlotte Soneson</title>
-      <link>/authors/charlotte-soneson/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/authors/charlotte-soneson/</guid>
-      <description></description>
     </item>
     
     <item>
