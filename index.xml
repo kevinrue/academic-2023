@@ -48,12 +48,32 @@
     </item>
     
     <item>
+      <title>iSEE - Bioconductor 2020 Flash Presentation</title>
+      <link>/talk/bioc2019-flashtalk/</link>
+      <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
+      
+      <guid>/talk/bioc2019-flashtalk/</guid>
+      <description>
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;See also the full workshop presentation &lt;a href=&#34;/talk/bioc2019-workshop&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>iSEE - Bioconductor 2020 Workshop Presentation</title>
       <link>/talk/bioc2019-workshop/</link>
       <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
       
       <guid>/talk/bioc2019-workshop/</guid>
-      <description>&lt;p&gt;The workshop materials are available &lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+      <description>
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;The workshop materials are available &lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;See also the accompanying flash presentation &lt;a href=&#34;/talk/bioc2019-flashtalk&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
