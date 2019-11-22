@@ -12,21 +12,21 @@
     
     
     <item>
-      <title>iSEE - Bioconductor 2020 Flash Presentation</title>
-      <link>/talk/bioc2019-flashtalk/</link>
-      <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
-      
-      <guid>/talk/bioc2019-flashtalk/</guid>
-      <description>Flash presentation of the iSEE package and functionality</description>
-    </item>
-    
-    <item>
       <title>iSEE - Bioconductor 2020 Workshop Presentation</title>
       <link>/talk/bioc2019-workshop/</link>
       <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
       
       <guid>/talk/bioc2019-workshop/</guid>
       <description>Overview of the iSEE package and functionality</description>
+    </item>
+    
+    <item>
+      <title>iSEE - Bioconductor 2020 Flash Presentation</title>
+      <link>/talk/bioc2019-flashtalk/</link>
+      <pubDate>Mon, 24 Jun 2019 10:25:00 +0000</pubDate>
+      
+      <guid>/talk/bioc2019-flashtalk/</guid>
+      <description>Flash presentation of the iSEE package and functionality</description>
     </item>
     
     <item>
