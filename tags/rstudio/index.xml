@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RStudio on Kevin Rue-Albrecht</title>
@@ -17,7 +17,7 @@
       <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/how-to-datapasta/</guid>
-      <description> I was recently told about datapasta, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.
+      <description>  I was recently told about datapasta, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.
 Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html  GitHub https://github.com/MilesMcBain/datapasta  MetaCRAN https://www.r-pkg.org/pkg/datapasta     </description>
     </item>
     
