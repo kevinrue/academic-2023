@@ -563,57 +563,57 @@ git2r::init() Also, restart RStudio to apply the changes and benefit of the “G
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="overview" class="section level1">
-<h1>Overview</h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
 <p>This post refers to code available online as a <a href="https://github.com/kevinrue/COVID-19-website">GitHub repository</a>.</p>
 </div>
-<div id="create-a-new-rstudio-project" class="section level1">
-<h1>Create a new RStudio project</h1>
+<div id="create-a-new-rstudio-project" class="section level2">
+<h2>Create a new RStudio project</h2>
 <p>Open the RStudio “New Project…” menu -&gt; New Directory -&gt; Simple R Markdown Website -&gt; Type a folder name.</p>
 </div>
-<div id="initialize-git" class="section level1">
-<h1>Initialize git</h1>
+<div id="initialize-git" class="section level2">
+<h2>Initialize git</h2>
 <p>You may need to <code>install.packages("git2r")</code> first.</p>
 <pre class="r"><code>git2r::init()</code></pre>
 <p>Also, restart RStudio to apply the changes and benefit of the “Git” tab.</p>
 </div>
-<div id="make-a-new-github-repository" class="section level1">
-<h1>Make a new GitHub repository</h1>
+<div id="make-a-new-github-repository" class="section level2">
+<h2>Make a new GitHub repository</h2>
 <p>Click on “New repository”.
 For simplicity, type the same name “COVID-19-website”.</p>
-<p>Do not add a README or a licnse yet, an empty repository will do.</p>
+<p>Do not add a README or a license yet, an empty repository will do.</p>
 <p>Add the GitHub remote to your local clone.
-The remote name should be “origin”
+The remote name should be <code>"origin"</code>.
 The <code>url</code> is shown on your GitHub repository page.</p>
 <pre class="r"><code>git2r::remote_add(name = &quot;origin&quot;, url = &quot;git@github.com:kevinrue/COVID-19-website.git&quot;)</code></pre>
 </div>
-<div id="push-your-local-clone-to-the-github-remote" class="section level1">
-<h1>Push your local clone to the GitHub remote</h1>
+<div id="push-your-local-clone-to-the-github-remote" class="section level2">
+<h2>Push your local clone to the GitHub remote</h2>
 <p>While <code>git2r::push()</code> does exist, it can raise issues related to the detection of your <code>git</code> credentials.
-I prefer to push and pull directly from the terminal.
-For this your current working directory must be the root of the RStudio project.</p>
+For simplicity, I prefer to push and pull directly from the terminal.
+To run the command below, the current working directory must be the root of the RStudio project.</p>
 <pre class="bash"><code>git push -u origin master</code></pre>
 </div>
-<div id="clone-csse" class="section level1">
-<h1>Clone the source data repository as a git submodule</h1>
+<div id="clone-csse" class="section level2">
+<h2>Clone the source data repository as a git submodule</h2>
 <pre class="bash"><code>git submodule add git@github.com:CSSEGISandData/COVID-19.git</code></pre>
 </div>
-<div id="write-notebooks" class="section level1">
-<h1>Write notebooks</h1>
+<div id="write-a-notebooks-for-each-webpage" class="section level2">
+<h2>Write a notebooks for each webpage</h2>
 <p>Fast-forwarding in time, I updated the template <code>index.Rmd</code> and <code>about.Rmd</code> notebooks, added some notebooks, and updated the <code>_site.yml</code> to include those new pages in the built website.</p>
 <p>Note that <code>_site.yml</code> is also useful to exclude certain subdirectories from the built website.
 In particular, those include the source data folders cloned as a submodule <a href="#clone-csse">above</a>.</p>
 <p>I also refactored some recurrent code as child notebooks (see the <code>childs/</code> subdirectory).</p>
 </div>
-<div id="build-the-website" class="section level1">
-<h1>Build the website</h1>
+<div id="build-the-website" class="section level2">
+<h2>Build the website</h2>
 <p>When you’re ready, click the “Build Webiste” button in the “Build” panel.
 This is equivalent to running <code>rmarkdown::render_site(encoding = 'UTF-8')</code> at the R console.
 This generates a <code>_site/</code> subdirectory in your project, that contains all the files for your website.</p>
 <p>To visualize your website, open the “index.html” file in this subdirectory.</p>
 </div>
-<div id="deploy-the-website" class="section level1">
-<h1>Deploy the website</h1>
+<div id="deploy-the-website" class="section level2">
+<h2>Deploy the website</h2>
 <p>After inspecting that your website looks as you intend it, you can deploy it on GitHub Pages.
 This can be done by pushing the files in the <code>_site/</code> subdirectory. to a <code>gh-pages</code> branch on your GitHub repository.</p>
 <p>Initially, you need to create an empty <code>gh-pages</code> orphan branch as it does not exist.
@@ -653,8 +653,8 @@ The second line overrides the GitHub history to erase that commit it from there 
 I only do this here because my website generates many PNG files in each version of the website.
 If I didn’t delete the previous version each time, the <code>git</code> history would keep track of every version of every PNG file that I ever generated, making the <code>git clone</code> commands increasingly time consuming each time I clone the <code>gh-pages</code> branch to push a new version of the website.</p>
 </div>
-<div id="thanks-for-reading" class="section level1">
-<h1>Thanks for reading!</h1>
+<div id="thanks-for-reading" class="section level2">
+<h2>Thanks for reading!</h2>
 </div>
 
     </div>
@@ -782,6 +782,10 @@ If I didn’t delete the previous version each time, the <code>git</code> histor
 
 <div class="container">
   <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
   
 
   <p class="powered-by">
