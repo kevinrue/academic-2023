@@ -16,12 +16,12 @@ output:
 
 layout: true
   
-<div class="my-header"></div>
+<div class="my-header"><img src="/img/ox_brand1_pos.gif" alt="Oxford University Logo" align="right"></div>
 
-<div class="my-footer"><span>xaringan power    
+<div class="my-footer"><span>Kevin Rue-Albrecht    
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-yolo</span></div> 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+Introduction to base R</span></div> 
 
 ---
 

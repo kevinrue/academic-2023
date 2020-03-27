@@ -1,6 +1,5 @@
 div.my-header {
-    background-color: #F77A00;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+    background-color: #002147;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -9,8 +8,13 @@ div.my-header {
     text-align: left;
 }
 
+div.my-header img {
+    margin-top: 40px;
+    margin-right: 5px;
+}
+
 div.my-footer {
-    background-color: #272822;
+    background-color: #002147;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -23,4 +27,12 @@ div.my-footer span {
     position: absolute;
     left: 15px;
     bottom: 2px;
+}
+
+.remark-slide-number {
+  font-size: 10pt;
+  margin-bottom: -11.6px;
+  margin-right: 10px;
+  color: #FFFFFF; /* white */
+  opacity: 1; /* default: 0.5 */
 }

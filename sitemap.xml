@@ -43,6 +43,11 @@
   </url>
   
   <url>
+    <loc>/courses/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/how-to-datapasta/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url>
@@ -50,6 +55,11 @@
   <url>
     <loc>/tags/rstudio/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/kevin/</loc>
+    <lastmod>2019-06-26T15:10:00+00:00</lastmod>
   </url>
   
   <url>
@@ -198,15 +208,7 @@
   </url>
   
   <url>
-    <loc>/authors/kevin/</loc>
-  </url>
-  
-  <url>
     <loc>/conferences/</loc>
-  </url>
-  
-  <url>
-    <loc>/courses/</loc>
   </url>
   
   <url>
