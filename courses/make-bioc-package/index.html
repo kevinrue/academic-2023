@@ -27,11 +27,10 @@
   
     
   
-  <meta name="description" content="  I was recently told about datapasta, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.
-Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html  GitHub https://github.com/MilesMcBain/datapasta  MetaCRAN https://www.r-pkg.org/pkg/datapasta     ">
+  <meta name="description" content="A tutorial to write, test, deploy, and maintain a Bioconductor package.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/how-to-datapasta/">
+  <link rel="alternate" hreflang="en-us" href="/courses/make-bioc-package/">
 
   
 
@@ -101,12 +100,15 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
   
 
   
+  <link rel="alternate" href="/courses/make-bioc-package/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
+  <link rel="feed" href="/courses/make-bioc-package/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
+  
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/post/how-to-datapasta/">
+  <link rel="canonical" href="/courses/make-bioc-package/">
 
   
   
@@ -120,22 +122,19 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
   <meta property="twitter:creator" content="@KevinRUE67">
   
   <meta property="og:site_name" content="Kevin Rue-Albrecht">
-  <meta property="og:url" content="/post/how-to-datapasta/">
-  <meta property="og:title" content="How to datapasta | Kevin Rue-Albrecht">
-  <meta property="og:description" content="  I was recently told about datapasta, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.
-Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html  GitHub https://github.com/MilesMcBain/datapasta  MetaCRAN https://www.r-pkg.org/pkg/datapasta     "><meta property="og:image" content="/img/android-chrome-512x512.png">
+  <meta property="og:url" content="/courses/make-bioc-package/">
+  <meta property="og:title" content="Syllabus | Kevin Rue-Albrecht">
+  <meta property="og:description" content="A tutorial to write, test, deploy, and maintain a Bioconductor package."><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-10-12T00:00:00&#43;00:00">
-  
-  <meta property="article:modified_time" content="2019-10-12T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2020-03-12T00:00:00&#43;00:00">
   
 
   
 
   
 
-  <title>How to datapasta | Kevin Rue-Albrecht</title>
+  <title>Syllabus | Kevin Rue-Albrecht</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -326,7 +325,7 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/courses/">
+          <a class="nav-link  active" href="/courses/">
             
             <span>Courses</span>
             
@@ -416,297 +415,179 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
 </nav>
 
 
-<article class="article" itemscope itemtype="http://schema.org/Article">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-<div class="article-container pt-3">
-  <h1 itemprop="name">How to datapasta</h1>
-
-  
-
-  
-    
-
-
-
-<meta content="2019-10-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-10-12 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
       
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/">Syllabus</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/prerequisites-1-install-r/">1. Pre-requisites</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/make-bioc-package/prerequisites-1-install-r/">Install R</a>
+      </li>
+      
+    </ul>
     
-    <time>Oct 12, 2019</time>
-  </span>
-  
 
+  </div>
   
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder"></i>
-    <a href="/categories/r/">R</a></span>
-  
-
-  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/essentials-1/">2. Essentials</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/make-bioc-package/essentials-1/">Essentials part 1</a>
+      </li>
+      
+    </ul>
     
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    <li>
-      <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=&amp;url="
-         target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u="
-         target="_blank" rel="noopener">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </li>
-    <li>
-      <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
-         target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-    <li>
-      <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=&amp;title="
-         target="_blank" rel="noopener">
-        <i class="fab fa-weibo"></i>
-      </a>
-    </li>
-    <li>
-      <a class="email"
-         href="mailto:?subject=&amp;body=">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#pre-requisites">Pre-requisites</a></li>
+    <li><a href="#_r_--_bioconductor_-packages-used"><em>R</em> / <em>Bioconductor</em> packages used</a></li>
   </ul>
-</div>
 
+  <ul>
+    <li><a href="#learning-goals">Learning goals</a></li>
+    <li><a href="#learning-objectives">Learning objectives</a></li>
+  </ul>
+</nav>
 
-  
-
-</div>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    <div class="article-style" itemprop="articleBody">
-      
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-
-
-<p>I was recently told about <em><a href="https://CRAN.R-project.org/package=datapasta">datapasta</a></em>, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.</p>
-<div id="resources" class="section level1">
-<h1>Resources</h1>
-<table>
-<colgroup>
-<col width="14%" />
-<col width="85%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>How to</td>
-<td><a href="https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html" class="uri">https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html</a></td>
-</tr>
-<tr class="even">
-<td>GitHub</td>
-<td><a href="https://github.com/MilesMcBain/datapasta" class="uri">https://github.com/MilesMcBain/datapasta</a></td>
-</tr>
-<tr class="odd">
-<td>MetaCRAN</td>
-<td><a href="https://www.r-pkg.org/pkg/datapasta" class="uri">https://www.r-pkg.org/pkg/datapasta</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-    </div>
-
-    
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/rstudio/">RStudio</a>
-  
-</div>
-
-
-
-    
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
-    
-      
-      <img class="portrait mr-3" src="/authors/admin/avatar_hub0ab203b6e7025c170ee77304bf3fde4_40169_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
-    
-
-    <div class="media-body">
-      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Kevin Rue-Albrecht</a></h5>
-      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
-      <p class="card-text" itemprop="description">My research interests include computational biology, software development and single-cell genomics.</p>
-      <ul class="network-icon" aria-hidden="true">
-        
-          
-          
-          
-            
-          
-          
-          
-          
-          
-          <li>
-            <a itemprop="sameAs" href="mailto:kevin.rue-albrecht@kennedy.ox.ac.uk" >
-              <i class="fas fa-at"></i>
-            </a>
-          </li>
-        
-          
-          
-          
-            
-          
-          
-          
-          
-          
-            
-          
-          <li>
-            <a itemprop="sameAs" href="https://twitter.com/KevinRUE67" target="_blank" rel="noopener">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-        
-          
-          
-          
-          
-          
-          
-          
-            
-          
-          <li>
-            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=JV0DWBQAAAAJ" target="_blank" rel="noopener">
-              <i class="ai ai-google-scholar"></i>
-            </a>
-          </li>
-        
-          
-          
-          
-            
-          
-          
-          
-          
-          
-            
-          
-          <li>
-            <a itemprop="sameAs" href="https://github.com/kevinrue" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-        
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
       </ul>
+
+      
     </div>
-  </div>
-
-
-
-      
-      
     
 
-    
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
 
-    
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Syllabus</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            <h2 id="overview">Overview</h2>
+<p>This course demonstrates the process of creating a <a href="https://www.bioconductor.org/">Bioconductor</a> package, from essential requirements to advanced DevOps practices that facilitate maintenance and dissemination.</p>
+<p>This course is presented as sequence of steps that establish the essential components of a minimal Bioconductor package, accompanied by a additional sections to extend the package set-up with additional valuable functionality.</p>
+<p>Pre-requisites:</p>
+<ol>
+<li>Install R</li>
+</ol>
+<p>Essentials:</p>
+<ol>
+<li>initialize version control</li>
+<li>initialize an R package skeleton</li>
+<li>write your first function</li>
+<li>write help pages for your functions</li>
+<li>test your functions</li>
+<li>write a vignette</li>
+</ol>
+<p>Advanced:</p>
+<ol>
+<li>enable continuous integration</li>
+<li>track code coverage</li>
+<li>deploy documentation online</li>
+<li>adding badges to your README</li>
+<li>making a Docker container</li>
+</ol>
+<p>Readers are encouraged to contribute feedback through <a href="https://github.com/kevinrue/kevinrue.github.io-academic/issues">issues</a>.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<ul>
+<li>Basic knowledge of <a href="https://www.r-project.org/about.html"><em>R</em></a> syntax.</li>
+<li>Basic knowledge of <a href="https://git-scm.com/">git</a>.</li>
+<li>Familiarity with <a href="https://github.com/">GitHub</a>.</li>
+</ul>
+<p>Additional background reading about the programming environment, relevant packages, and example use cases:</p>
+<ul>
+<li>R packages, by Hadley Wickham and Jennifer Bryan: <a href="https://r-pkgs.org/index.html">https://r-pkgs.org/index.html</a></li>
+</ul>
+<h2 id="_r_--_bioconductor_-packages-used"><em>R</em> / <em>Bioconductor</em> packages used</h2>
+<ol>
+<li><em>devtools</em> : <a href="https://CRAN.R-project.org/package=devtools">https://CRAN.R-project.org/package=devtools</a></li>
+</ol>
+<h1 id="course-goals-and-objectives">Course goals and objectives</h1>
+<h2 id="learning-goals">Learning goals</h2>
+<ul>
+<li>Outline the unique features of Bioconductor and CRAN package.</li>
+<li>Identify best practice in Bioconductor package development.</li>
+<li>Utilize R packages designed to facilitate the rapid and consistent development of R packages.</li>
+<li>Describe the components and functionality of R and Bioconductor packages.</li>
+</ul>
+<h2 id="learning-objectives">Learning objectives</h2>
+<ul>
+<li>Memorize the key components and requirements of a Bioconductor package.</li>
+<li>Set up a working continuous integration environment for durable development and maintenance.</li>
+<li>Interact with tools that facilitate the development, maintenance, and deployment of a Bioconductor package.</li>
+<li>Practice the workflow to write a Bioconductor package from scratch.</li>
+</ul>
+
+          </div>
+
+          
 
 
-  </div>
-</article>
 
-<div class="container">
-  <footer class="site-footer">
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Mar 12, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
   
   <p class="powered-by">
     <a href="/privacy/">Privacy Policy</a>
@@ -721,42 +602,11 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
     
-    <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
   </p>
 </footer>
 
-</div>
 
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
+    </main>
   </div>
 </div>
 
@@ -815,6 +665,11 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
 
     
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
 
     
     
@@ -858,4 +713,5 @@ Resources     How to https://cran.r-project.org/web/packages/datapasta/vignettes
 
   </body>
 </html>
+
 

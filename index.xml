@@ -6,7 +6,7 @@
     <description>Recent content on Kevin Rue-Albrecht</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     
 	    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,7 +23,7 @@
     <item>
       <title>Courses</title>
       <link>/courses/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/courses/</guid>
       <description></description>
@@ -54,6 +54,16 @@
       
       <guid>/publication/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>

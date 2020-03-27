@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Syllabus on Kevin Rue-Albrecht</title>
+    <link>/courses/make-bioc-package/</link>
+    <description>Recent content in Syllabus on Kevin Rue-Albrecht</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/courses/make-bioc-package/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install R</title>
+      <link>/courses/make-bioc-package/prerequisites-1-install-r/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/make-bioc-package/prerequisites-1-install-r/</guid>
+      <description>Which version of R? Bioconductor guidelines state:
+ Package authors should develop against the version of R that will be available to users when the Bioconductor devel branch becomes the Bioconductor release branch.
+ In addition:
+ This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.
+ R Sources or R binaries?</description>
+    </item>
+    
+    <item>
+      <title>Essentials 1</title>
+      <link>/courses/make-bioc-package/essentials-1/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/make-bioc-package/essentials-1/</guid>
+      <description>Header Text</description>
+    </item>
+    
+  </channel>
+</rss>
