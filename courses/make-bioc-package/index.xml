@@ -13,24 +13,46 @@
     
     <item>
       <title>Install R</title>
-      <link>/courses/make-bioc-package/prerequisites-1-install-r/</link>
+      <link>/courses/make-bioc-package/prerequisites-1-r/</link>
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
       
-      <guid>/courses/make-bioc-package/prerequisites-1-install-r/</guid>
-      <description>Which version of R? Bioconductor guidelines state:
+      <guid>/courses/make-bioc-package/prerequisites-1-r/</guid>
+      <description>Overview In this section, &amp;hellip;
+Which version of R? Bioconductor guidelines state:
  Package authors should develop against the version of R that will be available to users when the Bioconductor devel branch becomes the Bioconductor release branch.
  In addition:
- This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.
- R Sources or R binaries?</description>
+ This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.</description>
     </item>
     
     <item>
-      <title>Essentials 1</title>
+      <title>Install RStudio</title>
+      <link>/courses/make-bioc-package/prerequisites-2-rstudio/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/make-bioc-package/prerequisites-2-rstudio/</guid>
+      <description>Overview In this section, &amp;hellip;
+Install RStudio The RStudio program can be obtained from the RStudio website: https://rstudio.com/products/rstudio/download/</description>
+    </item>
+    
+    <item>
+      <title>Install helper packages</title>
+      <link>/courses/make-bioc-package/prerequisites-3-packages/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/make-bioc-package/prerequisites-3-packages/</guid>
+      <description>Overview This secrion introduces R packags that were developed to facilitate the development of other R packages.
+Install BiocManager install.packages(&amp;quot;BiocManager&amp;quot;) Install usethis BiocManager::install(&amp;quot;usethis&amp;quot;) </description>
+    </item>
+    
+    <item>
+      <title>Initialize an R package skeleton</title>
       <link>/courses/make-bioc-package/essentials-1/</link>
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
       
       <guid>/courses/make-bioc-package/essentials-1/</guid>
-      <description>Header Text</description>
+      <description>Create a new package skeleton From the usethis::create_tidy_package documentation.
+ Creates a new package, immediately applies as many of the tidyverse conventions as possible, issues a few reminders, and activates the new package.
+ usethis::create_tidy_package(&amp;quot;~/biocpkg&amp;quot;) </description>
     </item>
     
   </channel>
