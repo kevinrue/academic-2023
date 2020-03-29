@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>twitter on Kevin Rue-Albrecht</title>
+    <link>/tags/twitter/</link>
+    <description>Recent content in twitter on Kevin Rue-Albrecht</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Twitter conference coverage</title>
+      <link>/project/twitter/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/twitter/</guid>
+      <description>My website tracking tweets associated with scientific conferences.</description>
+    </item>
+    
+  </channel>
+</rss>

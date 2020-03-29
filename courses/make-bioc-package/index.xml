@@ -17,11 +17,10 @@
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
       
       <guid>/courses/make-bioc-package/prerequisites-1-r/</guid>
-      <description>Overview In this section, &amp;hellip;
-Which version of R? Bioconductor guidelines state:
- Package authors should develop against the version of R that will be available to users when the Bioconductor devel branch becomes the Bioconductor release branch.
- In addition:
- This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.</description>
+      <description>Scope In this section, we provide information and advice to install R for the purpose of developing a Bioconductor package.
+This section does not seek to provide a comprehensive workflow through the installation of R, as the details will depend on your individual operating system and configuration. Instead, this section includes links to key resources and sources of information.
+Which version of R? The Bioconductor developer guidelines state:
+ Package authors should develop against the version of R that will be available to users when the Bioconductor devel branch becomes the Bioconductor release branch.</description>
     </item>
     
     <item>

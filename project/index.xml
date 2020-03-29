@@ -6,27 +6,27 @@
     <description>Recent content in Projects on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>External Project</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>COVID-19 Website</title>
+      <link>/project/covid-19/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/project/external-project/</guid>
-      <description>An example of linking directly to an external project website using &lt;code&gt;external_link&lt;/code&gt;.</description>
+      <guid>/project/covid-19/</guid>
+      <description>My website tracking the evolution of the COVID-19 pandemic.</description>
     </item>
     
     <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Twitter conference coverage</title>
+      <link>/project/twitter/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/project/internal-project/</guid>
-      <description>An example of using the in-built project page.</description>
+      <guid>/project/twitter/</guid>
+      <description>My website tracking tweets associated with scientific conferences.</description>
     </item>
     
   </channel>

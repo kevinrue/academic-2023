@@ -6,10 +6,19 @@
     <description>Recent content in COVID-19 on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/covid-19/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>COVID-19 Website</title>
+      <link>/project/covid-19/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/covid-19/</guid>
+      <description>My website tracking the evolution of the COVID-19 pandemic.</description>
+    </item>
     
     <item>
       <title>Creating a dynamic Rmarkdown website for COVID-19 data</title>
