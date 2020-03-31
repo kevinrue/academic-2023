@@ -69,8 +69,8 @@ For instance, I have added the following sections that do not exist in the templ
 Somehow, the rest of that entry is not correctly aligned on the following page.
 However, subsequent items revert to the proper alignment.
 I haven’t thoroughly investigated the issue yet, but several issues related to page breaks have already been reported.
-The issue &lt;a href=&#34;https://github.com/rstudio/pagedown/issues/153&#34;&gt;pagedown::html_resume pagebreak issue&lt;/a&gt; seems to be the most recent and relevant issue.
-I’ll open another issue shortly, to track my specific issue.&lt;/p&gt;
+The issue &lt;a href=&#34;https://github.com/rstudio/pagedown/issues/153&#34;&gt;“pagedown::html_resume pagebreak issue”&lt;/a&gt; seems to be the most recent and relevant issue.
+I’ve opened another issue &lt;a href=&#34;https://github.com/rstudio/pagedown/issues/170&#34;&gt;here&lt;/a&gt;, to track my specific situation.&lt;/p&gt;
 &lt;p&gt;Anyway, that is really the least impactful issue I could have imagined, given the quality of the overall product!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;links&#34; class=&#34;section level2&#34;&gt;
