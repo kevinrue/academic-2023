@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pagedown on Kevin Rue-Albrecht</title>
+    <link>/tags/pagedown/</link>
+    <description>Recent content in pagedown on Kevin Rue-Albrecht</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/pagedown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing my CV using pagedown</title>
+      <link>/post/writing-my-cv-using-pagedown/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/writing-my-cv-using-pagedown/</guid>
+      <description>Wow! I have taken the time to write my CV using pagedown. And… WOW does it look beautiful! 
+A single .Rmd file can simultaneously generate both an HTML and a PDF version. Both of them look absolutely stunning … especially given the minimal amount of work I had to put in for the reward! 
+ Setup In RStudio, navigate the menu:
+ File  New File  R Markdown…  From Template  HTML Resume {pagedown}      In the .</description>
+    </item>
+    
+  </channel>
+</rss>

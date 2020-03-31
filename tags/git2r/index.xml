@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git2r on Kevin Rue-Albrecht</title>
+    <link>/tags/git2r/</link>
+    <description>Recent content in git2r on Kevin Rue-Albrecht</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/git2r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a dynamic Rmarkdown website for COVID-19 data</title>
+      <link>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</guid>
+      <description>Overview This post refers to code available online as a GitHub repository.
+ Create a new RStudio project Open the RStudio “New Project…” menu -&amp;gt; New Directory -&amp;gt; Simple R Markdown Website -&amp;gt; Type a folder name.
+ Initialize git You may need to install.packages(&#34;git2r&#34;) first.
+git2r::init() Also, restart RStudio to apply the changes and benefit of the “Git” tab.
+ Make a new GitHub repository Click on “New repository”.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -33,6 +33,46 @@
   </url>
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pagedown/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rmarkdown/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/writing-my-cv-using-pagedown/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/covid-19/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
@@ -48,21 +88,6 @@
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/rmarkdown/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/twitter/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
@@ -73,22 +98,22 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/tags/gh-pages/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
+    <loc>/tags/git/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/git2r/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
   

@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Kevin Rue-Albrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pagedown</title>
+      <link>/tags/pagedown/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pagedown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rmarkdown</title>
+      <link>/tags/rmarkdown/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rmarkdown/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>COVID-19</title>
@@ -21,29 +48,38 @@
     </item>
     
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rmarkdown</title>
-      <link>/tags/rmarkdown/</link>
-      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rmarkdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>twitter</title>
       <link>/tags/twitter/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gh-pages</title>
+      <link>/tags/gh-pages/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gh-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git2r</title>
+      <link>/tags/git2r/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git2r/</guid>
       <description></description>
     </item>
     

@@ -484,7 +484,7 @@ N/A
 
 This course is part of the [Genomic Data Science Specialization](https://www.coursera.org/specializations/genomic-data-science).
 
-### Command Line Tools for Genomic Data Science
+### Command Line Tools for Genomic Data Science {.page-break-before}
 
 [Coursera](https://www.coursera.org/learn/genomic-tools), [Johns Hopkins University](https://www.jhu.edu/)
 
