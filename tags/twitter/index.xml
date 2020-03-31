@@ -1,23 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>twitter on Kevin Rue-Albrecht</title>
+    <title>twitter | Kevin Rue-Albrecht</title>
     <link>/tags/twitter/</link>
-    <description>Recent content in twitter on Kevin Rue-Albrecht</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <description>twitter</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>twitter</title>
+      <link>/tags/twitter/</link>
+    </image>
     
     <item>
       <title>Twitter conference coverage</title>
       <link>/project/twitter/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>/project/twitter/</guid>
-      <description>My website tracking tweets associated with scientific conferences.</description>
+      <description>&lt;p&gt;I have started collecting 
+&lt;a href=&#34;/twitter-stats/&#34;&gt;Twitter coverage&lt;/a&gt; for scientific conferences that I attended.&lt;/p&gt;
+&lt;p&gt;Credits to 
+&lt;a href=&#34;https://github.com/lazappi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Luke Zappia&lt;/a&gt; who did all the hard work!&lt;/p&gt;
+</description>
     </item>
     
   </channel>

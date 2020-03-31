@@ -7,17 +7,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="/slides/bioc2019-workshop/">
 
   <title>iSEE workshop | Bioconductor conference 2019 | Kevin Rue-Albrecht</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous">
 
   
   
@@ -45,6 +45,9 @@
 
     
     
+    
+    
+    
 
     
     
@@ -54,89 +57,270 @@
     
     <section>
     
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h1 id="iseehttpbioconductororgpackagesisee-package-and-functionality"><a href="http://bioconductor.org/packages/iSEE/">iSEE</a> package and functionality</h1>
+      <!-- Prevent capitalization of titles -->
+<style>
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+		  }
+    .reveal fs80 {
+                  font-size: 80%;
+		  }
+    .reveal fs60 {
+                  font-size: 60%;
+		  }
+</style>
+<h1 id="iseehttpbioconductororgpackagesisee-package-and-functionality">
+<a href="http://bioconductor.org/packages/iSEE/" target="_blank" rel="noopener">iSEE</a> package and functionality</h1>
 <p>Bioconductor conference 2019</p>
-<p><a href="https://kevinrue.github.io">Kevin Rue-Albrecht</a> &amp; <a href="https://csoneson.github.io">Charlotte Soneson</a></p>
-<p>Twitter: <a href="https://twitter.com/KevinRUE67">@KevinRUE67</a> &amp; <a href="https://twitter.com/csoneson">@csoneson</a></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
+<p>
+<a href="https://kevinrue.github.io" target="_blank" rel="noopener">Kevin Rue-Albrecht</a> &amp; 
+<a href="https://csoneson.github.io" target="_blank" rel="noopener">Charlotte Soneson</a></p>
+<p>Twitter: 
+<a href="https://twitter.com/KevinRUE67" target="_blank" rel="noopener">@KevinRUE67</a> &amp; 
+<a href="https://twitter.com/csoneson" target="_blank" rel="noopener">@csoneson</a></p>
+<!--
+Welcome to the iSEE workshop.
+In this presentation, we will introduce the concepts and functionality of the iSEE package.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 <h1 id="the-team">The team</h1>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<h1 id="fs60original-wishlist-1--2fs60"><!-- raw HTML omitted -->Original wishlist (1 / 2)<!-- raw HTML omitted --></h1>
+<table>
+<tr>
+<td width="25%"><a href="https://kevinrue.github.io"><img src="/img/iSEE/kevin-rue.png"></a></td>
+<td width="25%"><a href="https://csoneson.github.io"><img src="/img/iSEE/charlotte-soneson.png"></a></td>
+<td width="25%"><a href="https://federicomarini.github.io"><img src="/img/iSEE/federico-marini.png"></a></td>
+<td width="25%"><a href="https://orcid.org/0000-0002-3564-4813"><img src="/img/iSEE/aaron-lun.png"></a></td>
+</tr>
+</table>
+<!--
+This was a team effort!
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<p><a href="https://bioconductor.org"><img src="/img/iSEE/biocstickers.jpg" height=600></a></p>
+<!--
+iSEE tightly integrates with other packages of the Bioconductor project.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="fs60original-wishlist-1--2fs60"><fs60>Original wishlist (1 / 2)</fs60></h1>
 <ul>
-<li><!-- raw HTML omitted -->An interactive user interface for exploring data in <em><a href="https://bioconductor.org/packages/release/SummarizedExperiment">SummarizedExperiment</a></em> objects<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Particular focus given to single-cell data in the <em><a href="https://bioconductor.org/packages/release/SingleCellExperiment">SingleCellExperiment</a></em> derived class<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Sample-oriented visualizations<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Feature-oriented visualizations<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Heat maps (cells <em>and</em> features)<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Selectable points<!-- raw HTML omitted --></li>
+<li><fs80>An interactive user interface for exploring data in <em>
+<a href="https://bioconductor.org/packages/release/SummarizedExperiment" target="_blank" rel="noopener">SummarizedExperiment</a></em> objects</fs80></li>
+<li><fs80>Particular focus given to single-cell data in the <em>
+<a href="https://bioconductor.org/packages/release/SingleCellExperiment" target="_blank" rel="noopener">SingleCellExperiment</a></em> derived class</fs80></li>
+<li><fs80>Sample-oriented visualizations</fs80></li>
+<li><fs80>Feature-oriented visualizations</fs80></li>
+<li><fs80>Heat maps (cells <em>and</em> features)</fs80></li>
+<li><fs80>Selectable points</fs80></li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<h1 id="fs60original-wishlist-2--2fs60"><!-- raw HTML omitted -->Original wishlist (2 / 2)<!-- raw HTML omitted --></h1>
+<!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="fs60original-wishlist-2--2fs60"><fs60>Original wishlist (2 / 2)</fs60></h1>
 <ul>
-<li><!-- raw HTML omitted -->Colouring of samples by metadata or assayed values<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Stratify axes and facets by metadata (e.g., violin plots)<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Hover and click<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Zoom<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Transmission of points selections between plots<!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted -->Code tracking for reproducibility and batch generation of figures<!-- raw HTML omitted --></li>
+<li><fs80>Colouring of samples by metadata or assayed values</fs80></li>
+<li><fs80>Stratify axes and facets by metadata (e.g., violin plots)</fs80></li>
+<li><fs80>Hover and click</fs80></li>
+<li><fs80>Zoom</fs80></li>
+<li><fs80>Transmission of points selections between plots</fs80></li>
+<li><fs80>Code tracking for reproducibility and batch generation of figures</fs80></li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
+<!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<img src="/img/OSCA/bioc-figures_v2-02.png" height=500>
+<!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<img src="/img/OSCA/bioc-figures_v2-03.png" height=600>
+<!-- 
+The SingleCellExperiment class is designed to accomodate all the information produced along a typical single-cell analysis workflow.
+Those data include raw data:
+- raw assay data
+- experimental metadata
+Processed data:
+- quality control metrics
+- normalized data
+- dimensionality reduction results
+Downstream analyses:
+- cluster labels
+- differential expression results
+- downstream cell and feature annotations
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<img src="/img/iSEE/batman-robin.png" height=500>
+<!--
+Don't try this at home.
+The wealth of information produced by single-cell analysis workflows has motivated the development of many interactive applications to help researchers explore their data sets.
+Each of those applications has its own strengths and limitations.
+It is very tempting to develop new applications to with their own strengths and limitations.
+Before you decide to do so, we encourage you to test iSEE.
+You may find that it already does everything you would like!
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<img src="/img/OSCA/OSCA-figure-4.png" height=600>
+<!--
+Here we demonstrate how iSEE dissects SCE objects to produce figures.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<img src="https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png" height=600>
+<!--
+iSEE provides a powerful yet flexible user interface that includes 8 predefined panel types.
+That said, it also gives the freedom to define any number custom panel types, both plots and tables.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<p><a href="https://kevinrue.shinyapps.io/magick-profile/"><img src="/img/workshop.png"></a></p>
+<!--
+With that introduction to the user interface, let us head into the workshop!
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 <p><code>iSEE(sce, voice=TRUE)</code></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<hr>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/0crFZLwAJOE?autoplay=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 90%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+<!--
+iSEE can be extended using third-party JavaScript libraries.
+Here we demonstrate how speech recognition was integrated to support a number of predefined vocal commands.
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<p><a href="https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/"><img src="/img/iSEE/shiny-contest.png" height=600></a></p>
+<!--
+iSEE won the RStudio Shiny Contest in April 2019 with mention for "Most technically impressive".
+See https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/ for more details.
+In particular:
+- There were 136 submissions from 122 unique app developers!
+-->
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 <p>Creating an <code>ExperimentColorMap</code></p>
 <pre><code>qc_color_fun &lt;- function(n){
     qc_colors &lt;- c(&quot;forestgreen&quot;, &quot;firebrick1&quot;)
     names(qc_colors) &lt;- c(&quot;Y&quot;, &quot;N&quot;)
     qc_colors
 }
-</code></pre><pre><code>ExperimentColorMap(
+</code></pre>
+<pre><code>ExperimentColorMap(
     assays = list(
         counts = heat.colors,
         logcounts = logcounts_color_fun,
@@ -150,26 +334,84 @@
     ),
     global_continuous = viridis::viridis
 )
-</code></pre><hr>
+</code></pre>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 <p>Using an <code>ExperimentColorMap</code> object</p>
 <pre><code>colDataColorMap(ecm, &quot;passes_qc_checks_s&quot;, discrete=TRUE)
-</code></pre><hr>
-<p>How <a href="http://bioconductor.org/packages/iSEE/">iSEE</a> uses the <code>ExperimentColorMap</code> object</p>
-<!-- raw HTML omitted -->
-<hr>
-<h1 id="fs60the-isee-versefs60"><!-- raw HTML omitted -->The iSEE-verse<!-- raw HTML omitted --></h1>
+</code></pre>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<p>How 
+<a href="http://bioconductor.org/packages/iSEE/" target="_blank" rel="noopener">iSEE</a> uses the <code>ExperimentColorMap</code> object</p>
+<img src="/img/iSEE/Use-ExperimentColorMap.png">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="fs60the-isee-versefs60"><fs60>The iSEE-verse</fs60></h1>
 <ul>
-<li><!-- raw HTML omitted --><a href="http://bioconductor.org/packages/iSEE/">http://bioconductor.org/packages/iSEE/</a><!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted --><a href="https://github.com/LTLA/iSEE2018">https://github.com/LTLA/iSEE2018</a><!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted --><a href="https://github.com/csoneson/iSEE">https://github.com/csoneson/iSEE</a><!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted --><a href="https://github.com/kevinrue/iSEE_custom">https://github.com/kevinrue/iSEE_custom</a><!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted --><a href="https://github.com/federicomarini/iSEE_instances">https://github.com/federicomarini/iSEE_instances</a><!-- raw HTML omitted --></li>
-<li><!-- raw HTML omitted --><a href="https://github.com/kevinrue/iSEEWorkshop2019">https://github.com/kevinrue/iSEEWorkshop2019</a><!-- raw HTML omitted --></li>
+<li><fs60><a href="http://bioconductor.org/packages/iSEE/">http://bioconductor.org/packages/iSEE/</a></fs60></li>
+<li><fs60><a href="https://github.com/LTLA/iSEE2018">https://github.com/LTLA/iSEE2018</a></fs60></li>
+<li><fs60><a href="https://github.com/csoneson/iSEE">https://github.com/csoneson/iSEE</a></fs60></li>
+<li><fs60><a href="https://github.com/kevinrue/iSEE_custom">https://github.com/kevinrue/iSEE_custom</a></fs60></li>
+<li><fs60><a href="https://github.com/federicomarini/iSEE_instances">https://github.com/federicomarini/iSEE_instances</a></fs60></li>
+<li><fs60><a href="https://github.com/kevinrue/iSEEWorkshop2019">https://github.com/kevinrue/iSEEWorkshop2019</a></fs60></li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+The growing funtionality of the iSEE package is demonstrated in various places:
+- The Bioconductor website is the primary source of information for the latest release and development package versions.
+- The package GitHub repository is the place to monitor the latest developments, open issues, and contribute pull requests (consider the Bioconductor support website for general questions)
+- kevinrue/iSEE_custom demonstrates the development of custom panels through a gallery of examples
+- federicomarini/iSEE_instances demonstrates the integration of iSEE with entire analyses of publicly available datasets through a gallery of examples
+- Finally, the iSEE workshop was written for the Bioconductor conference 2019 to showcase the functionality of the iSEE package for both newcomers and experienced R users.
+-->
+<!-- F1000 Twitter teaser -->
+<!-- 
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<video controls >
+  <source src="/img/iSEE/twitter-F1000.mp4" type="video/mp4">
+</video> -->
 
     </section>
     
@@ -181,16 +423,20 @@
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
 
   <script>
     window.revealPlugins = { dependencies: [
+      
       { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
       { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
       { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
       { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/zoom-js/zoom.js', async: true },
+      
       { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/math/math.js', async: true },
+      
       { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/print-pdf/print-pdf.js', async: true },
       
       { src: '\/js\/vendor\/reveal.js\/plugin\/notes\/notes.js', async: true }

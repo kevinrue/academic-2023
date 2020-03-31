@@ -3,174 +3,857 @@
   <channel>
     <title>Kevin Rue-Albrecht</title>
     <link>/</link>
-    <description>Recent content on Kevin Rue-Albrecht</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
-    
-	    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kevin Rue-Albrecht</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>Kevin Rue-Albrecht</title>
+      <link>/</link>
+    </image>
     
     <item>
-      <title>Posts</title>
-      <link>/post/</link>
+      <title>Install R</title>
+      <link>/courses/make-bioc-package/prerequisites-1-r/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/prerequisites-1-r/</guid>
+      <description>&lt;h2 id=&#34;scope&#34;&gt;Scope&lt;/h2&gt;
+&lt;p&gt;In this section, we provide information and advice to install &lt;em&gt;R&lt;/em&gt; for the purpose of developing a &lt;em&gt;Bioconductor&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;This section does not seek to provide a comprehensive workflow through the installation of &lt;em&gt;R&lt;/em&gt;, as the details will depend on your individual operating system and configuration.
+Instead, this section includes links to key resources and sources of information.&lt;/p&gt;
+&lt;h2 id=&#34;which-version-of-r&#34;&gt;Which version of R?&lt;/h2&gt;
+&lt;p&gt;The 
+&lt;a href=&#34;https://bioconductor.org/developers/how-to/useDevel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bioconductor developer guidelines&lt;/a&gt; state:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Package authors should develop against the version of &lt;em&gt;R&lt;/em&gt; that will be available to users when the &lt;em&gt;Bioconductor&lt;/em&gt; devel branch becomes the &lt;em&gt;Bioconductor&lt;/em&gt; release branch.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In addition:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This means that, from mid-October through mid-April, &lt;em&gt;Bioconductor&lt;/em&gt; developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for &lt;em&gt;Bioconductor&lt;/em&gt; development.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;r-sources-or-r-binaries&#34;&gt;R Sources or R binaries?&lt;/h2&gt;
+&lt;h3 id=&#34;r-binaries&#34;&gt;R binaries&lt;/h3&gt;
+&lt;p&gt;The 
+&lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CRAN website&lt;/a&gt; states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Windows and Mac users most likely want to download the precompiled binaries listed in the upper box, not the source code. The sources have to be compiled before you can use them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The main advantage of precompiled &lt;em&gt;R binaries&lt;/em&gt; is that they distribute code that can be immediately installed and executed.
+It is generally the fastest solution to get you started with your own work.
+However, each binaries is compiled for a specific operating system.
+To establish a working &lt;em&gt;R&lt;/em&gt; installation on your computer, you must find binaries that match your operating system.&lt;/p&gt;
+&lt;p&gt;R binaries - including both &lt;em&gt;R-release&lt;/em&gt; and &lt;em&gt;R-devel&lt;/em&gt; - can be obtained from CRAN: &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;https://cran.r-project.org/&lt;/a&gt;.
+The navigation panel on the left includes a link &amp;lsquo;R Binaries&amp;rsquo;.&lt;/p&gt;
+&lt;h3 id=&#34;r-sources&#34;&gt;R sources&lt;/h3&gt;
+&lt;p&gt;The main advantage of &lt;em&gt;R sources&lt;/em&gt; is that they distribute the human readable version of the application, which users can then compile on their own system with the right set of tools to yield an installation adapted to their system configuration and libraries.
+This often pays off when installing &lt;em&gt;R packages&lt;/em&gt; that need to be compiled from source themselves.
+However, installing compilers, keeping them up to date, and compiling sources can be a challenge, even for experienced developers.
+As the 
+&lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CRAN website&lt;/a&gt; states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you do not know what this means, you probably do not want to do it!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;R sources - including both &lt;em&gt;R-release&lt;/em&gt; and &lt;em&gt;R-devel&lt;/em&gt; - can be obtained from CRAN: &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;https://cran.r-project.org/&lt;/a&gt;
+The navigation panel on the left includes a link &amp;lsquo;R Sources&amp;rsquo;.&lt;/p&gt;
+&lt;h2 id=&#34;alternative-installations&#34;&gt;Alternative installations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Homebrew: &lt;a href=&#34;https://formulae.brew.sh/formula/r&#34;&gt;https://formulae.brew.sh/formula/r&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Anaconda: &lt;a href=&#34;https://anaconda.org/r/r&#34;&gt;https://anaconda.org/r/r&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install RStudio</title>
+      <link>/courses/make-bioc-package/prerequisites-2-rstudio/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/prerequisites-2-rstudio/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In this section, &amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;install-rstudio&#34;&gt;Install RStudio&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;RStudio&lt;/em&gt; program can be obtained from the RStudio website: &lt;a href=&#34;https://rstudio.com/products/rstudio/download/&#34;&gt;https://rstudio.com/products/rstudio/download/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install helper packages</title>
+      <link>/courses/make-bioc-package/prerequisites-3-packages/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/prerequisites-3-packages/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This secrion introduces R packags that were developed to facilitate the development of other R packages.&lt;/p&gt;
+&lt;h2 id=&#34;install-_biocmanager_&#34;&gt;Install &lt;em&gt;BiocManager&lt;/em&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;install.packages(&amp;quot;BiocManager&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;install-_usethis_&#34;&gt;Install &lt;em&gt;usethis&lt;/em&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;BiocManager::install(&amp;quot;usethis&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Initialize an R package skeleton</title>
+      <link>/courses/make-bioc-package/essentials-1/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/essentials-1/</guid>
+      <description>&lt;h2 id=&#34;create-a-new-package-skeleton&#34;&gt;Create a new package skeleton&lt;/h2&gt;
+&lt;p&gt;From the &lt;code&gt;usethis::create_tidy_package&lt;/code&gt; documentation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Creates a new package, immediately applies as many of the tidyverse conventions as possible, issues a few reminders, and activates the new package.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;usethis::create_tidy_package(&amp;quot;~/biocpkg&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Writing my CV using pagedown</title>
+      <link>/post/writing-my-cv-using-pagedown/</link>
       <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/</guid>
-      <description></description>
+      <guid>/post/writing-my-cv-using-pagedown/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;div id=&#34;wow&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Wow!&lt;/h2&gt;
+&lt;p&gt;I have taken the time to write my CV using &lt;code&gt;pagedown&lt;/code&gt;.
+And… WOW does it look beautiful! &lt;i class=&#34;far fa-grin-hearts&#34;&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;A single &lt;code&gt;.Rmd&lt;/code&gt; file can simultaneously generate both an &lt;a href=&#34;/files/Kevin-Rue-CV.html&#34;&gt;HTML&lt;/a&gt; and a &lt;a href=&#34;/files/Kevin-Rue-CV.pdf&#34;&gt;PDF&lt;/a&gt; version.
+Both of them look absolutely stunning … especially given the minimal amount of work I had to put in for the reward! &lt;i class=&#34;far fa-grimace&#34;&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;setup&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;p&gt;In RStudio, navigate the menu:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;File
+&lt;ul&gt;
+&lt;li&gt;New File
+&lt;ul&gt;
+&lt;li&gt;R Markdown…
+&lt;ul&gt;
+&lt;li&gt;From Template
+&lt;ul&gt;
+&lt;li&gt;HTML Resume {pagedown}&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the &lt;code&gt;.Rmd&lt;/code&gt; file, update the YAML header as needed.
+In particular, to generate both PDF and HTML, I enabled:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# uncomment this line to produce HTML and PDF in RStudio:
+knit: pagedown::chrome_print&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Editing the rest of the document is fairly intuitive, and acts as a good tutorial to design new sections.
+For instance, I have added the following sections that do not exist in the template:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Funding and awards&lt;/li&gt;
+&lt;li&gt;Organiser and chair&lt;/li&gt;
+&lt;li&gt;Training and courses&lt;/li&gt;
+&lt;li&gt;Professional memberships&lt;/li&gt;
+&lt;li&gt;Peer review&lt;/li&gt;
+&lt;li&gt;Conference presentations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;one-tiny-issue&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;One (tiny) issue&lt;/h2&gt;
+&lt;p&gt;The only issue I could spot so far is an occasional glitch when a page break occurs within an entry.
+Somehow, the rest of that entry is not correctly aligned on the following page.
+However, subsequent items revert to the proper alignment.
+I haven’t thoroughly investigated the issue yet, but several issues related to page breaks have already been reported.
+The issue &lt;a href=&#34;https://github.com/rstudio/pagedown/issues/153&#34;&gt;pagedown::html_resume pagebreak issue&lt;/a&gt; seems to be the most recent and relevant issue.
+I’ll open another issue shortly, to track my specific issue.&lt;/p&gt;
+&lt;p&gt;Anyway, that is really the least impactful issue I could have imagined, given the quality of the overall product!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;links&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Links&lt;/h2&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;HTML version&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;/files/Kevin-Rue-CV.html&#34;&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;PDF version&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;/files/Kevin-Rue-CV.pdf&#34;&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;pagedown&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/rstudio/pagedown&#34;&gt;rstudio/pagedown&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
-      <title>Projects</title>
-      <link>/project/</link>
+      <title>COVID-19 Website</title>
+      <link>/project/covid-19/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/project/</guid>
-      <description></description>
+      <guid>/project/covid-19/</guid>
+      <description>&lt;p&gt;I have developed 
+&lt;a href=&#34;/COVID-19-website/&#34;&gt;My COVID-19 Website&lt;/a&gt; using the data compiled and provided by
+the Center For Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU) to generate various interactive figure using the R packages &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;plotly&lt;/code&gt;, and more generally the &lt;code&gt;tidyverse&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;My COVID-19 Website&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;
+&lt;a href=&#34;/COVID-19-website/&#34;&gt;My COVID-19 Website&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Blog post&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;
+&lt;a href=&#34;/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/&#34;&gt;Creating a dynamic Rmarkdown website for COVID-19 data&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Source data&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34;&gt;https://github.com/CSSEGISandData/COVID-19&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;rmarkdown&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://rmarkdown.rstudio.com/%3E&#34;&gt;https://rmarkdown.rstudio.com/&amp;gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;plotly&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://plotly.com/r/&#34;&gt;https://plotly.com/r/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.tidyverse.org/&#34;&gt;https://www.tidyverse.org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
     </item>
     
     <item>
-      <title>Courses</title>
-      <link>/courses/</link>
-      <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/courses/</guid>
-      <description></description>
+      <title>Twitter conference coverage</title>
+      <link>/project/twitter/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/project/twitter/</guid>
+      <description>&lt;p&gt;I have started collecting 
+&lt;a href=&#34;/twitter-stats/&#34;&gt;Twitter coverage&lt;/a&gt; for scientific conferences that I attended.&lt;/p&gt;
+&lt;p&gt;Credits to 
+&lt;a href=&#34;https://github.com/lazappi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Luke Zappia&lt;/a&gt; who did all the hard work!&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Recent &amp; Upcoming Talks</title>
-      <link>/talk/</link>
+      <title>Creating a dynamic Rmarkdown website for COVID-19 data</title>
+      <link>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This post refers to code available online as a &lt;a href=&#34;https://github.com/kevinrue/COVID-19-website&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-a-new-rstudio-project&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Create a new RStudio project&lt;/h2&gt;
+&lt;p&gt;Open the RStudio “New Project…” menu -&amp;gt; New Directory -&amp;gt; Simple R Markdown Website -&amp;gt; Type a folder name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initialize-git&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Initialize git&lt;/h2&gt;
+&lt;p&gt;You may need to &lt;code&gt;install.packages(&#34;git2r&#34;)&lt;/code&gt; first.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;git2r::init()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also, restart RStudio to apply the changes and benefit of the “Git” tab.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-a-new-github-repository&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Make a new GitHub repository&lt;/h2&gt;
+&lt;p&gt;Click on “New repository”.
+For simplicity, type the same name “COVID-19-website”.&lt;/p&gt;
+&lt;p&gt;Do not add a README or a license yet, an empty repository will do.&lt;/p&gt;
+&lt;p&gt;Add the GitHub remote to your local clone.
+The remote name should be &lt;code&gt;&#34;origin&#34;&lt;/code&gt;.
+The &lt;code&gt;url&lt;/code&gt; is shown on your GitHub repository page.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;git2r::remote_add(name = &amp;quot;origin&amp;quot;, url = &amp;quot;git@github.com:kevinrue/COVID-19-website.git&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;push-your-local-clone-to-the-github-remote&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Push your local clone to the GitHub remote&lt;/h2&gt;
+&lt;p&gt;While &lt;code&gt;git2r::push()&lt;/code&gt; does exist, it can raise issues related to the detection of your &lt;code&gt;git&lt;/code&gt; credentials.
+For simplicity, I prefer to push and pull directly from the terminal.
+To run the command below, the current working directory must be the root of the RStudio project.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;clone-csse&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Clone the source data repository as a git submodule&lt;/h2&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add git@github.com:CSSEGISandData/COVID-19.git&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;write-a-notebooks-for-each-webpage&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Write a notebooks for each webpage&lt;/h2&gt;
+&lt;p&gt;Fast-forwarding in time, I updated the template &lt;code&gt;index.Rmd&lt;/code&gt; and &lt;code&gt;about.Rmd&lt;/code&gt; notebooks, added some notebooks, and updated the &lt;code&gt;_site.yml&lt;/code&gt; to include those new pages in the built website.&lt;/p&gt;
+&lt;p&gt;Note that &lt;code&gt;_site.yml&lt;/code&gt; is also useful to exclude certain subdirectories from the built website.
+In particular, those include the source data folders cloned as a submodule &lt;a href=&#34;#clone-csse&#34;&gt;above&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I also refactored some recurrent code as child notebooks (see the &lt;code&gt;childs/&lt;/code&gt; subdirectory).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;build-the-website&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Build the website&lt;/h2&gt;
+&lt;p&gt;When you’re ready, click the “Build Webiste” button in the “Build” panel.
+This is equivalent to running &lt;code&gt;rmarkdown::render_site(encoding = &#39;UTF-8&#39;)&lt;/code&gt; at the R console.
+This generates a &lt;code&gt;_site/&lt;/code&gt; subdirectory in your project, that contains all the files for your website.&lt;/p&gt;
+&lt;p&gt;To visualize your website, open the “index.html” file in this subdirectory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;deploy-the-website&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Deploy the website&lt;/h2&gt;
+&lt;p&gt;After inspecting that your website looks as you intend it, you can deploy it on GitHub Pages.
+This can be done by pushing the files in the &lt;code&gt;_site/&lt;/code&gt; subdirectory. to a &lt;code&gt;gh-pages&lt;/code&gt; branch on your GitHub repository.&lt;/p&gt;
+&lt;p&gt;Initially, you need to create an empty &lt;code&gt;gh-pages&lt;/code&gt; orphan branch as it does not exist.
+For this, I generally follow instructions in the &lt;a href=&#34;https://bookdown.org/yihui/bookdown/github.html&#34;&gt;bookdown book&lt;/a&gt;.
+Briefly:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# create a branch named gh-pages and clean up everything
+git checkout --orphan gh-pages
+git rm -rf .
+
+# create a hidden file .nojekyll
+touch .nojekyll
+git add .nojekyll
+
+git commit -m&amp;quot;Initial commit&amp;quot;
+git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, every time you build your website, you need to push the new website to that branch.
+To automate this process, I wrote a &lt;code&gt;_deploy.sh&lt;/code&gt; script, which I run as &lt;code&gt;bash _deplooy.sh&lt;/code&gt;.
+The script is adapted from … and looks like this.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git clone -b gh-pages \
+  git@github.com:kevinrue/COVID-19-website.git \
+  site-output
+cd site-output
+git reset --hard HEAD^
+git rm -rf *
+cp -r ../_site/* ./
+git add --all *
+git commit -m &amp;quot;Update the site&amp;quot;
+git push -f origin gh-pages
+cd ..
+rm -rf site-output&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that this script includes two lines that I do not recommend in general.
+Namely:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git reset --hard HEAD^
+git push -f origin gh-pages&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first line deletes the previous version of the website from the &lt;code&gt;git&lt;/code&gt; history, as if it never happened.
+The second line overrides the GitHub history to erase that commit it from there as well.
+I only do this here because my website generates many PNG files in each version of the website.
+If I didn’t delete the previous version each time, the &lt;code&gt;git&lt;/code&gt; history would keep track of every version of every PNG file that I ever generated, making the &lt;code&gt;git clone&lt;/code&gt; commands increasingly time consuming each time I clone the &lt;code&gt;gh-pages&lt;/code&gt; branch to push a new version of the website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thanks-for-reading&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thanks for reading!&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to datapasta</title>
+      <link>/post/how-to-datapasta/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/how-to-datapasta/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I was recently told about &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=datapasta&#34;&gt;datapasta&lt;/a&gt;&lt;/em&gt;, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.&lt;/p&gt;
+&lt;div id=&#34;resources&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;14%&#34; /&gt;
+&lt;col width=&#34;85%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;How to&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/datapasta/vignettes/how-to-datapasta.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;GitHub&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/MilesMcBain/datapasta&#34; class=&#34;uri&#34;&gt;https://github.com/MilesMcBain/datapasta&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;MetaCRAN&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.r-pkg.org/pkg/datapasta&#34; class=&#34;uri&#34;&gt;https://www.r-pkg.org/pkg/datapasta&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE - Bioconductor 2020 Workshop Presentation</title>
+      <link>/talk/bioc2019-workshop/</link>
       <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
-      
-      <guid>/talk/</guid>
-      <description></description>
+      <guid>/talk/bioc2019-workshop/</guid>
+      <description>&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;The workshop materials are available 
+&lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See also the accompanying flash presentation 
+&lt;a href=&#34;/talk/bioc2019-flashtalk&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Slides</title>
-      <link>/slides/</link>
+      <title>iSEE - Bioconductor 2020 Flash Presentation</title>
+      <link>/talk/bioc2019-flashtalk/</link>
+      <pubDate>Mon, 24 Jun 2019 10:25:00 +0000</pubDate>
+      <guid>/talk/bioc2019-flashtalk/</guid>
+      <description>&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;See also the full workshop presentation 
+&lt;a href=&#34;/talk/bioc2019-workshop&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE flashtalk | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-flashtalk/</link>
       <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/</guid>
-      <description></description>
+      <guid>/slides/bioc2019-flashtalk/</guid>
+      <description>&lt;!-- Prevent capitalization of titles --&gt;
+&lt;style&gt;
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+		  }
+&lt;/style&gt;
+&lt;h1 id=&#34;the-iseehttpbioconductororgpackagesisee-package&#34;&gt;The 
+&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;iSEE&lt;/code&gt;&lt;/a&gt; package&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Interactive and reproducible visualization of &lt;code&gt;SummarizedExperiment&lt;/code&gt; objects.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+This flashtalk introduces the iSEE package
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://kevinrue.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/kevin-rue.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/charlotte-soneson.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://federicomarini.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/federico-marini.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-3564-4813&#34;&gt;&lt;img src=&#34;/img/iSEE/aaron-lun.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!--
+The story begins with 4 postdocs  and a shared dream at EuroBioc2017.
+--&gt;
+&lt;hr&gt;
+&lt;code&gt;
+&lt;ins&gt;i&lt;/ins&gt;nteractive
+&lt;p&gt;&lt;ins&gt;S&lt;/ins&gt;ummarized&lt;ins&gt;E&lt;/ins&gt;xperiment&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;E&lt;/ins&gt;xplorer&lt;/code&gt;&lt;/p&gt;
+&lt;!--
+The name stands for.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;
+&lt;!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;iSEE(sce)&lt;/code&gt;&lt;/p&gt;
+&lt;!--
+Given any SCE object, repeat after me the magic formula.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png&#34; height=600&gt;
+&lt;!--
+A typical iSEE interface includes up to 8 different predefined panels types.
+In addition, it is possible to implement custom panels (not shown here).
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;
+&lt;!--
+Here we demonstrate how iSEE dissects SCE objects to produce different panel types.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=400&gt;
+&lt;!--
+With its diverse feature set, iSEE reduces the need for bespoke shiny applications.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.shinyapps.io/magick-profile/&#34;&gt;&lt;img src=&#34;/img/workshop.png&#34; height=500&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+iSEE will be presented as a workshop
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;workshop&#34;&gt;Workshop&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Wednesday 26 June 2019&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3:10 - 4:00 – Workshops Session 6a&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4:10 - 5:00 – Workshops Session 6b&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Carson Auditorium&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Interactive visualization of SummarizedExperiment objects&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; 
+&lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+The date and times of the workshop.
+--&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;you-will-learn-&#34;&gt;You will learn &amp;hellip;&lt;/h2&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 80%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+If you come to the workshop, we&#39;ll even show you how iSEE integrates voice recognition to interact with the application.
+--&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Most technically impressive&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/2019-01-07-shiny-contest.png&#34; height=400&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+If you don&#39;t believe me, you can trust the RStudio team who declared iSEE winner and most technically impressive application submitted to the first Shiny contest.
+--&gt;
+</description>
     </item>
     
     <item>
-      <title>Publications</title>
-      <link>/publication/</link>
+      <title>iSEE workshop at Bioc2019!</title>
+      <link>/post/isee-at-bioc2019/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      <guid>/post/isee-at-bioc2019/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;div id=&#34;what-to-expect&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What to expect&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
+&lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Workshop content&lt;/h1&gt;
+&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
+Next, we will walk participants through the various components of the graphical user interface (GUI).
+Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+&lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomics data modalities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
+&lt;li&gt;Point selections using &lt;a href=&#34;https://shiny.rstudio.com&#34;&gt;shiny&lt;/a&gt; brushes or lasso polygons drawn by consecutive clicks.
+&lt;ul&gt;
+&lt;li&gt;Multiple concurrent selections supported in versions ≥ 1.3.8.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Dynamic linking between plot and table panels, allowing users to transmit information across multiple panels via point selection.&lt;/li&gt;
+&lt;li&gt;Dynamic addition, removal, reordering, and resizing of panels.&lt;/li&gt;
+&lt;li&gt;Automatic tracking, storage, and rendering of the exact R code in a &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=shinyAce&#34;&gt;shinyAce&lt;/a&gt;&lt;/em&gt; editor to allow regeneration of all visible plots in a given application instance.&lt;/li&gt;
+&lt;li&gt;Intelligent density-dependent downsampling of data points shown for large data sets.&lt;/li&gt;
+&lt;li&gt;Custom colour scale specification for individual and groups of discrete and continuous variables.&lt;/li&gt;
+&lt;li&gt;Construction of bespoke interactive guided tours using &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=rintrojs&#34;&gt;rintrojs&lt;/a&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Dynamic detection of discrete and continuous covariates, switching individual plot panels between scatter plots, violin plots, and “square” plots.&lt;/li&gt;
+&lt;li&gt;Ability for users to programmatically define additional custom panels based on any number of user-defined functions performing on-the-fly calculations.&lt;/li&gt;
+&lt;li&gt;Ability to preconfigure app instances, including point selections and state of collapsible panels, to launch individual app instances in any predefined state.&lt;/li&gt;
+&lt;li&gt;Retrieval of gene annotations on the fly by using either user-defined functions or the built-in annotateEntrez or annotateEnsembl functions.&lt;/li&gt;
+&lt;li&gt;Hands-free control of the app using voice recognition by &lt;a href=&#34;https://www.talater.com/annyang/&#34;&gt;annyang&lt;/a&gt; in versions ≥ 1.3.2.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;where-and-when-to-find-us&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Where and when to find us&lt;/h1&gt;
+&lt;p&gt;This workshop will take place during the workshop &lt;a href=&#34;https://bioc2019.bioconductor.org/schedule#day-2-wednesday-june-26&#34;&gt;sessions 6a and 6b&lt;/a&gt; on Wednesday June 26 between between 15:10 and 17:00.&lt;/p&gt;
+&lt;p&gt;You can also come and find us between sessions if you have more questions!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;access-to-the-workshop-materials&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Access to the workshop materials&lt;/h1&gt;
+&lt;p&gt;The workshop materials are being prepared as the vignette of a freely available R package hosted on a &lt;a href=&#34;https://github.com/kevinrue/Bioc2019-iSEE-workshop&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, workshops will become part of a book similar to the &lt;a href=&#34;https://bioconductor.github.io/BiocWorkshops/&#34;&gt;Bioconductor 2018 Workshop Compilation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We look forward to seeing participants at the workshop!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example preprint / working paper</title>
+      <link>/publication/preprint/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/</guid>
-      <description></description>
+      <guid>/publication/preprint/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE workshop | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-workshop/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>/slides/bioc2019-workshop/</guid>
+      <description>&lt;!-- Prevent capitalization of titles --&gt;
+&lt;style&gt;
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+		  }
+    .reveal fs80 {
+                  font-size: 80%;
+		  }
+    .reveal fs60 {
+                  font-size: 60%;
+		  }
+&lt;/style&gt;
+&lt;h1 id=&#34;iseehttpbioconductororgpackagesisee-package-and-functionality&#34;&gt;
+&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iSEE&lt;/a&gt; package and functionality&lt;/h1&gt;
+&lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; 
+&lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: 
+&lt;a href=&#34;https://twitter.com/KevinRUE67&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@KevinRUE67&lt;/a&gt; &amp;amp; 
+&lt;a href=&#34;https://twitter.com/csoneson&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@csoneson&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+Welcome to the iSEE workshop.
+In this presentation, we will introduce the concepts and functionality of the iSEE package.
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://kevinrue.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/kevin-rue.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/charlotte-soneson.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://federicomarini.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/federico-marini.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-3564-4813&#34;&gt;&lt;img src=&#34;/img/iSEE/aaron-lun.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!--
+This was a team effort!
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://bioconductor.org&#34;&gt;&lt;img src=&#34;/img/iSEE/biocstickers.jpg&#34; height=600&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+iSEE tightly integrates with other packages of the Bioconductor project.
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;fs60original-wishlist-1--2fs60&#34;&gt;&lt;fs60&gt;Original wishlist (1 / 2)&lt;/fs60&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;fs80&gt;An interactive user interface for exploring data in &lt;em&gt;
+&lt;a href=&#34;https://bioconductor.org/packages/release/SummarizedExperiment&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; objects&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Particular focus given to single-cell data in the &lt;em&gt;
+&lt;a href=&#34;https://bioconductor.org/packages/release/SingleCellExperiment&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; derived class&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Sample-oriented visualizations&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Feature-oriented visualizations&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Heat maps (cells &lt;em&gt;and&lt;/em&gt; features)&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Selectable points&lt;/fs80&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;fs60original-wishlist-2--2fs60&#34;&gt;&lt;fs60&gt;Original wishlist (2 / 2)&lt;/fs60&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;fs80&gt;Colouring of samples by metadata or assayed values&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Stratify axes and facets by metadata (e.g., violin plots)&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Hover and click&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Zoom&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Transmission of points selections between plots&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Code tracking for reproducibility and batch generation of figures&lt;/fs80&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;
+&lt;!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/bioc-figures_v2-03.png&#34; height=600&gt;
+&lt;!-- 
+The SingleCellExperiment class is designed to accomodate all the information produced along a typical single-cell analysis workflow.
+Those data include raw data:
+- raw assay data
+- experimental metadata
+Processed data:
+- quality control metrics
+- normalized data
+- dimensionality reduction results
+Downstream analyses:
+- cluster labels
+- differential expression results
+- downstream cell and feature annotations
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=500&gt;
+&lt;!--
+Don&#39;t try this at home.
+The wealth of information produced by single-cell analysis workflows has motivated the development of many interactive applications to help researchers explore their data sets.
+Each of those applications has its own strengths and limitations.
+It is very tempting to develop new applications to with their own strengths and limitations.
+Before you decide to do so, we encourage you to test iSEE.
+You may find that it already does everything you would like!
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;
+&lt;!--
+Here we demonstrate how iSEE dissects SCE objects to produce figures.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png&#34; height=600&gt;
+&lt;!--
+iSEE provides a powerful yet flexible user interface that includes 8 predefined panel types.
+That said, it also gives the freedom to define any number custom panel types, both plots and tables.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.shinyapps.io/magick-profile/&#34;&gt;&lt;img src=&#34;/img/workshop.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+With that introduction to the user interface, let us head into the workshop!
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;iSEE(sce, voice=TRUE)&lt;/code&gt;&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 90%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+iSEE can be extended using third-party JavaScript libraries.
+Here we demonstrate how speech recognition was integrated to support a number of predefined vocal commands.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/iSEE/shiny-contest.png&#34; height=600&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+iSEE won the RStudio Shiny Contest in April 2019 with mention for &#34;Most technically impressive&#34;.
+See https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/ for more details.
+In particular:
+- There were 136 submissions from 122 unique app developers!
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;Creating an &lt;code&gt;ExperimentColorMap&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;qc_color_fun &amp;lt;- function(n){
+    qc_colors &amp;lt;- c(&amp;quot;forestgreen&amp;quot;, &amp;quot;firebrick1&amp;quot;)
+    names(qc_colors) &amp;lt;- c(&amp;quot;Y&amp;quot;, &amp;quot;N&amp;quot;)
+    qc_colors
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ExperimentColorMap(
+    assays = list(
+        counts = heat.colors,
+        logcounts = logcounts_color_fun,
+        cufflinks_fpkm = fpkm_color_fun
+    ),
+    colData = list(
+        passes_qc_checks_s = qc_color_fun
+    ),
+    all_continuous = list(
+        assays = viridis::plasma
+    ),
+    global_continuous = viridis::viridis
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;Using an &lt;code&gt;ExperimentColorMap&lt;/code&gt; object&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;colDataColorMap(ecm, &amp;quot;passes_qc_checks_s&amp;quot;, discrete=TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;How 
+&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iSEE&lt;/a&gt; uses the &lt;code&gt;ExperimentColorMap&lt;/code&gt; object&lt;/p&gt;
+&lt;img src=&#34;/img/iSEE/Use-ExperimentColorMap.png&#34;&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;fs60the-isee-versefs60&#34;&gt;&lt;fs60&gt;The iSEE-verse&lt;/fs60&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34;&gt;http://bioconductor.org/packages/iSEE/&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/LTLA/iSEE2018&#34;&gt;https://github.com/LTLA/iSEE2018&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34;&gt;https://github.com/csoneson/iSEE&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEE_custom&#34;&gt;https://github.com/kevinrue/iSEE_custom&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/federicomarini/iSEE_instances&#34;&gt;https://github.com/federicomarini/iSEE_instances&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34;&gt;https://github.com/kevinrue/iSEEWorkshop2019&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+The growing funtionality of the iSEE package is demonstrated in various places:
+- The Bioconductor website is the primary source of information for the latest release and development package versions.
+- The package GitHub repository is the place to monitor the latest developments, open issues, and contribute pull requests (consider the Bioconductor support website for general questions)
+- kevinrue/iSEE_custom demonstrates the development of custom panels through a gallery of examples
+- federicomarini/iSEE_instances demonstrates the integration of iSEE with entire analyses of publicly available datasets through a gallery of examples
+- Finally, the iSEE workshop was written for the Bioconductor conference 2019 to showcase the functionality of the iSEE package for both newcomers and experienced R users.
+--&gt;
+&lt;!-- F1000 Twitter teaser --&gt;
+&lt;!-- 
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+&lt;video controls &gt;
+  &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt; --&gt;
+</description>
     </item>
     
     <item>
       <title>Privacy Policy</title>
       <link>/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Conferences</title>
-      <link>/conferences/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/conferences/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;!-- Show img inline --&gt;
-&lt;style&gt; 
-.article-style img {
-    display: inline-block;
-}
-&lt;/style&gt;
-&lt;div id=&#34;past&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Past&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioc2019 conference&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package and functionality
-(&lt;a href=&#34;/slides/bioc2019-flashtalk/#/&#34;&gt;flashtalk&lt;/a&gt;,
-&lt;a href=&#34;/slides/bioc2019-workshop/#/&#34;&gt;slides&lt;/a&gt;,
-&lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34;&gt;workshop&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rebrand.ly/biocworkshops2019&#34;&gt;All workshops&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
+      <title>An example journal article</title>
+      <link>/publication/journal-article/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Software</title>
-      <link>/software/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/software/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;!-- Show img inline --&gt;
-&lt;style&gt; 
-.article-style img {
-    display: inline-block;
-}
-&lt;/style&gt;
-&lt;div id=&#34;r-packages&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;R packages&lt;/h2&gt;
-&lt;p&gt;I maintain or co-develop the following R packages.&lt;/p&gt;
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col width=&#34;23%&#34; /&gt;
-&lt;col width=&#34;76%&#34; /&gt;
-&lt;/colgroup&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/BiocCheck/&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/Bioconductor-BiocCheck-blue.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;img src=&#34;https://bioconductor.org/shields/years-in-bioc/BiocCheck.svg&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/BiocCheck&#34;&gt;BiocCheck&lt;/a&gt;&lt;/em&gt; executes Bioconductor-specific package checks.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/kevinrue/deeperTools&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/GitHub-deeperTools-c9510c.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://travis-ci.org/kevinrue/deeperTools&#34;&gt;&lt;img src=&#34;https://travis-ci.org/kevinrue/deeperTools.svg?branch=master&#34; alt=&#34;Travis build status&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://codecov.io/github/kevinrue/deeperTools?branch=master&#34;&gt;&lt;img src=&#34;https://codecov.io/gh/kevinrue/deeperTools/branch/master/graph/badge.svg&#34; alt=&#34;Coverage status&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://github.com/kevinrue/deeperTools&#34;&gt;deeperTools&lt;/a&gt;&lt;/em&gt; provides convenience functions to process files produced by &lt;a href=&#34;https://deeptools.readthedocs.io/en/develop/&#34;&gt;deepTools&lt;/a&gt;.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/GOexpress/&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/Bioconductor-GOexpress-blue.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;img src=&#34;https://bioconductor.org/shields/years-in-bioc/GOexpress.svg&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/GOexpress&#34;&gt;GOexpress&lt;/a&gt;&lt;/em&gt; provides methods to visualise the expression profile of genes from transcriptomics experiments, and offers a supervised clustering approach to identify GO terms containing genes with expression levels that best classify two or more predefined groups of samples.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/kevinrue/hancock&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/GitHub-hancock-c9510c.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://travis-ci.org/kevinrue/hancock&#34;&gt;&lt;img src=&#34;https://travis-ci.org/kevinrue/hancock.svg?branch=master&#34; alt=&#34;Travis build status&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://codecov.io/github/kevinrue/hancock?branch=master&#34;&gt;&lt;img src=&#34;https://codecov.io/gh/kevinrue/hancock/branch/master/graph/badge.svg&#34; alt=&#34;Coverage status&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://github.com/kevinrue/hancock&#34;&gt;hancock&lt;/a&gt;&lt;/em&gt; aims to provide a collection of methods for learning and applying gene signatures associated with cellular phenotypes and identities.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/Bioconductor-iSEE-blue.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;img src=&#34;https://bioconductor.org/shields/years-in-bioc/iSEE.svg&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; provides functions for creating an interactive graphical user interface based on &lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;RStudio Shiny&lt;/a&gt; for exploring data stored in &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; objects, including row- and column-level metadata. Particular attention is given to single-cell data in a &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; object with visualization of dimensionality reduction results.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/kevinrue/sqlighter&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/GitHub-sqlighter-c9510c.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://travis-ci.org/kevinrue/sqlighter&#34;&gt;&lt;img src=&#34;https://travis-ci.org/kevinrue/sqlighter.svg?branch=master&#34; alt=&#34;Travis build status&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://codecov.io/github/kevinrue/sqlighter?branch=master&#34;&gt;&lt;img src=&#34;https://codecov.io/gh/kevinrue/sqlighter/branch/master/graph/badge.svg&#34; alt=&#34;Coverage status&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://github.com/kevinrue/sqlighter&#34;&gt;sqlighter&lt;/a&gt;&lt;/em&gt; provides convenient wrapper functions around the &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=RSQLite&#34;&gt;RSQLite&lt;/a&gt;&lt;/em&gt; package.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://bioconductor.org/packages/TVTB/&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/Bioconductor-TVTB-blue.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;img src=&#34;https://bioconductor.org/shields/years-in-bioc/TVTB.svg&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/TVTB&#34;&gt;TVTB&lt;/a&gt;&lt;/em&gt; provides S4 classes and methods to filter, summarise and visualise genetic variation data stored in VCF files.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/kevinrue/unisets&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/GitHub-unisets-c9510c.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://travis-ci.org/kevinrue/unisets&#34;&gt;&lt;img src=&#34;https://travis-ci.org/kevinrue/unisets.svg?branch=master&#34; alt=&#34;Travis build status&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://codecov.io/github/kevinrue/unisets?branch=master&#34;&gt;&lt;img src=&#34;https://codecov.io/gh/kevinrue/unisets/branch/master/graph/badge.svg&#34; alt=&#34;Coverage status&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://github.com/kevinrue/unisets&#34;&gt;unisets&lt;/a&gt;&lt;/em&gt; provides a collection of S4 classes to store relationships between elements and sets, with a particular emphasis on gene sets.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/kevinrue/xCellData&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/GitHub-xCellData-c9510c.svg&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://travis-ci.org/kevinrue/xCellData&#34;&gt;&lt;img src=&#34;https://travis-ci.org/kevinrue/xCellData.svg?branch=master&#34; alt=&#34;Travis build status&#34; /&gt;&lt;/a&gt;&lt;br/&gt;&lt;a href=&#34;https://codecov.io/github/kevinrue/xCellData?branch=master&#34;&gt;&lt;img src=&#34;https://codecov.io/gh/kevinrue/xCellData/branch/master/graph/badge.svg&#34; alt=&#34;Coverage status&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;em&gt;&lt;a href=&#34;https://github.com/kevinrue/xCellData&#34;&gt;xCellData&lt;/a&gt;&lt;/em&gt; uses the &lt;code&gt;Sets&lt;/code&gt; class defined in the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/unisets&#34;&gt;unisets&lt;/a&gt;&lt;/em&gt; package (see above) to represent 489 cell type gene signatures from &lt;a href=&#34;https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1349-1&#34; title=&#34;Aran et al., 2017&#34;&gt;Aran et al., 2017&lt;/a&gt;.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+      <title>An example conference paper</title>
+      <link>/publication/conference-paper/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/conference-paper/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
