@@ -11,6 +11,7 @@ knit: pagedown::chrome_print
 ---
 
 ```{r setup, include = FALSE}
+stopifnot(requireNamespace("pagedown"))
 stopifnot(requireNamespace("htmltools"))
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
@@ -484,7 +485,7 @@ N/A
 
 This course is part of the [Genomic Data Science Specialization](https://www.coursera.org/specializations/genomic-data-science).
 
-### Command Line Tools for Genomic Data Science {.page-break-before}
+### Command Line Tools for Genomic Data Science
 
 [Coursera](https://www.coursera.org/learn/genomic-tools), [Johns Hopkins University](https://www.jhu.edu/)
 

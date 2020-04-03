@@ -14,6 +14,10 @@ output:
       countIncrementalSlides: false
 ---
 
+```{r, include=FALSE}
+stopifnot(requireNamespace("xaringan"))
+```
+
 layout: true
   
 <div class="my-header"><img src="/img/ox_brand1_pos.gif" alt="Oxford University Logo" align="right"></div>
