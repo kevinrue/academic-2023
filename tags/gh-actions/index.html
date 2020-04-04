@@ -28,11 +28,10 @@
   
     
   
-  <meta name="description" content="Create a new package skeleton From the usethis::create_tidy_package documentation.
- Creates a new package, immediately applies as many of the tidyverse conventions as possible, issues a few reminders, and activates the new package.">
+  <meta name="description" content="Kevin Rue-Albrecht&#39;s GitHub blogdown using hugo-academic">
 
   
-  <link rel="alternate" hreflang="en-us" href="/courses/make-bioc-package/essentials-1/">
+  <link rel="alternate" hreflang="en-us" href="/tags/gh-actions/">
 
   
 
@@ -211,12 +210,14 @@
 
 
   
+  <link rel="alternate" href="/tags/gh-actions/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/courses/make-bioc-package/essentials-1/">
+  <link rel="canonical" href="/tags/gh-actions/">
 
   
   
@@ -232,23 +233,17 @@
   <meta property="twitter:creator" content="@KevinRUE67">
   
   <meta property="og:site_name" content="Kevin Rue-Albrecht">
-  <meta property="og:url" content="/courses/make-bioc-package/essentials-1/">
-  <meta property="og:title" content="Initialize an R package skeleton | Kevin Rue-Albrecht">
-  <meta property="og:description" content="Create a new package skeleton From the usethis::create_tidy_package documentation.
- Creates a new package, immediately applies as many of the tidyverse conventions as possible, issues a few reminders, and activates the new package."><meta property="og:image" content="/img/android-chrome-512x512.png">
+  <meta property="og:url" content="/tags/gh-actions/">
+  <meta property="og:title" content="gh-actions | Kevin Rue-Albrecht">
+  <meta property="og:description" content="Kevin Rue-Albrecht&#39;s GitHub blogdown using hugo-academic"><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="twitter:image" content="/img/android-chrome-512x512.png"><meta property="og:locale" content="en-us">
   
-    
-      <meta property="article:published_time" content="2020-03-12T00:00:00&#43;01:00">
-    
-    <meta property="article:modified_time" content="2020-03-12T00:00:00&#43;01:00">
+    <meta property="og:updated_time" content="2020-04-04T00:00:00&#43;00:00">
   
 
   
 
 
-
-  
 
 
   
@@ -260,7 +255,7 @@
 
 
 
-  <title>Initialize an R package skeleton | Kevin Rue-Albrecht</title>
+  <title>gh-actions | Kevin Rue-Albrecht</title>
 
 </head>
 
@@ -483,7 +478,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/courses/"><span>Courses</span></a>
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
         </li>
 
         
@@ -553,193 +548,57 @@
 
   
 
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      
 
 
 
 
 
+
+
+
+
+
+
+  
+
+  
+  
   
     
   
-
-
-
-
-<form class="docs-search d-flex align-items-center">
-  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    <span><i class="fas fa-bars"></i></span>
-  </button>
+<div class="universal-wrapper pt-3">
+  <h1>gh-actions</h1>
 
   
-  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  
-</form>
 
-<nav class="collapse docs-links" id="docs-nav">
-  
-
-  
-  
-  
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/make-bioc-package/">Syllabus</a>
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/make-bioc-package/prerequisites-1-r/">1. Pre-requisites</a>
-    <ul class="nav docs-sidenav">
-      
-      <li >
-        <a href="/courses/make-bioc-package/prerequisites-1-r/">R</a>
-      </li>
-      
-      <li >
-        <a href="/courses/make-bioc-package/prerequisites-2-rstudio/">RStudio</a>
-      </li>
-      
-      <li >
-        <a href="/courses/make-bioc-package/prerequisites-3-packages/">Packages</a>
-      </li>
-      
-    </ul>
-    
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/make-bioc-package/essentials-1/">2. Essentials</a>
-    <ul class="nav docs-sidenav">
-      
-      <li class="active">
-        <a href="/courses/make-bioc-package/essentials-1/">Package skeleton</a>
-      </li>
-      
-    </ul>
-    
-
-  </div>
-  
-  
-</nav>
-
-    </div>
-
-    
-    <div class="d-none d-xl-block col-xl-2 docs-toc">
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
-      </ul>
-
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#create-a-new-package-skeleton">Create a new package skeleton</a></li>
-  </ul>
-</nav>
-
-      
-    </div>
-    
-
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
-
-      <article class="article">
-
-        <div class="docs-article-container">
-          <h1>Initialize an R package skeleton</h1>
-
-          <div class="article-style">
-            <h2 id="create-a-new-package-skeleton">Create a new package skeleton</h2>
-<p>From the <code>usethis::create_tidy_package</code> documentation.</p>
-<blockquote>
-<p>Creates a new package, immediately applies as many of the tidyverse conventions as possible, issues a few reminders, and activates the new package.</p>
-</blockquote>
-<pre><code class="language-{r}">usethis::create_tidy_package(&quot;~/biocpkg&quot;)
-</code></pre>
-
-          </div>
-
-          
-
-
-
-          
-          <div class="article-widget">
-            
-<div class="post-nav">
-  
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Previous</div>
-    <a href="/courses/make-bioc-package/prerequisites-3-packages/" rel="next">Install helper packages</a>
-  </div>
-  
   
 </div>
 
-          </div>
-          
-        </div>
-
-        <div class="body-footer">
-          <p>Last updated on Mar 12, 2020</p>
-
-          
 
 
-
-
+<div class="universal-wrapper">
+  
 
   
   
-
-<p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/courses/make-bioc-package/essentials-1.md">
-    <i class="fas fa-pen pr-2"></i>Edit this page
-  </a>
-</p>
-
-
-
-
-          
-
-        </div>
-
-      </article>
-
-      <footer class="site-footer">
-  
-  <p class="powered-by">
-    
-      <a href="/privacy/">Privacy Policy</a>
     
     
-  </p>
+    
+    <div>
+      <h2><a href="/post/transiton-from-travis-ci-to-github-actions/" >Transiton from Travis CI to GitHub Actions</a></h2>
+      <div class="article-style">
+        
+          Overview The recent introduction of GitHub Actions makes a lot of our Travis CI build configurations redundant.
+In particular, the examples actions include:
+  R-CMD-check using rcmdcheck::rcmdcheck() to check the package.
+        
+      </div>
+    </div>
   
 
-  <p class="powered-by">
-    
+  
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-    
-  </p>
-</footer>
-
-
-    </main>
-  </div>
 </div>
-
 
       
 
@@ -798,11 +657,6 @@
 
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
-    <script>
-      anchors.add();
-    </script>
-    
 
     
     
@@ -855,6 +709,31 @@
 
 
   
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
   
 
   
