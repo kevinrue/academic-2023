@@ -5,12 +5,171 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Kevin Rue-Albrecht</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     <image>
       <url>/img/android-chrome-512x512.png</url>
       <title>Kevin Rue-Albrecht</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Install R</title>
+      <link>/courses/make-bioc-package/prerequisites-1-r/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/prerequisites-1-r/</guid>
+      <description>&lt;h2 id=&#34;scope&#34;&gt;Scope&lt;/h2&gt;
+&lt;p&gt;In this section, we provide information and advice to install &lt;em&gt;R&lt;/em&gt; for the purpose of developing a &lt;em&gt;Bioconductor&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;This section does not seek to provide a comprehensive workflow through the installation of &lt;em&gt;R&lt;/em&gt;, as the details will depend on your individual operating system and configuration.
+Instead, this section includes links to key resources and sources of information.&lt;/p&gt;
+&lt;h2 id=&#34;which-version-of-r&#34;&gt;Which version of R?&lt;/h2&gt;
+&lt;p&gt;The 
+&lt;a href=&#34;https://bioconductor.org/developers/how-to/useDevel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bioconductor developer guidelines&lt;/a&gt; state:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Package authors should develop against the version of &lt;em&gt;R&lt;/em&gt; that will be available to users when the &lt;em&gt;Bioconductor&lt;/em&gt; devel branch becomes the &lt;em&gt;Bioconductor&lt;/em&gt; release branch.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In addition:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This means that, from mid-October through mid-April, &lt;em&gt;Bioconductor&lt;/em&gt; developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for &lt;em&gt;Bioconductor&lt;/em&gt; development.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;r-sources-or-r-binaries&#34;&gt;R Sources or R binaries?&lt;/h2&gt;
+&lt;h3 id=&#34;r-binaries&#34;&gt;R binaries&lt;/h3&gt;
+&lt;p&gt;The 
+&lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CRAN website&lt;/a&gt; states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Windows and Mac users most likely want to download the precompiled binaries listed in the upper box, not the source code. The sources have to be compiled before you can use them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The main advantage of precompiled &lt;em&gt;R binaries&lt;/em&gt; is that they distribute code that can be immediately installed and executed.
+It is generally the fastest solution to get you started with your own work.
+However, each binaries is compiled for a specific operating system.
+To establish a working &lt;em&gt;R&lt;/em&gt; installation on your computer, you must find binaries that match your operating system.&lt;/p&gt;
+&lt;p&gt;R binaries - including both &lt;em&gt;R-release&lt;/em&gt; and &lt;em&gt;R-devel&lt;/em&gt; - can be obtained from CRAN: &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;https://cran.r-project.org/&lt;/a&gt;.
+The navigation panel on the left includes a link &amp;lsquo;R Binaries&amp;rsquo;.&lt;/p&gt;
+&lt;h3 id=&#34;r-sources&#34;&gt;R sources&lt;/h3&gt;
+&lt;p&gt;The main advantage of &lt;em&gt;R sources&lt;/em&gt; is that they distribute the human readable version of the application, which users can then compile on their own system with the right set of tools to yield an installation adapted to their system configuration and libraries.
+This often pays off when installing &lt;em&gt;R packages&lt;/em&gt; that need to be compiled from source themselves.
+However, installing compilers, keeping them up to date, and compiling sources can be a challenge, even for experienced developers.
+As the 
+&lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CRAN website&lt;/a&gt; states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you do not know what this means, you probably do not want to do it!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;R sources - including both &lt;em&gt;R-release&lt;/em&gt; and &lt;em&gt;R-devel&lt;/em&gt; - can be obtained from CRAN: &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;https://cran.r-project.org/&lt;/a&gt;
+The navigation panel on the left includes a link &amp;lsquo;R Sources&amp;rsquo;.&lt;/p&gt;
+&lt;h2 id=&#34;alternative-installations&#34;&gt;Alternative installations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Homebrew: &lt;a href=&#34;https://formulae.brew.sh/formula/r&#34;&gt;https://formulae.brew.sh/formula/r&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Anaconda: &lt;a href=&#34;https://anaconda.org/r/r&#34;&gt;https://anaconda.org/r/r&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install RStudio</title>
+      <link>/courses/make-bioc-package/prerequisites-2-rstudio/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/prerequisites-2-rstudio/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In this section, &amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;install-rstudio&#34;&gt;Install RStudio&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;RStudio&lt;/em&gt; program can be obtained from the RStudio website: &lt;a href=&#34;https://rstudio.com/products/rstudio/download/&#34;&gt;https://rstudio.com/products/rstudio/download/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install helper packages</title>
+      <link>/courses/make-bioc-package/prerequisites-3-packages/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/prerequisites-3-packages/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This secrion introduces R packags that were developed to facilitate the development of other R packages.&lt;/p&gt;
+&lt;h2 id=&#34;install-_biocmanager_&#34;&gt;Install &lt;em&gt;BiocManager&lt;/em&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;install.packages(&amp;quot;BiocManager&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;install-_usethis_&#34;&gt;Install &lt;em&gt;usethis&lt;/em&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;BiocManager::install(&amp;quot;usethis&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Initialize an R package skeleton</title>
+      <link>/courses/make-bioc-package/essentials-1/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0100</pubDate>
+      <guid>/courses/make-bioc-package/essentials-1/</guid>
+      <description>&lt;h2 id=&#34;create-a-new-package-skeleton&#34;&gt;Create a new package skeleton&lt;/h2&gt;
+&lt;p&gt;From the &lt;code&gt;usethis::create_tidy_package&lt;/code&gt; documentation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Creates a new package, immediately applies as many of the tidyverse conventions as possible, issues a few reminders, and activates the new package.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;usethis::create_tidy_package(&amp;quot;~/biocpkg&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making a map of COVID-19 cases</title>
+      <link>/post/making-a-map-of-covid-19-cases/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/making-a-map-of-covid-19-cases/</guid>
+      <description>
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;I have added an &lt;a href=&#34;/COVID-19-website/csse_covid_19_map_latest.html&#34;&gt;interactive world map&lt;/a&gt; to my COVID-19 website using the &lt;code&gt;leaflet&lt;/code&gt; package.&lt;/p&gt;
+&lt;p&gt;Using my existing data preprocessing setup, it was incredibly easy to set up the interactive map!
+This includes a popup that displays the latest information for the corresponding country.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;leaflet(plot_data) %&amp;gt;%
+  addTiles() %&amp;gt;% 
+  addProviderTiles(providers$Esri.WorldImagery, group = &amp;quot;World Imagery&amp;quot;) %&amp;gt;%
+  addProviderTiles(providers$Stamen.TonerLite, group = &amp;quot;Toner Lite&amp;quot;) %&amp;gt;%
+  addCircles(
+    lng = ~Longitude, lat = ~Latitude, weight = 1,
+    radius = ~log(Deaths + 1) * radius_multiplier,
+    popup = sprintf(
+    paste(
+      &amp;quot;&amp;lt;strong&amp;gt;%s&amp;lt;/strong&amp;gt;&amp;quot;,
+      &amp;quot;&amp;lt;i&amp;gt;%s&amp;lt;/i&amp;gt;&amp;quot;,
+      &amp;quot;Confirmed cases: %s&amp;quot;,
+      &amp;quot;Active cases: %s&amp;quot;,
+      &amp;quot;Death: %s&amp;quot;,
+      &amp;quot;Recovered: %s&amp;quot;,
+      sep = &amp;quot;&amp;lt;/br&amp;gt;&amp;quot;),
+    format(plot_data$Date, &amp;quot;%a %b %d&amp;quot;),
+    plot_data$`Country/Region`,
+    format(plot_data$Confirmed, big.mark = &amp;quot;,&amp;quot;),
+    format(plot_data$Active, big.mark = &amp;quot;,&amp;quot;),
+    format(plot_data$Deaths, big.mark = &amp;quot;,&amp;quot;),
+    format(plot_data$Recovered, big.mark = &amp;quot;,&amp;quot;))
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-tweak&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A tweak&lt;/h2&gt;
+&lt;p&gt;The one tweak I pulled is to automatically adjust the multiplier controlling the radius of each circle as a function of the death toll.
+The multiplier is computed so that the largest circle on the map has a radius of 200 kilometers.
+All other circles are resized proportionally using the same multiplier.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;radius_multiplier &amp;lt;- 2E5 / max(sqrt(plot_data$Deaths), na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;links&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Links&lt;/h2&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;leaflet&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://rstudio.github.io/leaflet&#34; class=&#34;uri&#34;&gt;https://rstudio.github.io/leaflet&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Code&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;TODO&#34;&gt;GitHub&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thanks-for-reading&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thanks for reading!&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Transiton from Travis CI to GitHub Actions</title>
@@ -841,6 +1000,15 @@ The growing funtionality of the iSEE package is demonstrated in various places:
 &lt;video controls &gt;
   &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt; --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     

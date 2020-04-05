@@ -1,0 +1,157 @@
+---
+title: "Statistics in R"
+subtitle: "An introduction"
+author: "Kevin Rue-Albrecht"
+institute: "University of Oxford"
+date: "2020-04-03 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, "rladies-fonts.css", "my-theme.css"]
+    #css: [default, rladies, rladies-fonts, "my-theme.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+# uncomment this line to produce HTML and PDF in RStudio:
+knit: pagedown::chrome_print
+---
+
+layout: true
+
+```{r setup, include = FALSE}
+stopifnot(requireNamespace("htmltools"))
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+knitr::opts_chunk$set(
+  message = FALSE, warning = FALSE, error = FALSE
+)
+stopifnot(require(tidyverse))
+```
+
+---
+
+# Overview
+
+<br/>
+
+- Working with statistical distributions
+
+- Perform statistical tests and inspect results
+
+- Permutation, resampling, and bootstraping
+
+---
+
+# R Functions for Probability Distributions
+
+<!-- Sources
+https://www.stat.umn.edu/geyer/old/5101/rlook.html
+-->
+
+.x-small-table[.pull-left[
+|Distribution                   |Probability |Quantile    |Density     |Random    |
+|:------------------------------|:-----------|:-----------|:-----------|:---------|
+|Beta                           |`pbeta`     |`qbeta`     |`dbeta`     |`rbeta`     |
+|Binomial                       |`pbinom`    |`qbinom`    |`dbinom`    |`rbinom`    |
+|Cauchy                         |`pcauchy`   |`qcauchy`   |`dcauchy`   |`rcauchy`   |
+|Chi-Square                     |`pchisq`    |`qchisq`    |`dchisq`    |`rchisq`    |
+|Exponential                    |`pexp`      |`qexp`      |`dexp`      |`rexp`      |
+|F                              |`pf`        |`qf`        |`df`        |`rf`        |
+|Gamma                          |`pgamma`    |`qgamma`    |`dgamma`    |`rgamma`    |
+|Geometric                      |`pgeom`     |`qgeom`     |`dgeom`     |`rgeom`     |
+|Hypergeometric                 |`phyper`    |`qhyper`    |`dhyper`    |`rhyper`    |
+|Logistic                       |`plogis`    |`qlogis`    |`dlogis`    |`rlogis`    |
+|Log Normal                     |`plnorm`    |`qlnorm`    |`dlnorm`    |`rlnorm`    |
+|Negative Binomial              |`pnbinom`   |`qnbinom`   |`dnbinom`   |`rnbinom`   |
+|Normal                         |`pnorm`     |`qnorm`     |`dnorm`     |`rnorm`     |
+|Poisson                        |`ppois`     |`qpois`     |`dpois`     |`rpois`     |
+|Student t                      |`pt`        |`qt`        |`dt`        |`rt`        |
+|Studentized Range              |`ptukey`    |`qtukey`    |`dtukey`    |`rtukey`    |
+|Uniform                        |`punif`     |`qunif`     |`dunif`     |`runif`     |
+|Weibull                        |`pweibull`  |`qweibull`  |`dweibull`  |`rweibull`  |
+|Wilcoxon Rank Sum Statistic    |`pwilcox`   |`qwilcox`   |`dwilcox`   |`rwilcox`   |
+|Wilcoxon Signed Rank Statistic |`psignrank` |`qsignrank` |`dsignrank` |`rsignrank` |
+]]
+
+.small-text[.pull-right[
+- <i class="fab fa-r-project"></i> includes a number of statistical distributions.
+
+- Each has a root name, e.g. `norm`
+
+- Every distribution that R handles has four functions.
+
+- The root name is prefixed by one of the letters:
+  + `p` for "probability", the cumulative distribution function (c. d. f.)
+  + `q` for "quantile", the inverse c. d. f.
+  + `d` for "density", the density function (p. f. or p. d. f.)
+  + `r` for "random", a random variable having the specified distribution
+]]
+
+---
+
+# The normal distribution
+
+`rnorm` is the R function that simulates random variates having a specified normal distribution.
+
+For instance, it can be used to generate a vector of 1,000 values, normally distributed, with a mean of 0 and a standard deviation of 1.
+
+```{r}
+data_vector <- rnorm(n = 1000, mean = 0, sd = 1)
+```
+
+The `summary` function is useful to inspect certain properties of values.
+
+```{r}
+summary(data_vector)
+```
+
+---
+
+# The normal distribution
+
+.pull-left[
+`hist` is a useful base R function to inspect the distribution of values.
+
+```{r, fig.height=5, fig.align="center"}
+hist(data_vector, breaks = 30)
+abline(v = 0, col="red", lwd=2)
+abline(v = c(-1, 1), col="blue", lwd=2)
+abline(v = c(-2, 2), col="green", lwd=2)
+```
+]
+
+.pull-right[
+## Properties 
+- ~ 64% of the data points are between the blue lines (1 standard deviation)
+
+- ~ 95% of the data points are between the green lines (2 standard deviation)
+]
+
+---
+
+# The normal distribution
+
+`ggplot` requires the data formatted as a table first, but generates much better looking graphics.
+
+```{r, fig.height=5, fig.align="center"}
+ggplot() + geom_histogram(
+    aes(x = value), data = tibble(value = data_vector),
+    bins = 30, color = "black", fill = "grey")
+```
+
+---
+
+# The normal distribution
+
+**Exercise:** More data points build a better model.
+
+```{r, fig.width=8, fig.height=5, fig.align="center"}
+data_vector <- rnorm(n = 1E6, mean = 0, sd = 1)
+```
+
+---
+
+# Credits
+
+- [`xaringan`](https://github.com/yihui/xaringan) package to make slides
+- [`rladies`](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/rladies.css) slide theme by [Alison Hill](https://github.com/apreshill)

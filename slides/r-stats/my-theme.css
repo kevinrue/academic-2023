@@ -1,0 +1,12 @@
+
+p {
+  font-size: x-large;
+}
+
+.x-small-table th, td {
+  font-size: x-small;
+}
+
+.small-text {
+    font-size: small;
+}
