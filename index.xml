@@ -112,6 +112,8 @@ The navigation panel on the left includes a link &amp;lsquo;R Sources&amp;rsquo;
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/post/making-a-map-of-covid-19-cases/</guid>
       <description>
+&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
 
 
 &lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
@@ -155,12 +157,16 @@ All other circles are resized proportionally using the same multiplier.&lt;/p&gt
 &lt;table&gt;
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;leaflet&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://rstudio.github.io/leaflet&#34; class=&#34;uri&#34;&gt;https://rstudio.github.io/leaflet&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;World map&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;/COVID-19-website/csse_covid_19_map_latest.html&#34;&gt;COVID-19-website&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Code&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/kevinrue/COVID-19-website/blob/master/csse_covid_19_map_latest.Rmd&#34;&gt;kevinrue/COVID-19-website&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;i class=&#34;fa fa-github&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://github.com/kevinrue/COVID-19-website/blob/master/csse_covid_19_map_latest.Rmd&#34;&gt;kevinrue/COVID-19-website&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;leaflet&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://rstudio.github.io/leaflet&#34; class=&#34;uri&#34;&gt;https://rstudio.github.io/leaflet&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
