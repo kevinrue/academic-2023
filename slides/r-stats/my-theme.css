@@ -1,6 +1,6 @@
 
 p {
-  font-size: x-large;
+  font-size: large;
 }
 
 .x-small-table th, td {
@@ -8,5 +8,13 @@ p {
 }
 
 .small-text {
+    font-size: small;
+}
+
+.xx-large-list-text li > p {
+    font-size: xx-large;
+}
+
+.small-code .remark-code {
     font-size: small;
 }

@@ -1,13 +1,12 @@
 ---
-title: "Statistics in R"
+title: 'Statistics in <i class="fab fa-r-project"></i>'
 subtitle: "An introduction"
 author: "Kevin Rue-Albrecht"
 institute: "University of Oxford"
 date: "2020-04-03 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts, "rladies-fonts.css", "my-theme.css"]
-    #css: [default, rladies, rladies-fonts, "my-theme.css"]
+    css: [default, metropolis, rladies-fonts, "my-theme.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -34,23 +33,51 @@ stopifnot(require(tidyverse))
 
 <br/>
 
-- Working with statistical distributions
+.xx-large-list-text[
+- Statistical distributions available in <i class="fab fa-r-project"></i>
 
+- Working with statistical distributions
+  
 - Perform statistical tests and inspect results
 
 - Permutation, resampling, and bootstraping
+]
 
 ---
 
-# R Functions for Probability Distributions
+# <i class="fab fa-r-project"></i> is built for statistics
+
+- <i class="fab fa-r-project"></i> includes a number of common statistical distributions:
+
+  + The Normal Distribution
+  
+  + The Binomial Distribution
+  
+  + The Poisson Distribution
+  
+  + ...
+
+- <i class="fab fa-r-project"></i> implements a range of statistical tests:
+
+  + Student's t-Test
+  
+  + Pearson's Chi-squared Test for Count Data
+  
+  + Wilcoxon Rank Sum and Signed Rank Tests
+  
+  + ...
+
+---
+
+# <i class="fab fa-r-project"></i> Functions for Probability Distributions
 
 <!-- Sources
 https://www.stat.umn.edu/geyer/old/5101/rlook.html
 -->
 
 .x-small-table[.pull-left[
-|Distribution                   |Probability |Quantile    |Density     |Random    |
-|:------------------------------|:-----------|:-----------|:-----------|:---------|
+|Distribution                   |Probability |Quantile    |Density     |Random      |
+|:------------------------------|:-----------|:-----------|:-----------|:-----------|
 |Beta                           |`pbeta`     |`qbeta`     |`dbeta`     |`rbeta`     |
 |Binomial                       |`pbinom`    |`qbinom`    |`dbinom`    |`rbinom`    |
 |Cauchy                         |`pcauchy`   |`qcauchy`   |`dcauchy`   |`rcauchy`   |
@@ -74,16 +101,19 @@ https://www.stat.umn.edu/geyer/old/5101/rlook.html
 ]]
 
 .small-text[.pull-right[
-- <i class="fab fa-r-project"></i> includes a number of statistical distributions.
 
-- Each has a root name, e.g. `norm`
+- Each distribution has a root name, e.g. `norm`
 
-- Every distribution that R handles has four functions.
+- Every distribution has four functions.
 
 - The root name is prefixed by one of the letters:
+
   + `p` for "probability", the cumulative distribution function (c. d. f.)
+  
   + `q` for "quantile", the inverse c. d. f.
+  
   + `d` for "density", the density function (p. f. or p. d. f.)
+  
   + `r` for "random", a random variable having the specified distribution
 ]]
 
@@ -91,67 +121,492 @@ https://www.stat.umn.edu/geyer/old/5101/rlook.html
 
 # The normal distribution
 
-`rnorm` is the R function that simulates random variates having a specified normal distribution.
+## Notation
 
-For instance, it can be used to generate a vector of 1,000 values, normally distributed, with a mean of 0 and a standard deviation of 1.
+$${\mathcal {N}}(\mu ,\sigma ^{2})$$
+--
 
-```{r}
-data_vector <- rnorm(n = 1000, mean = 0, sd = 1)
+## Parameters
+
+- ${\displaystyle \mu \in \mathbb {R} }$ = mean (location)
+
+- ${\displaystyle \sigma ^{2}>0}$ = variance (squared scale)
+
+--
+
+## Properties
+
+.pull-left[
+- Median: ${ \mu }$
+
+- Mode: ${ \mu }$
+]
+
+.pull-right[
+- Variance: ${ \sigma ^{2} }$
+]
+
+--
+
+- Probability density function (PDF): ${\displaystyle {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}$
+
+---
+
+# The standard normal distribution (mean: 0, sd: 1)
+
+```{r, include=FALSE}
+slide_mean <- 0; slide_sd <- 1;
 ```
 
-The `summary` function is useful to inspect certain properties of values.
+Standard normal distribution with mean `r slide_mean` and standard deviation `r slide_sd`.
 
-```{r}
-summary(data_vector)
+```{r, include=FALSE}
+x <- tibble(
+  quantile = seq(from = slide_mean-5*slide_sd, to = slide_mean+5*slide_sd, by = slide_sd/100),
+  pnorm = pnorm(q = quantile, mean = slide_mean, sd = slide_sd)
+)
+gg1 <- ggplot(x) + geom_point(aes(quantile, pnorm)) +
+  geom_vline(xintercept = slide_mean, color = "blue") +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = slide_mean)) +
+  geom_vline(xintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(x = x, label = label), y = 0, alpha = 0.5,
+    data = tibble(x = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("pnorm(q = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the cumulative distribution function (c. d. f.)")
+```
+
+```{r, include=FALSE}
+x <- tibble(
+  quantile = seq(from = 0, to = 1, by = 0.01),
+  qnorm = qnorm(p = quantile, mean = slide_mean, sd = slide_sd)
+)
+gg2 <- ggplot(x) + geom_point(aes(quantile, qnorm)) +
+  geom_hline(yintercept = slide_mean, color = "blue") +
+  geom_label(aes(y = y, label = y), x = 0, data = tibble(y = slide_mean)) +
+  geom_hline(yintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(y = y, label = label), x = 0, alpha = 0.5,
+    data = tibble(y = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("qnorm(p = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the inverse c. d. f.")
+```
+
+```{r, include=FALSE}
+x <- tibble(
+  quantile = seq(from = slide_mean-5*slide_sd, to = slide_mean+5*slide_sd, by = slide_sd/100),
+  dnorm = dnorm(x = quantile, mean = slide_mean, sd = slide_sd)
+)
+gg3 <- ggplot(x) + geom_point(aes(quantile, dnorm)) +
+  geom_vline(xintercept = slide_mean, color = "blue") +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = slide_mean)) +
+  geom_vline(xintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(x = x, label = label), y = 0, alpha = 0.5,
+    data = tibble(x = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("dnorm(x = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the density function (p. f. or p. d. f.)")
+```
+
+```{r, include=FALSE}
+x <- tibble(
+  rnorm = rnorm(n = 1E3, mean = slide_mean, sd = slide_sd)
+)
+gg4 <- ggplot(x, aes(rnorm)) + geom_histogram(bins = 30, color = "black", fill = "grey") +
+  geom_rug(alpha = 0.5) +
+  geom_vline(xintercept = slide_mean, color = "blue") +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = slide_mean)) +
+  geom_vline(xintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(x = x, label = label), y = 0, alpha = 0.5,
+    data = tibble(x = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("rnorm(n = 1E3, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "a random variable having the specified distribution")
+```
+
+```{r, echo=FALSE, fig.width=12, fig.height=7}
+cowplot::plot_grid(gg1, gg2, gg3, gg4, ncol = 2, nrow = 2)
 ```
 
 ---
 
-# The normal distribution
+# A parameterised normal distribution (mean: 50, sd: 100)
+
+```{r, include=FALSE}
+slide_mean <- 50; slide_sd <- 100;
+```
+
+Normal distribution parameterised with mean `r slide_mean` and standard deviation `r slide_sd`.
+
+```{r, include=FALSE}
+x <- tibble(
+  quantile = seq(from = slide_mean-5*slide_sd, to = slide_mean+5*slide_sd, by = slide_sd/100),
+  pnorm = pnorm(q = quantile, mean = slide_mean, sd = slide_sd)
+)
+gg1 <- ggplot(x) + geom_point(aes(quantile, pnorm)) +
+  geom_vline(xintercept = slide_mean, color = "blue") +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = slide_mean)) +
+  geom_vline(xintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(x = x, label = label), y = 0, alpha = 0.5,
+    data = tibble(x = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("pnorm(q = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the cumulative distribution function (c. d. f.)")
+```
+
+```{r, include=FALSE}
+x <- tibble(
+  quantile = seq(from = 0, to = 1, by = 0.01),
+  qnorm = qnorm(p = quantile, mean = slide_mean, sd = slide_sd)
+)
+gg2 <- ggplot(x) + geom_point(aes(quantile, qnorm)) +
+  geom_hline(yintercept = slide_mean, color = "blue") +
+  geom_label(aes(y = y, label = y), x = 0, data = tibble(y = slide_mean)) +
+  geom_hline(yintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(y = y, label = label), x = 0, alpha = 0.5,
+    data = tibble(y = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("qnorm(p = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the inverse c. d. f.")
+```
+
+```{r, include=FALSE}
+x <- tibble(
+  quantile = seq(from = slide_mean-5*slide_sd, to = slide_mean+5*slide_sd, by = slide_sd/100),
+  dnorm = dnorm(x = quantile, mean = slide_mean, sd = slide_sd)
+)
+gg3 <- ggplot(x) + geom_point(aes(quantile, dnorm)) +
+  geom_vline(xintercept = slide_mean, color = "blue") +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = slide_mean)) +
+  geom_vline(xintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(x = x, label = label), y = 0, alpha = 0.5,
+    data = tibble(x = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("dnorm(x = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the density function (p. f. or p. d. f.)")
+```
+
+```{r, include=FALSE}
+x <- tibble(
+  rnorm = rnorm(n = 1E3, mean = slide_mean, sd = slide_sd)
+)
+gg4 <- ggplot(x, aes(rnorm)) + geom_histogram(bins = 30, color = "black", fill = "grey") +
+  geom_rug(alpha = 0.5) +
+  geom_vline(xintercept = slide_mean, color = "blue") +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = slide_mean)) +
+  geom_vline(xintercept = slide_mean+slide_sd*c(-2, 2), color = "blue", linetype = "dashed") +
+  geom_label(
+    aes(x = x, label = label), y = 0, alpha = 0.5,
+    data = tibble(x = slide_mean+slide_sd*c(-2, 2), label = "2*sd")) +
+  labs(
+    title = sprintf("rnorm(n = 1E3, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "a random variable having the specified distribution")
+```
+
+```{r, echo=FALSE, fig.width=12, fig.height=7}
+cowplot::plot_grid(gg1, gg2, gg3, gg4, ncol = 2, nrow = 2)
+```
+
+---
+
+# The normal distribution: `rnorm`
+
+`rnorm` is the R function that simulates random variates having a specified normal distribution.
+
+--
+
+For instance, `rnorm` can be used to generate a vector of 1,000 values, normally distributed with a mean of 0 and a standard deviation of 1.
+
+```{r}
+norm_vector <- rnorm(n = 1000, mean = 0, sd = 1)
+```
+
+--
+
+`summary()` is useful to inspect the properties of values.
+
+```{r}
+summary(norm_vector)
+```
+
+--
+
+`quantile()` returns quantiles of the sample corresponding to given probabilities.
+
+```{r}
+quantile(x = norm_vector, probs = seq(from = 0, to = 1, length.out = 5))
+```
+
+---
+
+# The normal distribution: visualise with base <i class="fab fa-r-project"></i>
 
 .pull-left[
+## Visualisation
+
 `hist` is a useful base R function to inspect the distribution of values.
 
-```{r, fig.height=5, fig.align="center"}
-hist(data_vector, breaks = 30)
+```{r, fig.height=4, fig.align="center"}
+hist(norm_vector, breaks = 30)
 abline(v = 0, col="red", lwd=2)
 abline(v = c(-1, 1), col="blue", lwd=2)
 abline(v = c(-2, 2), col="green", lwd=2)
 ```
 ]
 
-.pull-right[
-## Properties 
-- ~ 64% of the data points are between the blue lines (1 standard deviation)
+--
 
-- ~ 95% of the data points are between the green lines (2 standard deviation)
+.pull-right[
+## Properties
+
+- The mean of those randomly generated values is close to 0
+
+- The standard deviation of those randomly generated values is close to 1
+
+- ~ 64% of the data points are within 1 standard deviation of the mean (blue lines)
+
+- ~ 95% of the data points are within 2 standard deviations of the mean (green lines)
+
+**Exercise:** Check the above properties.
 ]
 
 ---
 
-# The normal distribution
+# The normal distribution: visualised with _ggplot2_
 
-`ggplot` requires the data formatted as a table first, but generates much better looking graphics.
+`ggplot` requires the data formatted as a table first, but generates better-looking graphics.
 
 ```{r, fig.height=5, fig.align="center"}
 ggplot() + geom_histogram(
-    aes(x = value), data = tibble(value = data_vector),
+    aes(x = value), data = tibble(value = norm_vector),
     bins = 30, color = "black", fill = "grey")
 ```
 
 ---
 
-# The normal distribution
+# The normal distribution: visualised with _ggplot2_
 
-**Exercise:** More data points build a better model.
+`ggplot` requires the data formatted as a table first, but generates better-looking graphics.
 
-```{r, fig.width=8, fig.height=5, fig.align="center"}
-data_vector <- rnorm(n = 1E6, mean = 0, sd = 1)
+```{r, fig.height=4, fig.align="center"}
+ggplot() + geom_histogram(
+  aes(x = value), data = tibble(value = norm_vector),
+  bins = 30, color = "black", fill = "grey") +
+  geom_vline(xintercept = 0, color = "red", linetype = "solid") +
+  geom_vline(xintercept = c(-2, 2), color = "blue", linetype = "dashed")
 ```
+
+---
+
+# The normal distribution: more data points
+
+More data points build better models.
+
+```{r}
+norm_vector <- rnorm(n = 1000000, mean = 0, sd = 1)
+```
+
+```{r, fig.width=8, fig.height=5, fig.align="center", echo=FALSE}
+ggplot() + geom_histogram(
+  aes(x = value), data = tibble(value = norm_vector),
+  bins = 30, color = "black", fill = "grey") +
+  geom_vline(xintercept = 0, color = "red", linetype = "solid") +
+  geom_vline(xintercept = c(-2, 2), color = "blue", linetype = "dashed")
+```
+
+---
+
+# The normal distribution: "what is the probability" ?
+
+**Exercise:**
+For data originating from the standard normal distribution, what is the probability of observing a value greater than 2?
+
+```{r, include=FALSE}
+slide_mean <- 0; slide_sd <- 1
+slide_answer <- pnorm(q = 2, mean = 0, sd = 1)
+```
+
+.pull-left[
+```{r, echo=FALSE, fig.height=5}
+x <- tibble(
+  quantile = seq(from = slide_mean-5*slide_sd, to = slide_mean+5*slide_sd, by = slide_sd/100),
+  dnorm = dnorm(x = quantile, mean = slide_mean, sd = slide_sd)
+)
+ggplot(x) + geom_point(aes(quantile, dnorm)) +
+  geom_vline(xintercept = 2) +
+  labs(
+    title = sprintf("dnorm(x = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the density function (p. f. or p. d. f.)")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.height=5}
+x <- tibble(
+  quantile = seq(from = slide_mean-5*slide_sd, to = slide_mean+5*slide_sd, by = slide_sd/100),
+  pnorm = pnorm(q = quantile, mean = slide_mean, sd = slide_sd)
+)
+ggplot(x) + geom_line(aes(quantile, pnorm)) +
+  geom_vline(xintercept = 2) +
+  geom_label(aes(x = x, label = x), y = 0, data = tibble(x = 2),
+             size = rel(4), vjust = 0) +
+  geom_hline(yintercept = pnorm(q = 2, mean = 0, sd = 1)) +
+  geom_label(aes(y = slide_answer, label = "?"), x = slide_mean-5*slide_sd, data = tibble(y = slide_answer),
+             size = rel(4), vjust = 0) +
+  labs(
+    title = sprintf("pnorm(q = quantile, mean = %s, sd = %s)", slide_mean, slide_sd),
+    subtitle = "the cumulative distribution function (c. d. f.)")
+```
+]
+
+**Hint:** Use `pnorm`.
+
+---
+
+# Hypothesis testing: the `iris` dataset
+
+Every time we want to test an assumption regarding a population parameter in a dataset.
+
+For instance, we can use the `iris` dataset.
+
+```{r, fig.align="center"}
+data("iris")
+tibble(iris)
+```
+
+---
+
+# Hypothesis testing: dataset summary
+
+For tables, `summary()` reports summary statistics for each column.
+
+.small-code[
+```{r}
+summary(iris)
+```
+]
+
+There are `r nlevels(iris$Species)` species in the dataset:
+
+```{r, results='asis', echo=FALSE}
+cat(paste(sprintf("- %s", levels(iris$Species)), collapse = "\n"))
+```
+
+Each of them has 50 observations.
+
+---
+
+# Hypothesis testing: visualise the data
+
+What does the distribution of sepal length look like for the various species?
+
+.pull-left[
+
+```{r, eval=FALSE}
+ggplot(iris) +
+  geom_histogram(
+    aes(x = Sepal.Length),
+    bins = 30,
+    color = "black",
+    fill = "grey") +
+  facet_grid(Species ~ .) +
+  theme(
+    strip.text.y=element_text(size=rel(2))
+  )
+```
+]
+
+.pull-right[
+```{r, fig.height=7, fig.align="center", echo=FALSE}
+ggplot(iris) +
+  geom_histogram(
+    aes(x = Sepal.Length),
+    bins = 30, color = "black", fill = "grey") +
+  facet_grid(Species ~ .) +
+  theme(strip.text.y = element_text(size = rel(2)))
+```
+]
+
+--
+
+Those distribution _look_ different.
+However, are those differences _statistically significant_?
+
+---
+
+# Hypothesis testing: visualise the data
+
+What does the distribution of sepal length look like for the various species?
+
+.pull-left[
+```{r, eval=FALSE}
+ggplot(iris) +
+  geom_boxplot(
+    aes(
+      x = Species, y = Sepal.Length,
+      fill = Species),
+    color = "black")
+```
+]
+
+.pull-right[
+What does the distribution of sepal length look like for the various species?
+
+```{r, fig.height=6, fig.align="center", echo=FALSE}
+ggplot(iris) +
+  geom_boxplot(
+    aes(x = Species, y = Sepal.Length, fill = Species),
+    color = "black")
+```
+]
+
+Those distribution _look_ different.
+However, are those differences _statistically significant_?
+
+---
+
+# Hypothesis testing: Apply Student's t-Test
+
+Is the difference of sepal length between species `setosa` and `versicolor` _significant_?
+
+```{r}
+df_test <- iris %>%
+  select(Sepal.Length, Species) %>% 
+  filter(Species == "setosa" | Species == "versicolor")
+t.test(Sepal.Length ~ Species, data = df_test)
+```
+
+--
+
+**Answer:** In this case, yes!
 
 ---
 
 # Credits
 
-- [`xaringan`](https://github.com/yihui/xaringan) package to make slides
-- [`rladies`](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/rladies.css) slide theme by [Alison Hill](https://github.com/apreshill)
+- [`xaringan`](https://github.com/yihui/xaringan) package by [Yihui Xie](https://github.com/yihui), used to make these slides.
+
+- [`rladies`](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/rladies.css) slide theme by [Alison Hill](https://github.com/apreshill).
+
+- [Charlotte Soneson](https://github.com/csoneson) for sharing pointers to online materials.
+
+---
+
+# Further reading
+
+- [UCLouvain Bioinformatics Summer School 2019](https://uclouvain-cbio.github.io/BSS2019/)
+
+  + [Introduction to Statistics and Machine Learning](https://github.com/ococrook/2019-BSS/raw/master/Intro2statsml.pdf) by Oliver M. Crook
+  
+  + [Practical: stats/ML](https://htmlpreview.github.io/?https://github.com/ococrook/2019-BSS/blob/master/practical/Intro2statmlPractical.html)
+
+- [CSAMA](https://github.com/Bioconductor/CSAMA/tree/2019/lecture/1-monday) by the European Molecular Biology Laboratory (EMBL).
+
+- [Statistic with R and dplyr and ggplot](https://www.youtube.com/watch?v=ANMuuq502rE) by Greg Martin
