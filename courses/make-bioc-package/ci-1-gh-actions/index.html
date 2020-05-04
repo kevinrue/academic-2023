@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="Scope In this section, we provide information and advice to install R for the purpose of developing a Bioconductor package.
-This section does not seek to provide a comprehensive workflow through the installation of R, as the details will depend on your individual operating system and configuration.">
+  <meta name="description" content="Overview This section introduces a workflow to set up continuous integration for a working R package.
+Open a new git branch Note: an earlier section will explain how to protect the master branch.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/courses/make-bioc-package/prerequisites-1-r/">
+  <link rel="alternate" hreflang="en-us" href="/courses/make-bioc-package/ci-1-gh-actions/">
 
   
 
@@ -216,7 +216,7 @@ This section does not seek to provide a comprehensive workflow through the insta
   <link rel="icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/courses/make-bioc-package/prerequisites-1-r/">
+  <link rel="canonical" href="/courses/make-bioc-package/ci-1-gh-actions/">
 
   
   
@@ -232,10 +232,10 @@ This section does not seek to provide a comprehensive workflow through the insta
   <meta property="twitter:creator" content="@KevinRUE67">
   
   <meta property="og:site_name" content="Kevin Rue-Albrecht">
-  <meta property="og:url" content="/courses/make-bioc-package/prerequisites-1-r/">
-  <meta property="og:title" content="Install R | Kevin Rue-Albrecht">
-  <meta property="og:description" content="Scope In this section, we provide information and advice to install R for the purpose of developing a Bioconductor package.
-This section does not seek to provide a comprehensive workflow through the installation of R, as the details will depend on your individual operating system and configuration."><meta property="og:image" content="/img/android-chrome-512x512.png">
+  <meta property="og:url" content="/courses/make-bioc-package/ci-1-gh-actions/">
+  <meta property="og:title" content="Set up GitHub Actions | Kevin Rue-Albrecht">
+  <meta property="og:description" content="Overview This section introduces a workflow to set up continuous integration for a working R package.
+Open a new git branch Note: an earlier section will explain how to protect the master branch."><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="twitter:image" content="/img/android-chrome-512x512.png"><meta property="og:locale" content="en-us">
   
     
@@ -260,7 +260,7 @@ This section does not seek to provide a comprehensive workflow through the insta
 
 
 
-  <title>Install R | Kevin Rue-Albrecht</title>
+  <title>Set up GitHub Actions | Kevin Rue-Albrecht</title>
 
 </head>
 
@@ -595,7 +595,7 @@ This section does not seek to provide a comprehensive workflow through the insta
     <a class="docs-toc-link" href="/courses/make-bioc-package/prerequisites-1-r/">1. Pre-requisites</a>
     <ul class="nav docs-sidenav">
       
-      <li class="active">
+      <li >
         <a href="/courses/make-bioc-package/prerequisites-1-r/">R</a>
       </li>
       
@@ -629,7 +629,7 @@ This section does not seek to provide a comprehensive workflow through the insta
     <a class="docs-toc-link" href="/courses/make-bioc-package/ci-1-gh-actions/">3. Continuous integration</a>
     <ul class="nav docs-sidenav">
       
-      <li >
+      <li class="active">
         <a href="/courses/make-bioc-package/ci-1-gh-actions/">GitHub Actions</a>
       </li>
       
@@ -651,15 +651,12 @@ This section does not seek to provide a comprehensive workflow through the insta
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#scope">Scope</a></li>
-    <li><a href="#which-version-of-r">Which version of R?</a></li>
-    <li><a href="#r-sources-or-r-binaries">R Sources or R binaries?</a>
-      <ul>
-        <li><a href="#r-binaries">R binaries</a></li>
-        <li><a href="#r-sources">R sources</a></li>
-      </ul>
-    </li>
-    <li><a href="#alternative-installations">Alternative installations</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#open-a-new-git-branch">Open a new git branch</a></li>
+    <li><a href="#load-_usethis_">Load <em>usethis</em></a></li>
+    <li><a href="#create-a-readme-file">Create a README file</a></li>
+    <li><a href="#set-up-the-template-r-cmd-check-action">Set up the template &lsquo;R CMD check&rsquo; action</a></li>
+    <li><a href="#edit-the-github-action-configuration">Edit the GitHub Action configuration</a></li>
   </ul>
 </nav>
 
@@ -672,52 +669,84 @@ This section does not seek to provide a comprehensive workflow through the insta
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>Install R</h1>
+          <h1>Set up GitHub Actions</h1>
 
           <div class="article-style">
-            <h2 id="scope">Scope</h2>
-<p>In this section, we provide information and advice to install <em>R</em> for the purpose of developing a <em>Bioconductor</em> package.</p>
-<p>This section does not seek to provide a comprehensive workflow through the installation of <em>R</em>, as the details will depend on your individual operating system and configuration.
-Instead, this section includes links to key resources and sources of information.</p>
-<h2 id="which-version-of-r">Which version of R?</h2>
-<p>The 
-<a href="https://bioconductor.org/developers/how-to/useDevel/" target="_blank" rel="noopener">Bioconductor developer guidelines</a> state:</p>
+            <h2 id="overview">Overview</h2>
+<p>This section introduces a workflow to set up continuous integration for a working R package.</p>
+<h2 id="open-a-new-git-branch">Open a new git branch</h2>
+<p><em>Note:</em> an earlier section will explain how to protect the <code>master</code> branch.</p>
+<p>At this point, the <code>master</code> branch of your GitHub repository should be protected.
+As always, we will work on a branch and merge to the <code>master</code> branch when the continuous integration feature is ready.</p>
+<pre><code class="language-bash">git checkout -b ci
+</code></pre>
+<h2 id="load-_usethis_">Load <em>usethis</em></h2>
+<pre><code class="language-r">library(usethis)
+</code></pre>
+<h2 id="create-a-readme-file">Create a README file</h2>
+<p><em>Note:</em> this should be moved to an earlier section, as it is not part of the continuous integration setup <em>per se</em>.</p>
+<p>If you haven&rsquo;t already, use <code>use_readme_md()</code> to create a <code>README.md</code>.</p>
+<pre><code class="language-r">use_readme_md()
+</code></pre>
+<h2 id="set-up-the-template-r-cmd-check-action">Set up the template &lsquo;R CMD check&rsquo; action</h2>
+<pre><code class="language-r">use_github_action_check_full()
+</code></pre>
+<p>As per documentation:</p>
 <blockquote>
-<p>Package authors should develop against the version of <em>R</em> that will be available to users when the <em>Bioconductor</em> devel branch becomes the <em>Bioconductor</em> release branch.</p>
+<p>This action installs the last 5 minor R versions and runs <code>R CMD check</code> via the <code>R BiocStyle::CRANpkg(&quot;rcmdcheck&quot;)</code> package on the three major OSs (linux, macOS and Windows).</p>
 </blockquote>
-<p>In addition:</p>
-<blockquote>
-<p>This means that, from mid-October through mid-April, <em>Bioconductor</em> developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for <em>Bioconductor</em> development.</p>
-</blockquote>
-<h2 id="r-sources-or-r-binaries">R Sources or R binaries?</h2>
-<h3 id="r-binaries">R binaries</h3>
-<p>The 
-<a href="https://cran.r-project.org/" target="_blank" rel="noopener">CRAN website</a> states:</p>
-<blockquote>
-<p>Windows and Mac users most likely want to download the precompiled binaries listed in the upper box, not the source code. The sources have to be compiled before you can use them.</p>
-</blockquote>
-<p>The main advantage of precompiled <em>R binaries</em> is that they distribute code that can be immediately installed and executed.
-It is generally the fastest solution to get you started with your own work.
-However, each binaries is compiled for a specific operating system.
-To establish a working <em>R</em> installation on your computer, you must find binaries that match your operating system.</p>
-<p>R binaries - including both <em>R-release</em> and <em>R-devel</em> - can be obtained from CRAN: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>.
-The navigation panel on the left includes a link &lsquo;R Binaries&rsquo;.</p>
-<h3 id="r-sources">R sources</h3>
-<p>The main advantage of <em>R sources</em> is that they distribute the human readable version of the application, which users can then compile on their own system with the right set of tools to yield an installation adapted to their system configuration and libraries.
-This often pays off when installing <em>R packages</em> that need to be compiled from source themselves.
-However, installing compilers, keeping them up to date, and compiling sources can be a challenge, even for experienced developers.
-As the 
-<a href="https://cran.r-project.org/" target="_blank" rel="noopener">CRAN website</a> states:</p>
-<blockquote>
-<p>If you do not know what this means, you probably do not want to do it!</p>
-</blockquote>
-<p>R sources - including both <em>R-release</em> and <em>R-devel</em> - can be obtained from CRAN: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>
-The navigation panel on the left includes a link &lsquo;R Sources&rsquo;.</p>
-<h2 id="alternative-installations">Alternative installations</h2>
-<ul>
-<li>Homebrew: <a href="https://formulae.brew.sh/formula/r">https://formulae.brew.sh/formula/r</a></li>
-<li>Anaconda: <a href="https://anaconda.org/r/r">https://anaconda.org/r/r</a></li>
-</ul>
+<p>Upon completion, <code>use_github_action_check_full()</code> generates Markdown content that displays a badge indicating the status of the GitHub Action.
+This content is both copied to your clipboard, and printed in the console.
+It should look like:</p>
+<pre><code>  &lt;!-- badges: start --&gt;
+  [![R build status](https://github.com/user/repo/workflows/R-CMD-check/badge.svg)](https://github.com/user/repo/actions)
+  &lt;!-- badges: end --&gt;
+</code></pre>
+<p>Paste this content in the <code>badges:</code> section of your <code>README.md</code> file.</p>
+<h2 id="edit-the-github-action-configuration">Edit the GitHub Action configuration</h2>
+<p>First, remove the restriction on <code>branches</code> for the <code>push</code> event.
+This will trigger the action on every push to any branch.</p>
+<pre><code class="language-yaml">on:
+  push:
+  pull_request:
+    branches:
+      - master
+</code></pre>
+<p>Next, keep only the latest <code>ubuntu</code> version, mainly to reduce the number of configurations run as separate jobs.
+For instance, this would look something like the following (update to the relevant version):</p>
+<pre><code>    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest,   r: 'devel'}
+          - {os: macOS-latest,   r: '4.0'}
+          - {os: windows-latest, r: '4.0'}
+          - {os: ubuntu-16.04,   r: '4.0', rspm: &quot;https://packagemanager.rstudio.com/cran/__linux__/xenial/latest&quot;}
+</code></pre>
+<p>When working with a 
+<a href="https://www.bioconductor.org/" target="_blank" rel="noopener"><em>Bioconductor</em></a> package, <code>BiocManager</code> should be installed during the <code>Query dependencies</code> step.
+This allows <code>BiocManager::repositories()</code> to be called to add 
+<a href="https://www.bioconductor.org/" target="_blank" rel="noopener"><em>Bioconductor</em></a> package repositories to be added to the global session options.
+In turn, this allows <code>remotes::dev_package_deps()</code> to query all repositories when identifying dependencies, as it uses the default argument value <code>repos = getOption(&quot;repos&quot;)</code>.</p>
+<pre><code>- name: Query dependencies
+  run: |
+    install.packages(c('remotes', 'BiocManager'))
+    options(repos = c(getOption(&quot;repos&quot;), BiocManager::repositories()))
+    saveRDS(remotes::dev_package_deps(dependencies = TRUE), &quot;depends.Rds&quot;, version = 2)
+  shell: Rscript {0}
+</code></pre>
+<p>Again, when working with a 
+<a href="https://www.bioconductor.org/" target="_blank" rel="noopener"><em>Bioconductor</em></a> package, we add 
+<a href="https://www.bioconductor.org/" target="_blank" rel="noopener"><em>Bioconductor</em></a> package repositories to the global session options during the <code>Install dependencies</code> step.
+Similarly, the <code>remotes::install_deps(dependencies = TRUE)</code> uses the default argument value <code>repos = getOption(&quot;repos&quot;)</code>.</p>
+<p>In this step, you may also add any dependency that is not explicitly declared in the <code>DESCRIPTION</code> file of your package, or installed as an indirect dependency, as well as any esoteric development version of your dependencies.</p>
+<pre><code>- name: Install dependencies
+  run: |
+    options(repos = c(getOption(&quot;repos&quot;), BiocManager::repositories()))
+    remotes::install_deps(dependencies = TRUE)
+    remotes::install_cran(&quot;rcmdcheck&quot;)
+  shell: Rscript {0}
+</code></pre>
 
           </div>
 
@@ -733,9 +762,10 @@ The navigation panel on the left includes a link &lsquo;R Sources&rsquo;.</p>
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/make-bioc-package/prerequisites-2-rstudio/" rel="prev">Install RStudio</a>
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/make-bioc-package/essentials-1/" rel="next">Initialize an R package skeleton</a>
   </div>
+  
   
 </div>
 
@@ -756,7 +786,7 @@ The navigation panel on the left includes a link &lsquo;R Sources&rsquo;.</p>
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/courses/make-bioc-package/prerequisites-1-r.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/courses/make-bioc-package/ci-1-gh-actions.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>
