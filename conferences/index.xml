@@ -5,7 +5,7 @@
     <link>/conferences/</link>
       <atom:link href="/conferences/index.xml" rel="self" type="application/rss+xml" />
     <description>Conferences</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2020</copyright>
     <image>
       <url>/img/android-chrome-512x512.png</url>
       <title>Conferences</title>
