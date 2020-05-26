@@ -200,7 +200,7 @@ Similarly, the &lt;code&gt;remotes::install_deps(dependencies = TRUE)&lt;/code&g
 
 &lt;div id=&#34;motivation&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Motivation&lt;/h2&gt;
-&lt;p&gt;There are currently 5,621, broken down as follows:&lt;/p&gt;
+&lt;p&gt;There are currently 5,624, broken down as follows:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
@@ -219,7 +219,7 @@ Similarly, the &lt;code&gt;remotes::install_deps(dependencies = TRUE)&lt;/code&g
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Software&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2,163&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,166&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -273,7 +273,7 @@ software_monthly_stats %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## # A tibble: 1 x 7
 ##   Package  Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
 ##   &amp;lt;chr&amp;gt;   &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
-## 1 RnBeads  2020 Apr                  282             699 Software 2020-04-01&lt;/code&gt;&lt;/pre&gt;
+## 1 edgeR    2020 Apr                16018           27781 Software 2020-04-01&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>
