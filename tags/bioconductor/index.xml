@@ -70,8 +70,9 @@ To do that, I look for the latest month with non-zero download statistics, and I
   arrange(desc(Date)) %&amp;gt;% 
   head(2) %&amp;gt;% 
   tail(1) %&amp;gt;% 
-  pull(Date)
-software_monthly_stats &amp;lt;- software_stats %&amp;gt;% 
+  pull(Date)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `summarise()` ungrouping output (override with `.groups` argument)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;software_monthly_stats &amp;lt;- software_stats %&amp;gt;% 
   filter(Date == latest_full_date)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I wanted to give an edge to packages more frequently downloaded, but without being overwhelmed by core packages that have excessively large download statistics.&lt;/p&gt;
 &lt;p&gt;To do so, I visualised the distribution of download stats, and I chose to weigh packages by the &lt;code&gt;log(x+1)&lt;/code&gt; transformation of the number of distinct IP addresses in their download statistics.&lt;/p&gt;
@@ -94,9 +95,9 @@ plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)&lt;/code&gt;&lt;/pre&gt;
 software_monthly_stats %&amp;gt;% 
   sample_n(size = 1, replace = FALSE, weight = log(Nb_of_distinct_IPs + 1))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # A tibble: 1 x 7
-##   Package   Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
-##   &amp;lt;chr&amp;gt;    &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
-## 1 pathview  2020 Apr                 4086            6485 Software 2020-04-01&lt;/code&gt;&lt;/pre&gt;
+##   Package     Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
+##   &amp;lt;chr&amp;gt;      &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
+## 1 metabomxtr  2020 May                   52             115 Software 2020-05-01&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>
