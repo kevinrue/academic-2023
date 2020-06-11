@@ -1,0 +1,827 @@
+---
+title: "Kevin Rue-Albrecht's resume"
+author: Kevin Rue-Albrecht
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+# uncomment this line to produce HTML and PDF in RStudio:
+knit: pagedown::chrome_print
+---
+
+```{r setup, include = FALSE}
+stopifnot(requireNamespace("pagedown"))
+stopifnot(requireNamespace("htmltools"))
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+Aside
+================================================================================
+
+
+![Kevin Rue-Albrecht](kennedy.jpg){width=80%}
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> kevinrue67@gmail.com
+- <i class="fa fa-github"></i> [github.com/kevinrue](https://github.com/kevinrue)
+- For more information, please contact me via email.
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- Experienced in statistical analysis, genomics, and software engineering.
+
+- Full experience with next generation sequencing data analysis.
+
+- Highly skilled in R, Bash, Python, with experience in C#, JavaScript, HTML, SQL, PHP, CSS, LaTeX, Perl, and Matlab.
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+
+A PDF version is available [here](Kevin-Rue-CV.pdf).
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Kevin Rue-Albrecht {#title}
+--------------------------------------------------------------------------------
+
+### Computational Biologist (Dipl. Ing., Ph.D.)
+
+I am a computational biologist at the [University of Oxford](http://www.ox.ac.uk/).
+
+My research interests in computational biology include software engineering best practices, DevOps, single-cell genomics, and interactive data visualization.
+I particularly enjoy using and contributing R packages part of the [Bioconductor project](https://www.bioconductor.org/).
+A list of software packages that I maintain or contributed to is available on the "Software" page of my [website](https://kevinrue.github.io/).
+
+My academic research primarily explores the host immune response to infectious diseases, inflammation, and self-antigens.
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### CPGE BCPST Véto - Lycée Jean Rostand
+
+Class Préparatoire aux Grandes Écoles
+
+Strasbourg, France
+
+2008
+
+::: concise
+- Biology
+- Chemistry
+- Physics
+- Earth Sciences
+- Mathematics
+- Programming
+:::
+
+### École Polytechnique Universitaire Polytech Nice-Sophia
+
+Ingénieur diplômé, MSc
+
+Sophia Antipolis
+
+2011
+
+::: concise
+- Pharmacology
+- Biotechnology
+- Toxicology
+- Environmental Safety
+- Bioinformatics
+:::
+
+**Major:** Bioinformatics and Modelling for Biology
+
+### University College Dublin
+
+Ph.D. in Computational Infection Biology
+
+Dublin, Ireland
+
+2015
+
+**Thesis:** Comparative systems biology analyses of the bovine transcriptional response to species of the _Mycobacterium_ genus.
+
+- [_Bioconductor_](https://www.bioconductor.org/) package for [Gene Ontology (GO)](http://geneontology.org/) analysis of gene expression data (<img src="bioconductor.favicon.ico" alt="Bioconductor favicon" width="10px"> [`GOexpress`](	https://bioconductor.org/packages/GOexpress/)).
+
+
+Research Experience {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+### Research Assistant, intern
+
+INSERM, Unité Mixte de Recherche S725, Biologie des Cellules Dendritiques
+Humaines
+
+Strasbourg, France
+
+Jul. 2009 - Aug. 2009
+
+- Recombinant protein expression of MHC class II molecules in HeLa cells.
+
+### Research Assistant - Computational Biology, intern
+
+[Shields Lab](http://shieldslab.ucd.ie/), [University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+Jun. 2010 - Sep. 2010
+
+- Computational analysis of structural disorder in _Saccharomyces cerevisiae_ interacting proteins.
+
+### Ph.D. student - Computational Infection Biology, rotation 1
+
+[Shields Lab](http://shieldslab.ucd.ie/), UCD Complex and Adaptive Systems Laboratory (CASL)
+
+Dublin, Ireland
+
+Sep. 2011 - Jan. 2012
+
+- _In silico_ structure-based prediction of _Mycobacterium bovis_ epitopes in cattle (supervisor: [Dr. Anthony Chubb](https://www.rcsi.com/people/profile/AChubb)).
+
+### Ph.D. student - Computational Infection Biology, rotation 2
+
+[Dr Neil Ferguson](https://www.ucd.ie/news/2011/01JAN11/200111-UCD-scientists-receives-President-of-Ireland-Young-Researcher-Award-PIYRA.html)'s Group, [UCD Conway Institute](https://www.ucd.ie/conway/)
+
+Dublin, Ireland
+
+Jan. 2012 - Apr. 2012
+
+- Expression and purication of a Hepatitis B protein construct for experimental
+screening of interacting drug fragments.
+
+### Ph.D. student - Computational Infection Biology, rotation 3
+
+[Prof. James O’Gara](http://www.ucd.ie/infectbio/infectionbiologyresearchers/drjimogara/home/)'s Group, UCD Science Centre North
+
+Dublin, Ireland
+
+Apr. 2012 - Jul. 2012
+
+- Evaluation of a gene candidate underlying _Staphylococcus aureus_ antibiotic
+resistance by Sanger sequencing and biofilm assay
+
+### Research associate - Bioinformatics & Biostatistics
+
+[Prof. Martin Wilkins](https://www.imperial.ac.uk/people/m.wilkins)'s Group, Imperial Centre for Translational and Experimental Medicine, [Imperial College London](https://www.imperial.ac.uk/)
+
+London, UK
+
+2015 - 2016
+
+- Integration of genetic variation, proteomic and metabolomics data and associated deep
+phenotype data, in collaboration with the [Morrell Group](http://www.med.cam.ac.uk/morrell/research/#graf-group).
+- [_Bioconductor_](https://www.bioconductor.org/) package for the analysis of genetic variants (<img src="bioconductor.favicon.ico" alt="Bioconductor favicon" width="10px"> [`TVTB`](	https://bioconductor.org/packages/TVTB/)).
+
+### Postdoctoral Researcher - Computational Biologist
+
+[Ratcliffe group](https://www.ludwig.ox.ac.uk/research/prof-sir-peter-ratcliffe-oxygen-sensing), [Target Discovery Institute](https://www.tdi.ox.ac.uk/), [University of Oxford](http://www.ox.ac.uk/)
+
+Oxford, UK
+
+2016 - 2017
+
+- Management and quality control of genomics data for analyses of DNA targeted
+resequencing, ChIP-seq, RNA-seq in the context of oxygen sensing and renal cancer.
+- Prototype of [MeteorJS](https://www.meteor.com/) application to manage sequencing data (<i class="fab fa-github"></i> [kevinrue/Seqbook](https://github.com/kevinrue/Seqbook)).
+
+### Postdoctoral Researcher - Computational Biologist
+
+[Sansom Group](https://www.kennedy.ox.ac.uk/research/computational-genomics), [Kennedy Institute of Rheumatology](https://www.kennedy.ox.ac.uk/), [University of Oxford](http://www.ox.ac.uk/)
+
+Oxford, UK
+
+2017-2020
+
+- Molecular pathogenesis of inflammatory bowel disease, in collaboration with the [Powrie Group](https://www.kennedy.ox.ac.uk/research/mucosal-immunology).
+- Role of thymic epithelial cells in T-cell development, in collaboration with the [Holländer Group](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-human-immunology-unit/research-groups/developmental-immunology-research-group) and [Ponting Group](https://www.ed.ac.uk/mrc-human-genetics-unit/research/ponting-group).
+- Contribution to software pipelines for single-cell genomics data analysis (<i class="fab fa-github"></i> [sansomlab/tenx](https://github.com/sansomlab/tenx)).
+- [_Bioconductor_](https://www.bioconductor.org/) package for interactive exploration of [`SummarizedExperiment`](	https://bioconductor.org/packages/SummarizedExperiment/) objects (<img src="bioconductor.favicon.ico" alt="Bioconductor favicon" width="10px"> [`iSEE`](	https://bioconductor.org/packages/iSEE/)).
+- R package for the analysis of ChIP-seq data (<i class="fab fa-github"></i> [kevinrue/deeperTools](https://github.com/kevinrue/deeperTools)).
+
+### Postdoctoral Researcher - Computational Biologist
+
+[Sims Group](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology/groups/sims-group-computational-genomics), [MRC WIMM Centre for Computational Biology](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology),  [University of Oxford](http://www.ox.ac.uk/)
+
+Oxford, UK
+
+2020-present
+
+- Development and delivery of training materials to cohorts of trainees as part of the [Oxford Biomedical Data Science Training Programme](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology/training/oxford-biomedical-data-science-training-programme).
+- Development of novel bioinformatics tools and pipelines following software engineering best practices.
+- Contribution to scientific reports and publications.
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### Software developer, intern
+
+[MEDIT S.A.](http://medit-pharma.com/)
+
+Palaiseau, France
+
+Apr. 2011 - Jul. 2011
+
+- Implementation of structurally-constrained multiple alignment of protein sequences for
+the commercial software [MED-SuMo](http://medit-pharma.com/index.php?page=med-sumo).
+
+
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+### Agricultural Microbiology
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2014
+
+Teaching assistant of [MICR20010](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=MODULE&MODULE=MICR20010) at [University College Dublin](https://www.ucd.ie/).
+
+### Molecular Genetics and Biotech
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2014
+
+Teaching assistant of [BMOL20090](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=MODULE&MODULE=BMOL20090) at [University College Dublin](https://www.ucd.ie/).
+
+### Interactive visualisation of SummarizedExperiment objects using iSEE
+
+[Bioconductor conference 2019](http://bioc2019.bioconductor.org/)
+
+New York, USA
+
+2019
+
+Co-instructor of a [2-hour workshop](https://github.com/iSEE/iSEEWorkshop2019) at the [Bioconductor conference 2019](http://bioc2019.bioconductor.org/).
+
+### R Code Clinic
+
+[Big Data Institute](https://www.sib.swiss/), [University of Oxford](http://www.ox.ac.uk/)
+
+Oxford, UK
+
+2019 - present
+
+Volunteer to sit with individuals and assist them with any R problems they need help with.
+Website: <https://bdicodeclub.netlify.com/>.
+
+### Intuitive interactive data exploration with iSEE
+
+[Swiss Institute of Bioinformatics](https://www.bdi.ox.ac.uk/)
+
+Zoom (online)
+
+2020
+
+Co-organizer of a [2h30 workshop](https://github.com/iSEE/iSEEWorkshop2020) at the [SIB Days 2020](https://www.sib.swiss/events/sibdays2020/).
+
+
+Funding and Awards {data-icon=medal}
+--------------------------------------------------------------------------------
+
+### Wellcome Trust Four-year PhD Programme
+
+Computational Infection Biology
+
+Dublin, Ireland
+
+2011
+
+**Title:** Transcriptome analysis of the bovine macrophage response to _Mycobacterium tuberculosis_ complex strains.
+
+### 5th Annual PhD Symposium in Computational Biology & Innovation
+
+Best oral presentation
+
+Dublin, Ireland
+
+2014
+
+### ISMB/ECCB conference
+
+Conference fee waiver
+
+Dublin, Ireland
+
+2015
+
+[23rd Annual International Conference on Intelligent Systems for Molecular Biology (ISMB) and 14th European Conference on Computational Biology (ECCB)](https://www.iscb.org/ismbeccb2015).
+Special Interest Group (SIG) [Bioinformatics Open Source Conference (BOSC)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004691).
+
+### Bioconductor 2017 conference
+
+Conference fee waiver and travel grant for [BioC 2017](https://bioconductor.org/help/course-materials/2017/BioC2017/).
+
+Boston, USA
+
+2017
+
+- Flash presentation for <img src="bioconductor.favicon.ico" alt="Bioconductor favicon" width="10px"> [`TVTB`](	https://bioconductor.org/packages/TVTB/).
+- Flash presentation for <img src="bioconductor.favicon.ico" alt="Bioconductor favicon" width="10px"> [`GOexpress`](	https://bioconductor.org/packages/GOexpress/).
+
+### Bioconductor 2019 conference
+
+Conference fee waiver and travel grant for [BioC 2019](http://bioc2019.bioconductor.org/).
+
+New York, USA
+
+2019
+
+- Instructor of a [2-hour workshop](https://github.com/iSEE/iSEEWorkshop2019) at the [Bioconductor conference 2019](http://bioc2019.bioconductor.org/).
+- Co-organiser of the Special Interest Group (SIG) [Extending gene set and signature representations](https://github.com/Bioconductor/BioC2019/issues/25).
+
+### RStudio Shiny Contest
+
+[Winner](https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners#winners) of the "Most technically impressive" prize.
+
+N/A
+
+2019
+
+
+Organiser and Chair {data-icon=calendar}
+--------------------------------------------------------------------------------
+
+### Computational Biology and Innovation PhD Symposium
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+Co-organiser in charge of sponsorships and the abstract book.
+
+### Bioinformatics Seminar
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2013 - 2014
+
+Co-organiser of a weekly meeting to present and discuss ongoing projects in the university.
+
+### Genomics Forum
+
+[Kennedy Institute of Rheumatology](https://www.kennedy.ox.ac.uk/), [University of Oxford](http://www.ox.ac.uk/)
+
+Oxford, UK
+
+2018-2020
+
+Coordinator of a weekly meeting to present and discuss ongoing projects in the institute.
+
+### Special Interest Group
+
+[Bioconductor conference 2019](http://bioc2019.bioconductor.org/).
+
+New York, USA
+
+2019
+
+**Topic:** [Extending gene set and signature representations](https://github.com/Bioconductor/BioC2019/issues/25).
+
+
+Training and Courses {data-icon=leanpub}
+--------------------------------------------------------------------------------
+
+### Introductory Statistics using R for Computational Biologists
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+### Python Programming for Computational Biologists
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+### Online Research Skills for Computational Biologists
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+### Advances in Infection Biology
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+### Bioinformatics Research Seminars
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+### Genomics – Principles and Practical Applications
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2012
+
+### Hot Topics in Food and Nutrition Research
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2013
+
+### Sequence Data Analysis Training
+
+Wageningen Institute of Animal Sciences
+
+Wageningen, Netherlands
+
+2013
+
+### Network Analysis in Systems Biology
+
+[Coursera](https://www.coursera.org/learn/network-biology), [Icahn School of Medicine at Mount Sinai](https://icahn.mssm.edu/)
+
+N/A
+
+2013
+
+### Teaching in Higher Education
+
+[University College Dublin](https://www.ucd.ie/)
+
+Dublin, Ireland
+
+2014
+
+### Statistics for Genomic Data Science
+
+[Coursera](https://www.coursera.org/learn/statistical-genomics), [Johns Hopkins University](https://www.jhu.edu/)
+
+N/A
+
+2015
+
+This course is part of the [Genomic Data Science Specialization](https://www.coursera.org/specializations/genomic-data-science).
+
+### Bioconductor for Genomic Data Science
+
+[Coursera](https://www.coursera.org/learn/bioconductor), [Johns Hopkins University](https://www.jhu.edu/)
+
+N/A
+
+2015
+
+This course is part of the [Genomic Data Science Specialization](https://www.coursera.org/specializations/genomic-data-science).
+
+### Command Line Tools for Genomic Data Science
+
+[Coursera](https://www.coursera.org/learn/genomic-tools), [Johns Hopkins University](https://www.jhu.edu/)
+
+N/A
+
+2015
+
+This course is part of the [Genomic Data Science Specialization](https://www.coursera.org/specializations/genomic-data-science).
+
+### Python for Genomic Data Science
+
+[Coursera](https://www.coursera.org/learn/python-genomics), [Johns Hopkins University](https://www.jhu.edu/)
+
+N/A
+
+2015
+
+This course is part of the [Genomic Data Science Specialization](https://www.coursera.org/specializations/genomic-data-science).
+
+### Machine Learning
+
+[Coursera](https://www.coursera.org/learn/machine-learning), [Stanford University](https://www.stanford.edu/)
+
+N/A
+
+2016
+
+
+Professional memberships {data-icon=id-badge}
+--------------------------------------------------------------------------------
+
+### International Society for Computational Biology (ISCB)
+
+<https://www.iscb.org/>
+
+N/A
+
+2012 - present
+
+
+Peer review {data-icon=newspaper}
+--------------------------------------------------------------------------------
+
+### OUP Bioinformatics
+
+<https://academic.oup.com/bioinformatics>
+
+N/A
+
+2019
+
+1 article
+
+### Journal of Open Source Software
+
+<https://joss.theoj.org/>
+
+N/A
+
+2019
+
+1 article
+
+
+Selected Publications and Posters {data-icon=file}
+--------------------------------------------------------------------------------
+
+### iSEE: Interactive SummarizedExperiment Explorer.
+
+F1000Res.
+
+N/A
+
+2018
+
+**Rue-Albrecht, K.**, F. Marini, C. Soneson and A. T. L. Lun
+
+### Orchestrating single-cell analysis with Bioconductor.
+
+Nat Methods.
+
+N/A
+
+2019
+
+Amezquita, R. A., A. T. L. Lun, E. Becht, V. J. Carey, L. N. Carpp, L. Geistlinger, F. Marini, **K. Rue-Albrecht**, D. Risso, C. Soneson, L. Waldron, H. Pages, M. L. Smith, W. Huber, M. Morgan, R. Gottardo and S. C. Hicks
+
+### The Short Chain Fatty Acid Butyrate Imprints an Antimicrobial Program in Macrophages
+
+Immunity.
+
+N/A
+
+2019
+
+Schulthess, J., S. Pandey, M. Capitani, **K. C. Rue-Albrecht**, I. Arnold, F. Franchini, A. Chomka, N. E. Ilott, D. G. W. Johnston, E. Pires, J. McCullagh, S. N. Sansom, C. V. Arancibia-Carcamo, H. H. Uhlig and F. Powrie
+
+
+Conference presentations {data-icon=file-powerpoint}
+--------------------------------------------------------------------------------
+
+### Association of Veterinary Teachers and Research Workers (AVTRW)
+
+Oral presentation.
+
+Hillsborough, Ireland
+
+2013
+
+**Title:** Systems Biology of Host-Pathogen Interactions and Bovine Tuberculosis - Differential transcriptional response of bovine monocyte-derived macrophages following different mycobacterial infections
+
+### Animal Health Ireland Workshop & Conference
+
+Poster.
+
+Rochestown Park Hotel, Cork
+
+2013
+
+**Title:** Microarray analysis of the bovine macrophage response to _Mycobacterium bovis_, _M. bovis_ Bacille Calmette-Guérin (BCG) and _M. avium_ subspecies _paratuberculosis_.
+
+### Virtual Institute of Bioinformatics and Evolution (VIBE)
+
+Oral presentation.
+
+Galway, Ireland
+
+2013
+
+**Title:** Systems Biology of Host-Pathogen Interactions and Bovine Tuberculosis - Differential transcriptional response of bovine monocyte-derived macrophages following different mycobacterial infections.
+
+### Computational Biology & Innovation Symposium
+
+Poster.
+
+Dublin, Ireland
+
+2013
+
+**Title:** Microarray analysis of the bovine macrophage response to _Mycobacterium bovis_, _M. bovis_ Bacille Calmette-Guérin (BCG) and _M. avium_ subspecies _paratuberculosis_.
+
+### Dublin Academy of Pathogenomics & Infection Biology (DAPI)
+
+Poster.
+
+Dublin, Ireland
+
+2013
+
+**Title:** Microarray analysis of the bovine macrophage response to _Mycobacterium bovis_, _M. bovis_ Bacille Calmette-Guérin (BCG) and _M. avium_ subspecies _paratuberculosis_.
+
+### Society for General Microbiology (SGM)
+
+Poster.
+
+Dublin, Ireland
+
+2014
+
+**Title:** Microarray analysis of the bovine macrophage response to _Mycobacterium bovis_, _M. bovis_ Bacille Calmette-Guérin (BCG) and _M. avium_ subspecies _paratuberculosis_.
+
+### Virtual Institute of Bioinformatics & Evolution (VIBE)
+
+Oral presentation.
+
+Carlow, Ireland
+
+2014
+
+**Title:** The quest for meaningful visualisation of genome-wide expression data.
+
+### EMBO conference: Microbiology after the genomics revolution - Genomes 2014
+
+Poster.
+
+Paris, France
+
+2014
+
+**Title:** Transcriptome analysis reveals differential innate immune response to members of the _Mycobacterium tuberculosis_ complex.
+
+### The Acid Fast Club, Summer Meeting
+
+Oral presentation.
+
+Berlin, Germany
+
+2014
+
+**Title:** Transcriptome analysis reveals differential innate immune response of bovine macrophages to strains of the _Mycobacterium tuberculosis_ complex.
+
+### UCD Conway Festival of Research & Innovation
+
+Poster.
+
+Dublin, Ireland.
+
+2014
+
+**Title:** Transcriptome analysis reveals differential innate immune response to members of the _Mycobacterium tuberculosis_ complex.
+
+### Wellcome Trust Final Year PhD Students’ Meeting
+
+Poster.
+
+London, UK
+
+2014
+
+**Title:** Transcriptome analysis reveals differential innate immune response to members of the _Mycobacterium tuberculosis_ complex.
+
+### Quantitative Genomics
+
+Poster.
+
+London, UK
+
+2015
+
+**Title:** `GOexpress`: A R/Bioconductor package for the identification and visualisation of robust gene ontology signatures through supervised learning of gene expression data.
+
+### BOSC - ISMB/ECCB conference
+
+Oral presentation and poster.
+
+Dublin, Ireland
+
+2015
+
+* [Talk](https://f1000research.com/slides/4-248) `GOexpress`: A R/Bioconductor package for the identification and visualisation of robust gene ontology signatures through supervised learning of gene expression data.
+* [Poster](https://f1000research.com/posters/4-247) `GOexpress`: Identify and visualise gene expression using supervised learning and Gene Ontology.
+
+### NGS-SIG - Single-cell RNA-seq
+
+Oral presentation.
+
+Oxford, UK
+
+2017
+
+**Title:** Variability of human dendritic cells responses to differentially invasive Salmonella strains at single-cell level.
+
+### Bioconductor
+
+Oral presentations.
+
+Boston, USA
+
+2017
+
+* `GOexpress`: Visualise and summarise gene expression data using Gene Ontology
+* `TVTB`: The VCF Tool Box: an effort to summarise and visualise variants
+
+### Genome Informatics
+
+Poster.
+
+Cambridge, UK
+
+2018
+
+**Title:** Promiscuous expression of lincRNAs in medullary thymic epithelial cells
+
+### Bioconductor
+
+Oral presentations.
+
+New York, USA
+
+2019
+
+* [Talk](https://kevinrue.github.io/slides/bioc2019-flashtalk/#/): Interactive and reproducible visualization of `SummarizedExperiment` objects.
+* [Workshop](http://biocworkshops2019.bioconductor.org.s3-website-us-east-1.amazonaws.com/page/iSEEWorkshop2019__iSEE-lab/): Interactive visualization of `SummarizedExperiment` objects with `iSEE`.
+* [Special Interest Group](https://github.com/Bioconductor/BioC2019/issues/25): Extending gene set and signature representations.
+
+Language {data-icon=language}
+--------------------------------------------------------------------------------
+
+### French
+
+Native.
+
+N/A
+
+N/A
+
+### English
+
+Fluent. TOEIC score 970.
+
+N/A
+
+N/A
+
+### Italian
+
+Working knowledge.
+
+N/A
+
+N/A
+
+### Spanish
+
+Limited. Used to be fluent though <i class="far fa-sad-tear"></i>.
+
+N/A
+
+N/A
+
+### German
+
+Limited. Haven't practiced in a long time.
+
+N/A
+
+N/A
+

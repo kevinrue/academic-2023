@@ -38,17 +38,32 @@
   </url>
   
   <url>
+    <loc>/categories/bioinformatics/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/reading-list/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/bioconductor/</loc>
     <lastmod>2020-05-24T09:22:36+01:00</lastmod>
   </url>
   
   <url>
     <loc>/post/biocpkgtools/</loc>
-    <lastmod>2020-05-24T09:22:36+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
     <lastmod>2020-05-24T09:22:36+01:00</lastmod>
   </url>
   
@@ -134,11 +149,6 @@
   
   <url>
     <loc>/project/covid-19/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
   

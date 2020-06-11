@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bioinformatics | Kevin Rue-Albrecht</title>
+    <link>/categories/bioinformatics/</link>
+      <atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bioinformatics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2020</copyright><lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>Bioinformatics</title>
+      <link>/categories/bioinformatics/</link>
+    </image>
+    
+    <item>
+      <title>Reading list</title>
+      <link>/project/reading-list/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>/project/reading-list/</guid>
+      <description>&lt;h2 id=&#34;biorxiv&#34;&gt;biorXiv&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;A single-cell RNA-seq Training and Analysis Suite using the Galaxy Framework&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://doi.org/10.1101/2020.06.06.137570&#34;&gt;https://doi.org/10.1101/2020.06.06.137570&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Cites:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://doi.org/10.1038/s41592-019-0654-x&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Orchestrating single-cell analysis with Bioconductor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
