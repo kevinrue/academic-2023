@@ -23,7 +23,7 @@
 
 &lt;div id=&#34;motivation&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Motivation&lt;/h2&gt;
-&lt;p&gt;There are currently 5,634 packages on Bioconductor, broken down as follows:&lt;/p&gt;
+&lt;p&gt;There are currently 5,654 packages on Bioconductor, broken down as follows:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
@@ -34,19 +34,19 @@
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;AnnotationData&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2,650&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,653&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;ExperimentData&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;809&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;810&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Software&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2,175&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,191&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.12/BiocPkgTools&#34;&gt;BiocPkgTools&lt;/a&gt;&lt;/em&gt; package to develop a website updated daily and feature packages selected randomly from each repository.&lt;/p&gt;
+&lt;p&gt;In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/BiocPkgTools&#34;&gt;BiocPkgTools&lt;/a&gt;&lt;/em&gt; package to develop a website updated daily and feature packages selected randomly from each repository.&lt;/p&gt;
 &lt;p&gt;I have then set up a &lt;a href=&#34;https://github.com/kevinrue/BiocRoulette/actions&#34;&gt;GitHub Action&lt;/a&gt; executed as a CRON job to update the website daily.&lt;/p&gt;
 &lt;p&gt;The result is accessible at: &lt;a href=&#34;https://kevinrue.github.io/BiocRoulette/&#34; class=&#34;uri&#34;&gt;https://kevinrue.github.io/BiocRoulette/&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -95,9 +95,9 @@ plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)&lt;/code&gt;&lt;/pre&gt;
 software_monthly_stats %&amp;gt;% 
   sample_n(size = 1, replace = FALSE, weight = log(Nb_of_distinct_IPs + 1))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # A tibble: 1 x 7
-##   Package    Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
-##   &amp;lt;chr&amp;gt;     &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
-## 1 biobtreeR  2020 May                   46              84 Software 2020-05-01&lt;/code&gt;&lt;/pre&gt;
+##   Package  Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
+##   &amp;lt;chr&amp;gt;   &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
+## 1 IVAS     2020 Jun                   51             170 Software 2020-06-01&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -640,18 +640,18 @@ If you don&#39;t believe me, you can trust the RStudio team who declared iSEE wi
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.12/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
 &lt;div id=&#34;what-to-expect&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;What to expect&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.12/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
 &lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
 &lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Workshop content&lt;/h1&gt;
-&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.12/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.12/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
+&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
 Next, we will walk participants through the various components of the graphical user interface (GUI).
-Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.12/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
 &lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomics data modalities:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
