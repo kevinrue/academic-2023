@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Kevin Rue-Albrecht&#39;s GitHub blogdown using hugo-academic">
+  <meta name="description" content="A tutorial to write, test, deploy, and maintain a Bioconductor package.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/tags/package/">
+  <link rel="alternate" hreflang="en-us" href="/courses/make-bioc-package/">
 
   
 
@@ -248,14 +248,14 @@
 
 
   
-  <link rel="alternate" href="/tags/package/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
+  <link rel="alternate" href="/courses/make-bioc-package/index.xml" type="application/rss+xml" title="Kevin Rue-Albrecht">
   
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/tags/package/">
+  <link rel="canonical" href="/courses/make-bioc-package/">
 
   
   
@@ -271,12 +271,12 @@
   <meta property="twitter:creator" content="@KevinRUE67">
   
   <meta property="og:site_name" content="Kevin Rue-Albrecht">
-  <meta property="og:url" content="/tags/package/">
-  <meta property="og:title" content="package | Kevin Rue-Albrecht">
-  <meta property="og:description" content="Kevin Rue-Albrecht&#39;s GitHub blogdown using hugo-academic"><meta property="og:image" content="/img/android-chrome-512x512.png">
+  <meta property="og:url" content="/courses/make-bioc-package/">
+  <meta property="og:title" content="Syllabus | Kevin Rue-Albrecht">
+  <meta property="og:description" content="A tutorial to write, test, deploy, and maintain a Bioconductor package."><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="twitter:image" content="/img/android-chrome-512x512.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-05-24T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-03-12T00:00:00&#43;00:00">
   
 
   
@@ -293,7 +293,7 @@
 
 
 
-  <title>package | Kevin Rue-Albrecht</title>
+  <title>Syllabus | Kevin Rue-Albrecht</title>
 
 </head>
 
@@ -516,7 +516,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+          <a class="nav-link  active" href="/courses/"><span>Courses</span></a>
         </li>
 
         
@@ -586,56 +586,260 @@
 
   
 
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
 
 
 
 
 
-
-
-
-
-
-
-  
-
-  
-  
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>package</h1>
 
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
   
 
   
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
   
   
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/">Syllabus</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/prerequisites-1-r/">1. Pre-requisites</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/make-bioc-package/prerequisites-1-r/">R</a>
+      </li>
+      
+      <li >
+        <a href="/courses/make-bioc-package/prerequisites-2-rstudio/">RStudio</a>
+      </li>
+      
+      <li >
+        <a href="/courses/make-bioc-package/prerequisites-3-packages/">Packages</a>
+      </li>
+      
+    </ul>
     
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/essentials-1/">2. Essentials</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/make-bioc-package/essentials-1/">Package skeleton</a>
+      </li>
+      
+    </ul>
     
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/make-bioc-package/ci-1-gh-actions/">3. Continuous integration</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/make-bioc-package/ci-1-gh-actions/">GitHub Actions</a>
+      </li>
+      
+    </ul>
     
-    <div>
-      <h2><a href="/post/biocpkgtools/" >BiocPkgTools</a></h2>
-      <div class="article-style">
-        
-          Motivation There are currently 5,656 packages on Bioconductor, broken down as follows:
-  Repository Packages    AnnotationData 2,653  ExperimentData 810  Software 2,193    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository.
-        
-      </div>
+
+  </div>
+  
+  
+</nav>
+
     </div>
-  
 
-  
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
 
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#pre-requisites">Pre-requisites</a></li>
+    <li><a href="#_r_--_bioconductor_-packages-used"><em>R</em> / <em>Bioconductor</em> packages used</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#learning-goals">Learning goals</a></li>
+    <li><a href="#learning-objectives">Learning objectives</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Syllabus</h1>
+
+          <div class="article-style">
+            <h2 id="overview">Overview</h2>
+<p>This course demonstrates the process of creating a 
+<a href="https://www.bioconductor.org/" target="_blank" rel="noopener">Bioconductor</a> package, from essential requirements to advanced DevOps practices that facilitate maintenance and dissemination.</p>
+<p>This course is presented as sequence of steps that establish the essential components of a minimal Bioconductor package, accompanied by a additional sections to extend the package set-up with additional valuable functionality.</p>
+<p>Pre-requisites:</p>
+<ol>
+<li>Install R</li>
+<li>Install RStudio</li>
+<li>Install version control software</li>
+</ol>
+<p>Essentials:</p>
+<ol>
+<li>Initialize an R package skeleton</li>
+<li>Initialize version control</li>
+<li>Write your first function</li>
+<li>Write help pages for your functions</li>
+<li>Test your functions</li>
+<li>Write a vignette</li>
+</ol>
+<p>Advanced:</p>
+<ol>
+<li>Enable continuous integration</li>
+<li>Track code coverage</li>
+<li>Deploy documentation online</li>
+<li>Adding badges to your README</li>
+<li>Making a Docker container</li>
+</ol>
+<p>Readers are encouraged to contribute feedback through 
+<a href="https://github.com/kevinrue/kevinrue.github.io-academic/issues" target="_blank" rel="noopener">issues</a>.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<ul>
+<li>Basic knowledge of 
+<a href="https://www.r-project.org/about.html" target="_blank" rel="noopener"><em>R</em></a> syntax.</li>
+<li>Basic knowledge of 
+<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>.</li>
+<li>Familiarity with 
+<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.</li>
+</ul>
+<p>Additional background reading about the programming environment, relevant packages, and example use cases:</p>
+<ul>
+<li>R packages, by Hadley Wickham and Jennifer Bryan: <a href="https://r-pkgs.org/index.html">https://r-pkgs.org/index.html</a></li>
+</ul>
+<h2 id="_r_--_bioconductor_-packages-used"><em>R</em> / <em>Bioconductor</em> packages used</h2>
+<ol>
+<li><em>devtools</em> : <a href="https://CRAN.R-project.org/package=devtools">https://CRAN.R-project.org/package=devtools</a></li>
+</ol>
+<h1 id="course-goals-and-objectives">Course goals and objectives</h1>
+<h2 id="learning-goals">Learning goals</h2>
+<ul>
+<li>Outline the unique features of Bioconductor and CRAN package.</li>
+<li>Identify best practice in Bioconductor package development.</li>
+<li>Utilize R packages designed to facilitate the rapid and consistent development of R packages.</li>
+<li>Describe the components and functionality of R and Bioconductor packages.</li>
+</ul>
+<h2 id="learning-objectives">Learning objectives</h2>
+<ul>
+<li>Memorize the key components and requirements of a Bioconductor package.</li>
+<li>Set up a working continuous integration environment for durable development and maintenance.</li>
+<li>Interact with tools that facilitate the development, maintenance, and deployment of a Bioconductor package.</li>
+<li>Practice the workflow to write a Bioconductor package from scratch.</li>
+</ul>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
 </div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Mar 12, 2020</p>
+
+          
+
+
+
+
+
+  
+  
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/courses/make-bioc-package/_index.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+  </p>
+  
+
+  <p class="powered-by">
+    © Kevin Rue-Albrecht 2019-2020 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
 
       
 
@@ -694,6 +898,11 @@
 
     
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
 
     
     
@@ -746,38 +955,6 @@
 
 
   
-  
-  <div class="container">
-    <footer class="site-footer">
-  
-  <p class="powered-by">
-    
-      <a href="/privacy/">Privacy Policy</a>
-    
-    
-  </p>
-  
-
-  <p class="powered-by">
-    © Kevin Rue-Albrecht 2019-2020 &middot; 
-
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" class="back-to-top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
-
-  </div>
   
 
   
