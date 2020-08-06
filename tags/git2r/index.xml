@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git2r | Kevin Rue-Albrecht</title>
+    <link>/tags/git2r/</link>
+      <atom:link href="/tags/git2r/index.xml" rel="self" type="application/rss+xml" />
+    <description>git2r</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2020</copyright><lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>git2r</title>
+      <link>/tags/git2r/</link>
+    </image>
+    
+    <item>
+      <title>Creating a dynamic Rmarkdown website for COVID-19 data</title>
+      <link>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This post refers to code available online as a &lt;a href=&#34;https://github.com/kevinrue/COVID-19-website&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-a-new-rstudio-project&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Create a new RStudio project&lt;/h2&gt;
+&lt;p&gt;Open the RStudio “New Project…” menu -&amp;gt; New Directory -&amp;gt; Simple R Markdown Website -&amp;gt; Type a folder name.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initialize-git&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Initialize git&lt;/h2&gt;
+&lt;p&gt;You may need to &lt;code&gt;install.packages(&#34;git2r&#34;)&lt;/code&gt; first.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;git2r::init()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also, restart RStudio to apply the changes and benefit of the “Git” tab.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-a-new-github-repository&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Make a new GitHub repository&lt;/h2&gt;
+&lt;p&gt;Click on “New repository”.
+For simplicity, type the same name “COVID-19-website”.&lt;/p&gt;
+&lt;p&gt;Do not add a README or a license yet, an empty repository will do.&lt;/p&gt;
+&lt;p&gt;Add the GitHub remote to your local clone.
+The remote name should be &lt;code&gt;&#34;origin&#34;&lt;/code&gt;.
+The &lt;code&gt;url&lt;/code&gt; is shown on your GitHub repository page.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;git2r::remote_add(name = &amp;quot;origin&amp;quot;, url = &amp;quot;git@github.com:kevinrue/COVID-19-website.git&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;push-your-local-clone-to-the-github-remote&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Push your local clone to the GitHub remote&lt;/h2&gt;
+&lt;p&gt;While &lt;code&gt;git2r::push()&lt;/code&gt; does exist, it can raise issues related to the detection of your &lt;code&gt;git&lt;/code&gt; credentials.
+For simplicity, I prefer to push and pull directly from the terminal.
+To run the command below, the current working directory must be the root of the RStudio project.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;clone-csse&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Clone the source data repository as a git submodule&lt;/h2&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git submodule add git@github.com:CSSEGISandData/COVID-19.git&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;write-a-notebooks-for-each-webpage&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Write a notebooks for each webpage&lt;/h2&gt;
+&lt;p&gt;Fast-forwarding in time, I updated the template &lt;code&gt;index.Rmd&lt;/code&gt; and &lt;code&gt;about.Rmd&lt;/code&gt; notebooks, added some notebooks, and updated the &lt;code&gt;_site.yml&lt;/code&gt; to include those new pages in the built website.&lt;/p&gt;
+&lt;p&gt;Note that &lt;code&gt;_site.yml&lt;/code&gt; is also useful to exclude certain subdirectories from the built website.
+In particular, those include the source data folders cloned as a submodule &lt;a href=&#34;#clone-csse&#34;&gt;above&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I also refactored some recurrent code as child notebooks (see the &lt;code&gt;childs/&lt;/code&gt; subdirectory).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;build-the-website&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Build the website&lt;/h2&gt;
+&lt;p&gt;When you’re ready, click the “Build Webiste” button in the “Build” panel.
+This is equivalent to running &lt;code&gt;rmarkdown::render_site(encoding = &#39;UTF-8&#39;)&lt;/code&gt; at the R console.
+This generates a &lt;code&gt;_site/&lt;/code&gt; subdirectory in your project, that contains all the files for your website.&lt;/p&gt;
+&lt;p&gt;To visualize your website, open the “index.html” file in this subdirectory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;deploy-the-website&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Deploy the website&lt;/h2&gt;
+&lt;p&gt;After inspecting that your website looks as you intend it, you can deploy it on GitHub Pages.
+This can be done by pushing the files in the &lt;code&gt;_site/&lt;/code&gt; subdirectory. to a &lt;code&gt;gh-pages&lt;/code&gt; branch on your GitHub repository.&lt;/p&gt;
+&lt;p&gt;Initially, you need to create an empty &lt;code&gt;gh-pages&lt;/code&gt; orphan branch as it does not exist.
+For this, I generally follow instructions in the &lt;a href=&#34;https://bookdown.org/yihui/bookdown/github.html&#34;&gt;bookdown book&lt;/a&gt;.
+Briefly:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;# create a branch named gh-pages and clean up everything
+git checkout --orphan gh-pages
+git rm -rf .
+
+# create a hidden file .nojekyll
+touch .nojekyll
+git add .nojekyll
+
+git commit -m&amp;quot;Initial commit&amp;quot;
+git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, every time you build your website, you need to push the new website to that branch.
+To automate this process, I wrote a &lt;code&gt;_deploy.sh&lt;/code&gt; script, which I run as &lt;code&gt;bash _deplooy.sh&lt;/code&gt;.
+The script is adapted from … and looks like this.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git clone -b gh-pages \
+  git@github.com:kevinrue/COVID-19-website.git \
+  site-output
+cd site-output
+git reset --hard HEAD^
+git rm -rf *
+cp -r ../_site/* ./
+git add --all *
+git commit -m &amp;quot;Update the site&amp;quot;
+git push -f origin gh-pages
+cd ..
+rm -rf site-output&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that this script includes two lines that I do not recommend in general.
+Namely:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git reset --hard HEAD^
+git push -f origin gh-pages&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first line deletes the previous version of the website from the &lt;code&gt;git&lt;/code&gt; history, as if it never happened.
+The second line overrides the GitHub history to erase that commit it from there as well.
+I only do this here because my website generates many PNG files in each version of the website.
+If I didn’t delete the previous version each time, the &lt;code&gt;git&lt;/code&gt; history would keep track of every version of every PNG file that I ever generated, making the &lt;code&gt;git clone&lt;/code&gt; commands increasingly time consuming each time I clone the &lt;code&gt;gh-pages&lt;/code&gt; branch to push a new version of the website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thanks-for-reading&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thanks for reading!&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

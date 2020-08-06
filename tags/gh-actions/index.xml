@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gh-actions | Kevin Rue-Albrecht</title>
+    <link>/tags/gh-actions/</link>
+      <atom:link href="/tags/gh-actions/index.xml" rel="self" type="application/rss+xml" />
+    <description>gh-actions</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2020</copyright><lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>gh-actions</title>
+      <link>/tags/gh-actions/</link>
+    </image>
+    
+    <item>
+      <title>Transiton from Travis CI to GitHub Actions</title>
+      <link>/post/transiton-from-travis-ci-to-github-actions/</link>
+      <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/transiton-from-travis-ci-to-github-actions/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The recent introduction of &lt;a href=&#34;https://github.com/features/actions&#34;&gt;GitHub Actions&lt;/a&gt; makes a lot of our &lt;a href=&#34;https://travis-ci.com/&#34;&gt;Travis CI&lt;/a&gt; build configurations redundant.&lt;/p&gt;
+&lt;p&gt;In particular, the &lt;a href=&#34;https://github.com/r-lib/actions/blob/master/examples&#34;&gt;examples actions&lt;/a&gt; include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/r-lib/actions/blob/master/examples/check-full.yaml&#34;&gt;&lt;code&gt;R-CMD-check&lt;/code&gt;&lt;/a&gt; using &lt;code&gt;rcmdcheck::rcmdcheck()&lt;/code&gt; to check the package.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/r-lib/actions/blob/master/examples/test-coverage.yaml&#34;&gt;&lt;code&gt;test-coverage&lt;/code&gt;&lt;/a&gt; using &lt;code&gt;covr::codecov()&lt;/code&gt; to publish the unit test coverage of the package to &lt;a href=&#34;https://codecov.io/&#34; class=&#34;uri&#34;&gt;https://codecov.io/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/r-lib/actions/blob/master/examples/pkgdown.yaml&#34;&gt;&lt;code&gt;pkgdown&lt;/code&gt;&lt;/a&gt; using &lt;code&gt;pkgdown::deploy_to_branch()&lt;/code&gt; to push the &lt;code&gt;pkgdown&lt;/code&gt; website to the &lt;code&gt;gh-pages&lt;/code&gt; branch of the repository.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, &lt;a href=&#34;https://www.bioconductor.org/&#34;&gt;&lt;em&gt;Bioconductor&lt;/em&gt;&lt;/a&gt; packages need a bit of extra tweaking to run those workflows, as we will see below.&lt;/p&gt;
+&lt;p&gt;In addition, it is useful to combine those individual example actions into a single workflow, as some of those actions only make sense to run when other have successfully completed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;use-case&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Use case&lt;/h2&gt;
+&lt;p&gt;Let’s pick up one of my Bioconductor-to-be packages that needs updating, namely &lt;a href=&#34;https://github.com/kevinrue/deeperTools&#34; class=&#34;uri&#34;&gt;https://github.com/kevinrue/deeperTools&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;issue&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Issue&lt;/h2&gt;
+&lt;p&gt;Recent updates of the GitHub and Travis integration have caused the &lt;a href=&#34;https://travis-ci.com/github/kevinrue/deeperTools/builds/156152410&#34;&gt;latest Travis run&lt;/a&gt; to fail deploying the &lt;code&gt;pkgdown&lt;/code&gt; website to the &lt;code&gt;gh-pages&lt;/code&gt; branch of the repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;── Deploying to GitHub Pages ───────────────────────────────────────────────────
+Running git remote -v
+origin  https://github.com/kevinrue/deeperTools.git (fetch)
+origin  https://github.com/kevinrue/deeperTools.git (push)
+Running git push --force origin &amp;#39;HEAD:gh-pages&amp;#39;
+remote: Invalid username or password.
+fatal: Authentication failed for &amp;#39;https://github.com/kevinrue/deeperTools.git/&amp;#39;
+Error: System command &amp;#39;git&amp;#39; failed, exit status: 128, stdout &amp;amp; stderr were printed
+ Stack trace:
+ 1. pkgdown::deploy_site_github()
+ 2. pkgdown:::deploy_to_branch(pkg, commit_message = commit_message,  ...
+ 3. pkgdown:::github_push(dest_dir, commit_message, remote, branch)
+ 4. pkgdown:::with_dir(dir, { ...
+ 5. base:::force(code)
+ 6. pkgdown:::git(&amp;quot;push&amp;quot;, &amp;quot;--force&amp;quot;, remote, paste0(&amp;quot;HEAD:&amp;quot;, branch))
+ 7. processx::run(&amp;quot;git&amp;quot;, c(...), echo_cmd = echo_cmd, echo = echo,  ...
+ 8. throw(new_process_error(res, call = sys.call(), echo = echo,  ...
+ x System command &amp;#39;git&amp;#39; failed, exit status: 128, stdout &amp;amp; stderr were printed 
+── Removing worktree ───────────────────────────────────────────────────────────
+Running git worktree remove /tmp/Rtmpzu14jy/file3f67f42389b
+Execution halted
+Script failed with status 1
+failed to deploy&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As Hadley Wickham &lt;a href=&#34;https://github.com/r-lib/pkgdown/issues/1206#issuecomment-597339775&#34;&gt;wrote&lt;/a&gt;, it is now recommended to move away from Travis CI and use GitHub Action instead.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We now recommend using the github actions workflow instead; which avoids all this configuration pain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initialise-the-github-action&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Initialise the GitHub action&lt;/h2&gt;
+&lt;p&gt;Having open the RStudio project located at the root of my repository, I use the &lt;code&gt;usethis&lt;/code&gt; package to fetch and set up the &lt;code&gt;R-CMD-check&lt;/code&gt; example workflow.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;usethis::use_github_action_check_full()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;edit-the-r-cmd-check-github-action-as-necessary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Edit the &lt;code&gt;R-CMD-check&lt;/code&gt; GitHub action as necessary&lt;/h2&gt;
+&lt;p&gt;I proceed to edit some steps of the workflow for my package.
+Some of those edits are necessary, others are for my own convenience.
+The following command opens the file in the RStudio editor.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;file.edit(&amp;quot;github/workflows/R-CMD-check.yaml&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First, I remove the restriction on &lt;code&gt;branches&lt;/code&gt; for the &lt;code&gt;push&lt;/code&gt; event.
+This will trigger the action on every push to any branch.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;on:
+  push:
+  pull_request:
+    branches:
+      - master&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, I keep only the latest &lt;code&gt;ubuntu&lt;/code&gt; version, mainly to reduce the number of configurations run as separate jobs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;strategy:
+  fail-fast: false
+  matrix:
+    config:
+      - {os: windows-latest, r: &amp;#39;3.6&amp;#39;}
+      - {os: macOS-latest, r: &amp;#39;3.6&amp;#39;}
+      - {os: macOS-latest, r: &amp;#39;devel&amp;#39;}
+      - {os: ubuntu-16.04, r: &amp;#39;3.6&amp;#39;, rspm: &amp;quot;https://demo.rstudiopm.com/all/__linux__/xenial/latest&amp;quot;}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When working with a &lt;a href=&#34;https://www.bioconductor.org/&#34;&gt;&lt;em&gt;Bioconductor&lt;/em&gt;&lt;/a&gt; package, &lt;code&gt;BiocManager&lt;/code&gt; should be installed during the &lt;code&gt;Query dependencies&lt;/code&gt; step.
+This allows &lt;code&gt;BiocManager::repositories()&lt;/code&gt; to be called to add &lt;a href=&#34;https://www.bioconductor.org/&#34;&gt;&lt;em&gt;Bioconductor&lt;/em&gt;&lt;/a&gt; package repositories to be added to the global session options.
+In turn, this allows &lt;code&gt;remotes::dev_package_deps()&lt;/code&gt; to query all repositories when identifying dependencies, as it uses the default argument value &lt;code&gt;repos = getOption(&#34;repos&#34;)&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Query dependencies
+  run: |
+    install.packages(c(&amp;#39;remotes&amp;#39;, &amp;#39;BiocManager&amp;#39;))
+    options(repos = c(getOption(&amp;quot;repos&amp;quot;), BiocManager::repositories()))
+    saveRDS(remotes::dev_package_deps(dependencies = TRUE), &amp;quot;depends.Rds&amp;quot;, version = 2)
+  shell: Rscript {0}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, when working with a &lt;a href=&#34;https://www.bioconductor.org/&#34;&gt;&lt;em&gt;Bioconductor&lt;/em&gt;&lt;/a&gt; package, we add &lt;a href=&#34;https://www.bioconductor.org/&#34;&gt;&lt;em&gt;Bioconductor&lt;/em&gt;&lt;/a&gt; package repositories to the global session options during the &lt;code&gt;Install dependencies&lt;/code&gt; step.
+Similarly, the &lt;code&gt;remotes::install_deps(dependencies = TRUE)&lt;/code&gt; uses the default argument value &lt;code&gt;repos = getOption(&#34;repos&#34;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In this step, you may also add any dependency that is not explicitly declared in the &lt;code&gt;DESCRIPTION&lt;/code&gt; file of your package, or installed as an indirect dependency, as well as any esoteric development version of your dependencies.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Install dependencies
+  run: |
+    options(repos = c(getOption(&amp;quot;repos&amp;quot;), BiocManager::repositories()))
+    remotes::install_deps(dependencies = TRUE)
+    remotes::install_cran(&amp;quot;rcmdcheck&amp;quot;)
+  shell: Rscript {0}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You may wish to set &lt;code&gt;error_on = &#34;error&#34;&lt;/code&gt; during &lt;code&gt;R CMD check&lt;/code&gt;.
+Otherwise, deprecation warnings would cause the step (and as a consequence the entire workflow) to fail.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Check
+  run: rcmdcheck::rcmdcheck(args = &amp;quot;--no-manual&amp;quot;, error_on = &amp;quot;error&amp;quot;, check_dir = &amp;quot;check&amp;quot;)
+  shell: Rscript {0}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;remove-redundant-actions-from-the-travis-ci-build&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Remove redundant actions from the Travis CI build&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;Test coverage&lt;/code&gt; step of the &lt;code&gt;R-CMD-check&lt;/code&gt; GitHub action deploys the website.
+Remove the following sections from the Travis build configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;after_success:
+  - Rscript -e &amp;#39;library(covr); codecov()&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;Deploy&lt;/code&gt; step of the &lt;code&gt;R-CMD-check&lt;/code&gt; GitHub action deploys the website.
+Remove the following sections from the Travis build configuration.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;before_cache: Rscript -e &amp;#39;remotes::install_cran(&amp;quot;pkgdown&amp;quot;)&amp;#39;
+deploy:
+  provider: script
+  script: Rscript -e &amp;#39;pkgdown::deploy_site_github()&amp;#39;
+  skip_cleanup: true&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;credits&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Credits&lt;/h2&gt;
+&lt;p&gt;Thanks to &lt;a href=&#34;https://github.com/csoneson&#34;&gt;Charlotte Soneson&lt;/a&gt; for discussion and advice!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

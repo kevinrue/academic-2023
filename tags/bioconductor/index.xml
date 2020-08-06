@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bioconductor | Kevin Rue-Albrecht</title>
+    <link>/tags/bioconductor/</link>
+      <atom:link href="/tags/bioconductor/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bioconductor</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2020</copyright><lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>Bioconductor</title>
+      <link>/tags/bioconductor/</link>
+    </image>
+    
+    <item>
+      <title>BiocPkgTools</title>
+      <link>/post/biocpkgtools/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/biocpkgtools/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;motivation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;There are currently 5,656 packages on Bioconductor, broken down as follows:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Repository&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Packages&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;AnnotationData&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,653&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;ExperimentData&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Software&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,193&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/BiocPkgTools&#34;&gt;BiocPkgTools&lt;/a&gt;&lt;/em&gt; package to develop a website updated daily and feature packages selected randomly from each repository.&lt;/p&gt;
+&lt;p&gt;I have then set up a &lt;a href=&#34;https://github.com/kevinrue/BiocRoulette/actions&#34;&gt;GitHub Action&lt;/a&gt; executed as a CRON job to update the website daily.&lt;/p&gt;
+&lt;p&gt;The result is accessible at: &lt;a href=&#34;https://kevinrue.github.io/BiocRoulette/&#34; class=&#34;uri&#34;&gt;https://kevinrue.github.io/BiocRoulette/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-usage&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example usage&lt;/h2&gt;
+&lt;p&gt;Below, I include a bit of code that I wrote while developing the website, to illustrate the process.&lt;/p&gt;
+&lt;p&gt;First, the packages that I used to fetch, process, and visualise the data.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(BiocPkgTools)
+library(tidyverse)
+library(cowplot)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then I fetch the data using &lt;code&gt;BiocPkgTools::biocDownloadStats()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;download_stats &amp;lt;- biocDownloadStats()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, I subset the download stats to a given repository.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;software_stats &amp;lt;- download_stats %&amp;gt;% filter(repo == &amp;quot;Software&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, I identify the latest complete month with data in the download statistics.
+To do that, I look for the latest month with non-zero download statistics, and I take the month before that one.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;latest_full_date &amp;lt;- software_stats %&amp;gt;% 
+  group_by(Date) %&amp;gt;% 
+  summarise(Nb_of_downloads = sum(Nb_of_downloads)) %&amp;gt;% 
+  filter(Nb_of_downloads &amp;gt; 0) %&amp;gt;% 
+  arrange(desc(Date)) %&amp;gt;% 
+  head(2) %&amp;gt;% 
+  tail(1) %&amp;gt;% 
+  pull(Date)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `summarise()` ungrouping output (override with `.groups` argument)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;software_monthly_stats &amp;lt;- software_stats %&amp;gt;% 
+  filter(Date == latest_full_date)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I wanted to give an edge to packages more frequently downloaded, but without being overwhelmed by core packages that have excessively large download statistics.&lt;/p&gt;
+&lt;p&gt;To do so, I visualised the distribution of download stats, and I chose to weigh packages by the &lt;code&gt;log(x+1)&lt;/code&gt; transformation of the number of distinct IP addresses in their download statistics.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gg_dl &amp;lt;- ggplot(software_monthly_stats) +
+  geom_histogram(aes(Nb_of_downloads)) +
+  theme_cowplot()
+gg_dl_log &amp;lt;- ggplot(software_monthly_stats) +
+  geom_histogram(aes(log(Nb_of_downloads+1))) +
+  theme_cowplot()
+gg_ip &amp;lt;- ggplot(software_monthly_stats) +
+  geom_histogram(aes(Nb_of_distinct_IPs)) +
+  theme_cowplot()
+gg_ip_log &amp;lt;- ggplot(software_monthly_stats) +
+  geom_histogram(aes(log(Nb_of_distinct_IPs+1))) +
+  theme_cowplot()
+plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-05-24-biocpkgtools/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally, I set the random seed using the date of the day, and I randomly sample a package from the table, using the weight described above.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(as.numeric(Sys.Date()))
+software_monthly_stats %&amp;gt;% 
+  sample_n(size = 1, replace = FALSE, weight = log(Nb_of_distinct_IPs + 1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 1 x 7
+##   Package    Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
+##   &amp;lt;chr&amp;gt;     &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
+## 1 NADfinder  2020 Jul                   42             101 Software 2020-07-01&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE - Bioconductor 2020 Workshop Presentation</title>
+      <link>/talk/bioc2019-workshop/</link>
+      <pubDate>Wed, 26 Jun 2019 15:10:00 +0000</pubDate>
+      <guid>/talk/bioc2019-workshop/</guid>
+      <description>&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;The workshop materials are available 
+&lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See also the accompanying flash presentation 
+&lt;a href=&#34;/talk/bioc2019-flashtalk&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE - Bioconductor 2020 Flash Presentation</title>
+      <link>/talk/bioc2019-flashtalk/</link>
+      <pubDate>Mon, 24 Jun 2019 10:25:00 +0000</pubDate>
+      <guid>/talk/bioc2019-flashtalk/</guid>
+      <description>&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;See also the full workshop presentation 
+&lt;a href=&#34;/talk/bioc2019-workshop&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE flashtalk | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-flashtalk/</link>
+      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/slides/bioc2019-flashtalk/</guid>
+      <description>&lt;!-- Prevent capitalization of titles --&gt;
+&lt;style&gt;
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+		  }
+&lt;/style&gt;
+&lt;h1 id=&#34;the-iseehttpbioconductororgpackagesisee-package&#34;&gt;The 
+&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;iSEE&lt;/code&gt;&lt;/a&gt; package&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Interactive and reproducible visualization of &lt;code&gt;SummarizedExperiment&lt;/code&gt; objects.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+This flashtalk introduces the iSEE package
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://kevinrue.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/kevin-rue.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/charlotte-soneson.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://federicomarini.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/federico-marini.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-3564-4813&#34;&gt;&lt;img src=&#34;/img/iSEE/aaron-lun.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!--
+The story begins with 4 postdocs  and a shared dream at EuroBioc2017.
+--&gt;
+&lt;hr&gt;
+&lt;code&gt;
+&lt;ins&gt;i&lt;/ins&gt;nteractive
+&lt;p&gt;&lt;ins&gt;S&lt;/ins&gt;ummarized&lt;ins&gt;E&lt;/ins&gt;xperiment&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;E&lt;/ins&gt;xplorer&lt;/code&gt;&lt;/p&gt;
+&lt;!--
+The name stands for.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;
+&lt;!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;iSEE(sce)&lt;/code&gt;&lt;/p&gt;
+&lt;!--
+Given any SCE object, repeat after me the magic formula.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png&#34; height=600&gt;
+&lt;!--
+A typical iSEE interface includes up to 8 different predefined panels types.
+In addition, it is possible to implement custom panels (not shown here).
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;
+&lt;!--
+Here we demonstrate how iSEE dissects SCE objects to produce different panel types.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=400&gt;
+&lt;!--
+With its diverse feature set, iSEE reduces the need for bespoke shiny applications.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.shinyapps.io/magick-profile/&#34;&gt;&lt;img src=&#34;/img/workshop.png&#34; height=500&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+iSEE will be presented as a workshop
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;workshop&#34;&gt;Workshop&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Wednesday 26 June 2019&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3:10 - 4:00 – Workshops Session 6a&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4:10 - 5:00 – Workshops Session 6b&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Carson Auditorium&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Interactive visualization of SummarizedExperiment objects&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; 
+&lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+The date and times of the workshop.
+--&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;you-will-learn-&#34;&gt;You will learn &amp;hellip;&lt;/h2&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 80%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+If you come to the workshop, we&#39;ll even show you how iSEE integrates voice recognition to interact with the application.
+--&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Most technically impressive&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/2019-01-07-shiny-contest.png&#34; height=400&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+If you don&#39;t believe me, you can trust the RStudio team who declared iSEE winner and most technically impressive application submitted to the first Shiny contest.
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE workshop at Bioc2019!</title>
+      <link>/post/isee-at-bioc2019/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      <guid>/post/isee-at-bioc2019/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;div id=&#34;what-to-expect&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What to expect&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
+&lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Workshop content&lt;/h1&gt;
+&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
+Next, we will walk participants through the various components of the graphical user interface (GUI).
+Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+&lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomics data modalities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
+&lt;li&gt;Point selections using &lt;a href=&#34;https://shiny.rstudio.com&#34;&gt;shiny&lt;/a&gt; brushes or lasso polygons drawn by consecutive clicks.
+&lt;ul&gt;
+&lt;li&gt;Multiple concurrent selections supported in versions ≥ 1.3.8.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Dynamic linking between plot and table panels, allowing users to transmit information across multiple panels via point selection.&lt;/li&gt;
+&lt;li&gt;Dynamic addition, removal, reordering, and resizing of panels.&lt;/li&gt;
+&lt;li&gt;Automatic tracking, storage, and rendering of the exact R code in a &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=shinyAce&#34;&gt;shinyAce&lt;/a&gt;&lt;/em&gt; editor to allow regeneration of all visible plots in a given application instance.&lt;/li&gt;
+&lt;li&gt;Intelligent density-dependent downsampling of data points shown for large data sets.&lt;/li&gt;
+&lt;li&gt;Custom colour scale specification for individual and groups of discrete and continuous variables.&lt;/li&gt;
+&lt;li&gt;Construction of bespoke interactive guided tours using &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=rintrojs&#34;&gt;rintrojs&lt;/a&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Dynamic detection of discrete and continuous covariates, switching individual plot panels between scatter plots, violin plots, and “square” plots.&lt;/li&gt;
+&lt;li&gt;Ability for users to programmatically define additional custom panels based on any number of user-defined functions performing on-the-fly calculations.&lt;/li&gt;
+&lt;li&gt;Ability to preconfigure app instances, including point selections and state of collapsible panels, to launch individual app instances in any predefined state.&lt;/li&gt;
+&lt;li&gt;Retrieval of gene annotations on the fly by using either user-defined functions or the built-in annotateEntrez or annotateEnsembl functions.&lt;/li&gt;
+&lt;li&gt;Hands-free control of the app using voice recognition by &lt;a href=&#34;https://www.talater.com/annyang/&#34;&gt;annyang&lt;/a&gt; in versions ≥ 1.3.2.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;where-and-when-to-find-us&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Where and when to find us&lt;/h1&gt;
+&lt;p&gt;This workshop will take place during the workshop &lt;a href=&#34;https://bioc2019.bioconductor.org/schedule#day-2-wednesday-june-26&#34;&gt;sessions 6a and 6b&lt;/a&gt; on Wednesday June 26 between between 15:10 and 17:00.&lt;/p&gt;
+&lt;p&gt;You can also come and find us between sessions if you have more questions!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;access-to-the-workshop-materials&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Access to the workshop materials&lt;/h1&gt;
+&lt;p&gt;The workshop materials are being prepared as the vignette of a freely available R package hosted on a &lt;a href=&#34;https://github.com/kevinrue/Bioc2019-iSEE-workshop&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, workshops will become part of a book similar to the &lt;a href=&#34;https://bioconductor.github.io/BiocWorkshops/&#34;&gt;Bioconductor 2018 Workshop Compilation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We look forward to seeing participants at the workshop!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>iSEE workshop | Bioconductor conference 2019</title>
+      <link>/slides/bioc2019-workshop/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>/slides/bioc2019-workshop/</guid>
+      <description>&lt;!-- Prevent capitalization of titles --&gt;
+&lt;style&gt;
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+                  text-transform: none;
+		  }
+    .reveal fs80 {
+                  font-size: 80%;
+		  }
+    .reveal fs60 {
+                  font-size: 60%;
+		  }
+&lt;/style&gt;
+&lt;h1 id=&#34;iseehttpbioconductororgpackagesisee-package-and-functionality&#34;&gt;
+&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iSEE&lt;/a&gt; package and functionality&lt;/h1&gt;
+&lt;p&gt;Bioconductor conference 2019&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://kevinrue.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kevin Rue-Albrecht&lt;/a&gt; &amp;amp; 
+&lt;a href=&#34;https://csoneson.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Charlotte Soneson&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Twitter: 
+&lt;a href=&#34;https://twitter.com/KevinRUE67&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@KevinRUE67&lt;/a&gt; &amp;amp; 
+&lt;a href=&#34;https://twitter.com/csoneson&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@csoneson&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+Welcome to the iSEE workshop.
+In this presentation, we will introduce the concepts and functionality of the iSEE package.
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;the-team&#34;&gt;The team&lt;/h1&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://kevinrue.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/kevin-rue.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/charlotte-soneson.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://federicomarini.github.io&#34;&gt;&lt;img src=&#34;/img/iSEE/federico-marini.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width=&#34;25%&#34;&gt;&lt;a href=&#34;https://orcid.org/0000-0002-3564-4813&#34;&gt;&lt;img src=&#34;/img/iSEE/aaron-lun.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!--
+This was a team effort!
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://bioconductor.org&#34;&gt;&lt;img src=&#34;/img/iSEE/biocstickers.JPG&#34; height=600&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+iSEE tightly integrates with other packages of the Bioconductor project.
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;fs60original-wishlist-1--2fs60&#34;&gt;&lt;fs60&gt;Original wishlist (1 / 2)&lt;/fs60&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;fs80&gt;An interactive user interface for exploring data in &lt;em&gt;
+&lt;a href=&#34;https://bioconductor.org/packages/release/SummarizedExperiment&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; objects&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Particular focus given to single-cell data in the &lt;em&gt;
+&lt;a href=&#34;https://bioconductor.org/packages/release/SingleCellExperiment&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; derived class&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Sample-oriented visualizations&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Feature-oriented visualizations&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Heat maps (cells &lt;em&gt;and&lt;/em&gt; features)&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Selectable points&lt;/fs80&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+--&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;fs60original-wishlist-2--2fs60&#34;&gt;&lt;fs60&gt;Original wishlist (2 / 2)&lt;/fs60&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;fs80&gt;Colouring of samples by metadata or assayed values&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Stratify axes and facets by metadata (e.g., violin plots)&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Hover and click&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Zoom&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Transmission of points selections between plots&lt;/fs80&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs80&gt;Code tracking for reproducibility and batch generation of figures&lt;/fs80&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+When we sat down at EuroBioc2017, we drafted a wishlist of features.
+See commit #3 at https://github.com/csoneson/iSEE/tree/021e3e20cfdb194e511f8097ed544329bd46bcd6
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/bioc-figures_v2-02.png&#34; height=500&gt;
+&lt;!--
+iSEE focuses on the SingleCellExperiment class.
+This class stores all the data and metadata associated with assays, cells, and features.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/bioc-figures_v2-03.png&#34; height=600&gt;
+&lt;!-- 
+The SingleCellExperiment class is designed to accomodate all the information produced along a typical single-cell analysis workflow.
+Those data include raw data:
+- raw assay data
+- experimental metadata
+Processed data:
+- quality control metrics
+- normalized data
+- dimensionality reduction results
+Downstream analyses:
+- cluster labels
+- differential expression results
+- downstream cell and feature annotations
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/iSEE/batman-robin.png&#34; height=500&gt;
+&lt;!--
+Don&#39;t try this at home.
+The wealth of information produced by single-cell analysis workflows has motivated the development of many interactive applications to help researchers explore their data sets.
+Each of those applications has its own strengths and limitations.
+It is very tempting to develop new applications to with their own strengths and limitations.
+Before you decide to do so, we encourage you to test iSEE.
+You may find that it already does everything you would like!
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;/img/OSCA/OSCA-figure-4.png&#34; height=600&gt;
+&lt;!--
+Here we demonstrate how iSEE dissects SCE objects to produce figures.
+--&gt;
+&lt;hr&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/kevinrue/iSEEWorkshop2019/master/inst/vignettes/img/iSEEinterface.png&#34; height=600&gt;
+&lt;!--
+iSEE provides a powerful yet flexible user interface that includes 8 predefined panel types.
+That said, it also gives the freedom to define any number custom panel types, both plots and tables.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://kevinrue.shinyapps.io/magick-profile/&#34;&gt;&lt;img src=&#34;/img/workshop.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+With that introduction to the user interface, let us head into the workshop!
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;iSEE(sce, voice=TRUE)&lt;/code&gt;&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0crFZLwAJOE?autoplay=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 90%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+iSEE can be extended using third-party JavaScript libraries.
+Here we demonstrate how speech recognition was integrated to support a number of predefined vocal commands.
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;&lt;img src=&#34;/img/iSEE/shiny-contest.png&#34; height=600&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+iSEE won the RStudio Shiny Contest in April 2019 with mention for &#34;Most technically impressive&#34;.
+See https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/ for more details.
+In particular:
+- There were 136 submissions from 122 unique app developers!
+--&gt;
+&lt;hr&gt;
+&lt;p&gt;Creating an &lt;code&gt;ExperimentColorMap&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;qc_color_fun &amp;lt;- function(n){
+    qc_colors &amp;lt;- c(&amp;quot;forestgreen&amp;quot;, &amp;quot;firebrick1&amp;quot;)
+    names(qc_colors) &amp;lt;- c(&amp;quot;Y&amp;quot;, &amp;quot;N&amp;quot;)
+    qc_colors
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ExperimentColorMap(
+    assays = list(
+        counts = heat.colors,
+        logcounts = logcounts_color_fun,
+        cufflinks_fpkm = fpkm_color_fun
+    ),
+    colData = list(
+        passes_qc_checks_s = qc_color_fun
+    ),
+    all_continuous = list(
+        assays = viridis::plasma
+    ),
+    global_continuous = viridis::viridis
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;Using an &lt;code&gt;ExperimentColorMap&lt;/code&gt; object&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;colDataColorMap(ecm, &amp;quot;passes_qc_checks_s&amp;quot;, discrete=TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;How 
+&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iSEE&lt;/a&gt; uses the &lt;code&gt;ExperimentColorMap&lt;/code&gt; object&lt;/p&gt;
+&lt;img src=&#34;/img/iSEE/Use-ExperimentColorMap.png&#34;&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;fs60the-isee-versefs60&#34;&gt;&lt;fs60&gt;The iSEE-verse&lt;/fs60&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;http://bioconductor.org/packages/iSEE/&#34;&gt;http://bioconductor.org/packages/iSEE/&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/LTLA/iSEE2018&#34;&gt;https://github.com/LTLA/iSEE2018&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/csoneson/iSEE&#34;&gt;https://github.com/csoneson/iSEE&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEE_custom&#34;&gt;https://github.com/kevinrue/iSEE_custom&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/federicomarini/iSEE_instances&#34;&gt;https://github.com/federicomarini/iSEE_instances&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;li&gt;&lt;fs60&gt;&lt;a href=&#34;https://github.com/kevinrue/iSEEWorkshop2019&#34;&gt;https://github.com/kevinrue/iSEEWorkshop2019&lt;/a&gt;&lt;/fs60&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
+The growing funtionality of the iSEE package is demonstrated in various places:
+- The Bioconductor website is the primary source of information for the latest release and development package versions.
+- The package GitHub repository is the place to monitor the latest developments, open issues, and contribute pull requests (consider the Bioconductor support website for general questions)
+- kevinrue/iSEE_custom demonstrates the development of custom panels through a gallery of examples
+- federicomarini/iSEE_instances demonstrates the integration of iSEE with entire analyses of publicly available datasets through a gallery of examples
+- Finally, the iSEE workshop was written for the Bioconductor conference 2019 to showcase the functionality of the iSEE package for both newcomers and experienced R users.
+--&gt;
+&lt;!-- F1000 Twitter teaser --&gt;
+&lt;!-- 
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+&lt;video controls &gt;
+  &lt;source src=&#34;/img/iSEE/twitter-F1000.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt; --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
