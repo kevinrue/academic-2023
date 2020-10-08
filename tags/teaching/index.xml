@@ -72,7 +72,7 @@ This allows &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#3
 &lt;p&gt;As such, participants should not need to install any packages at all; the environment should provide everything they need to write a script equivalent to my own.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Launch the R project for the environment created at step 2.&lt;/li&gt;
-&lt;li&gt;Create a script called &lt;code&gt;solutions.R&lt;/code&gt;, &lt;em&gt;within in this project directory&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Create a script called &lt;code&gt;solutions.R&lt;/code&gt;, &lt;em&gt;within this project directory&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Write code that performs the tasks you expect participants to do themselves, loading all the packages that you expect them to use.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For instance, the simple script below will allow me to create an environment that records the version of &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=ggplot2&#34;&gt;ggplot2&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=cowplot&#34;&gt;cowplot&lt;/a&gt;&lt;/em&gt;, and their relevant dependencies in the project library used to run the script, so that I can provide a working environment that I have tested myself and that participants can use with confidence.&lt;/p&gt;
