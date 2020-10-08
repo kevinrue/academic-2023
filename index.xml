@@ -68,18 +68,18 @@ Those files are useful to me, but I don’t want to:&lt;/p&gt;
 &lt;h2&gt;Step 3. Write an R script using all relevant packages&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; package is capable of detecting the packages needed to run all the scripts in an R project, usually with a bit of extra help.&lt;/p&gt;
 &lt;p&gt;I leverage that feature, writing a script that outlines my own rough version of the code that I expect participants to write; but more importantly this script also contains the statements loading all the packages that I expect participants to use.
-This allows &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to detect adn record all the packages that I load in the script, their own dependencies, and the version of all those packages that I used to run and test my script.&lt;/p&gt;
+This allows &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to detect and record all the packages that I load in the script, their own dependencies, and the version of all those packages that I used to run and test that my script actually works without error.&lt;/p&gt;
 &lt;p&gt;As such, participants should not need to install any packages at all; the environment should provide everything they need to write a script equivalent to my own.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Launch the R project for the environment created at step 2.&lt;/li&gt;
 &lt;li&gt;Create a script called &lt;code&gt;solutions.R&lt;/code&gt;, &lt;em&gt;within in this project directory&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Write code that performs the tasks you expect participants to do themselves, loading all the packages that you expect them to use.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For instance, the simple script below will allow me to create an environment that records the version of &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=ggplot2&#34;&gt;ggplot2&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=cowplot&#34;&gt;cowplot&lt;/a&gt;&lt;/em&gt;, and their relevant dependencies in the project library used to run the script, so that I can provide a working environment that I have tested myself to participants.&lt;/p&gt;
+&lt;p&gt;For instance, the simple script below will allow me to create an environment that records the version of &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=ggplot2&#34;&gt;ggplot2&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=cowplot&#34;&gt;cowplot&lt;/a&gt;&lt;/em&gt;, and their relevant dependencies in the project library used to run the script, so that I can provide a working environment that I have tested myself and that participants can use with confidence.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;step-4.-record-the-environment&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Step 4. Record the environment&lt;/h2&gt;
-&lt;p&gt;Having saved the script in the environment project at step 3, I then use &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=ggplot2&#34;&gt;ggplot2&lt;/a&gt;&lt;/em&gt; to record the packages and versions that I used to write, and run the script to test the code.&lt;/p&gt;
+&lt;p&gt;Having saved the script in the environment project at step 3, I then use &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to record the packages and versions that I used to write, and run the script to test the code.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;renv::hydrate()&lt;/code&gt; to make sure all the packages that I need are installed&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;renv::clean()&lt;/code&gt;, to remove packages that I may have installed in the environment, but that are not used by my script any more.
@@ -114,6 +114,27 @@ Other files - &lt;code&gt;.Rprofile&lt;/code&gt; and those in the &lt;code&gt;re
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git commit -m &#34;added environment1&#34;&lt;/code&gt;, to commit the changes (with an appropriate message).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git push&lt;/code&gt;, to deploy the new/updated files an online repository I that participants hae access to (e.g. GitHub).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-6.-restoring-and-using-the-environment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 6. Restoring and using the environment&lt;/h2&gt;
+&lt;p&gt;Everything is now set for participants to fetch and use those environments.&lt;/p&gt;
+&lt;p&gt;First, I ask participants to clone the repository that contains the environments.
+They can clone it anywhere on their system, that is not already a Git repository.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git clone ...&lt;/code&gt;, replacing the dots with the link to the repository where I pushed the files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, for every new environment that I want them to use for an exercise, I ask them to copy (recursively) the subdirectory that corresponds to the environment into their work directory.
+That is, I ask them to copy the environment as a subdirectoy of the Git repository that they use to store their code for the course.
+In a Terminal, this would look like the following command:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cp -r .../environment1 .../course-repository/&lt;/code&gt;, replacing dots with the full path to the relevant locations on their system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then participants can launch an RStudio session using the &lt;code&gt;...Rproj&lt;/code&gt; file in the copied environment.
+For instance, in a Finder windows, in this example, click on the &lt;code&gt;environment1.Rproj&lt;/code&gt; file to launch RStudio.&lt;/p&gt;
+&lt;p&gt;Finally, I ask them to restore the environment, which means installing all the packages that I expect them to use for that session.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;renv::restore()&lt;/code&gt;, to restore the environment, allowing &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to install all the packages listed in the &lt;code&gt;renv.lock&lt;/code&gt; file (with the appropriate version).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;caveats&#34; class=&#34;section level2&#34;&gt;
