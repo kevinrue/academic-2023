@@ -150,7 +150,7 @@ Furthermore, users could also fork each original repository, to work and commit 
 &lt;p&gt;Instead:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;At the start of the course, participants initially set up their own Git repository, where they store all the code they write throughout the course.&lt;/li&gt;
-&lt;li&gt;I want to provide a single “read-only” repository where participants can find the files to recreated the environment&lt;/li&gt;
+&lt;li&gt;I want to provide a single “read-only” repository where participants can find the files to recreate the environment&lt;/li&gt;
 &lt;li&gt;Participants can then copy each from the “read-only” repository, to their own repository, restore the environment, set up the input data, and write and commit their own code in their own repository.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
