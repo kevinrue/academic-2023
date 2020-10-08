@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="Motivation There are currently 5,707 packages on Bioconductor, broken down as follows:
-  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,238    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository.">
+  <meta name="description" content="In this post, I’ll describe a use of renv to manage a collection of environments for a training course, in a single Git repository.
+I will cover some caveats at the end of the post, so that you can decide whether this set up suits your own needs, but for now - before I give myself a chance to confuse you - I’ll just get straight into my process.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/biocpkgtools/">
+  <link rel="alternate" hreflang="en-us" href="/post/create-renv-for-teaching/">
 
   
 
@@ -254,7 +254,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/post/biocpkgtools/">
+  <link rel="canonical" href="/post/create-renv-for-teaching/">
 
   
   
@@ -270,14 +270,14 @@
   <meta property="twitter:creator" content="@KevinRUE67">
   
   <meta property="og:site_name" content="Kevin Rue-Albrecht">
-  <meta property="og:url" content="/post/biocpkgtools/">
-  <meta property="og:title" content="BiocPkgTools | Kevin Rue-Albrecht">
-  <meta property="og:description" content="Motivation There are currently 5,707 packages on Bioconductor, broken down as follows:
-  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,238    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository."><meta property="og:image" content="/img/android-chrome-512x512.png">
+  <meta property="og:url" content="/post/create-renv-for-teaching/">
+  <meta property="og:title" content="Create R environments for teaching | Kevin Rue-Albrecht">
+  <meta property="og:description" content="In this post, I’ll describe a use of renv to manage a collection of environments for a training course, in a single Git repository.
+I will cover some caveats at the end of the post, so that you can decide whether this set up suits your own needs, but for now - before I give myself a chance to confuse you - I’ll just get straight into my process."><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="twitter:image" content="/img/android-chrome-512x512.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-24T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-10-05T00:00:00&#43;00:00">
     
     <meta property="article:modified_time" content="2020-10-08T09:22:36&#43;01:00">
   
@@ -303,11 +303,11 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/biocpkgtools/"
+    "@id": "/post/create-renv-for-teaching/"
   },
-  "headline": "BiocPkgTools",
+  "headline": "Create R environments for teaching",
   
-  "datePublished": "2020-05-24T00:00:00Z",
+  "datePublished": "2020-10-05T00:00:00Z",
   "dateModified": "2020-10-08T09:22:36+01:00",
   
   "author": {
@@ -323,7 +323,7 @@
       "url": "/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Motivation There are currently 5,707 packages on Bioconductor, broken down as follows:\n  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,238    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository."
+  "description": "In this post, I’ll describe a use of renv to manage a collection of environments for a training course, in a single Git repository.\nI will cover some caveats at the end of the post, so that you can decide whether this set up suits your own needs, but for now - before I give myself a chance to confuse you - I’ll just get straight into my process."
 }
 </script>
 
@@ -341,7 +341,7 @@
 
 
 
-  <title>BiocPkgTools | Kevin Rue-Albrecht</title>
+  <title>Create R environments for teaching | Kevin Rue-Albrecht</title>
 
 </head>
 
@@ -653,7 +653,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>BiocPkgTools</h1>
+  <h1>Create R environments for teaching</h1>
 
   
 
@@ -683,7 +683,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    6 min read
   </span>
   
 
@@ -727,83 +727,117 @@
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="motivation" class="section level2">
-<h2>Motivation</h2>
-<p>There are currently 5,707 packages on Bioconductor, broken down as follows:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Repository</th>
-<th align="left">Packages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">AnnotationData</td>
-<td align="left">2,653</td>
-</tr>
-<tr class="even">
-<td align="left">ExperimentData</td>
-<td align="left">816</td>
-</tr>
-<tr class="odd">
-<td align="left">Software</td>
-<td align="left">2,238</td>
-</tr>
-</tbody>
-</table>
-<p>In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the <em><a href="https://bioconductor.org/packages/3.11/BiocPkgTools">BiocPkgTools</a></em> package to develop a website updated daily and feature packages selected randomly from each repository.</p>
-<p>I have then set up a <a href="https://github.com/kevinrue/BiocRoulette/actions">GitHub Action</a> executed as a CRON job to update the website daily.</p>
-<p>The result is accessible at: <a href="https://kevinrue.github.io/BiocRoulette/" class="uri">https://kevinrue.github.io/BiocRoulette/</a>.</p>
+<p>In this post, I’ll describe a use of <em><a href="https://CRAN.R-project.org/package=renv">renv</a></em> to manage a collection of environments for a training course, in a single Git repository.</p>
+<p>I will cover some caveats at the end of the post, so that you can decide whether this set up suits your own needs, but for now - before I give myself a chance to confuse you - I’ll just get straight into my process.</p>
+<div id="step-1.-set-up-the-main-git-repository" class="section level2">
+<h2>Step 1. Set up the main Git repository</h2>
+<p>This Git repository is the one repository that I provide to the next group of participants to the course.
+It is intended as a read-only repository that participants are asked to clone, and where they’ll fetch the files to re-create the R environment that I prepared for them.</p>
+<ul>
+<li>In RStudio, create a new project
+<ul>
+<li>Use <code>git</code></li>
+<li>Use <code>renv</code></li>
+</ul></li>
+</ul>
+<p><img src="img/new_main_project.png" /><!-- --></p>
+<ul>
+<li>Edit the <code>.gitignore</code> file.
+Add the following lines.</li>
+</ul>
+<pre><code>solutions.R
+data</code></pre>
+<p>I’ll get a ahead of myself, for a moment here.
+These two lines tell <code>git</code> to ignore files that don’t exist yet.
+I will create those in subsequent steps, so that I never accidentally commit and push them.
+Those files are useful to me, but I don’t want to:</p>
+<ul>
+<li>commit (potentially large) data sets to the Git repository</li>
+<li>give the solution to participants.</li>
+</ul>
 </div>
-<div id="example-usage" class="section level2">
-<h2>Example usage</h2>
-<p>Below, I include a bit of code that I wrote while developing the website, to illustrate the process.</p>
-<p>First, the packages that I used to fetch, process, and visualise the data.</p>
-<pre class="r"><code>library(BiocPkgTools)
-library(tidyverse)
-library(cowplot)</code></pre>
-<p>Then I fetch the data using <code>BiocPkgTools::biocDownloadStats()</code>.</p>
-<pre class="r"><code>download_stats &lt;- biocDownloadStats()</code></pre>
-<p>Next, I subset the download stats to a given repository.</p>
-<pre class="r"><code>software_stats &lt;- download_stats %&gt;% filter(repo == &quot;Software&quot;)</code></pre>
-<p>Then, I identify the latest complete month with data in the download statistics.
-To do that, I look for the latest month with non-zero download statistics, and I take the month before that one.</p>
-<pre class="r"><code>latest_full_date &lt;- software_stats %&gt;% 
-  group_by(Date) %&gt;% 
-  summarise(Nb_of_downloads = sum(Nb_of_downloads)) %&gt;% 
-  filter(Nb_of_downloads &gt; 0) %&gt;% 
-  arrange(desc(Date)) %&gt;% 
-  head(2) %&gt;% 
-  tail(1) %&gt;% 
-  pull(Date)</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre class="r"><code>software_monthly_stats &lt;- software_stats %&gt;% 
-  filter(Date == latest_full_date)</code></pre>
-<p>I wanted to give an edge to packages more frequently downloaded, but without being overwhelmed by core packages that have excessively large download statistics.</p>
-<p>To do so, I visualised the distribution of download stats, and I chose to weigh packages by the <code>log(x+1)</code> transformation of the number of distinct IP addresses in their download statistics.</p>
-<pre class="r"><code>gg_dl &lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(Nb_of_downloads)) +
-  theme_cowplot()
-gg_dl_log &lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(log(Nb_of_downloads+1))) +
-  theme_cowplot()
-gg_ip &lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(Nb_of_distinct_IPs)) +
-  theme_cowplot()
-gg_ip_log &lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(log(Nb_of_distinct_IPs+1))) +
-  theme_cowplot()
-plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)</code></pre>
-<p><img src="/post/2020-05-24-biocpkgtools/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>Finally, I set the random seed using the date of the day, and I randomly sample a package from the table, using the weight described above.</p>
-<pre class="r"><code>set.seed(as.numeric(Sys.Date()))
-software_monthly_stats %&gt;% 
-  sample_n(size = 1, replace = FALSE, weight = log(Nb_of_distinct_IPs + 1))</code></pre>
-<pre><code>## # A tibble: 1 x 7
-##   Package     Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
-##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;              &lt;int&gt;           &lt;int&gt; &lt;chr&gt;    &lt;date&gt;    
-## 1 OmicCircos  2020 Sep                  235             394 Software 2020-09-01</code></pre>
+<div id="step-2.-create-an-project-environment" class="section level2">
+<h2>Step 2. Create an project environment</h2>
+<p>The <em><a href="https://CRAN.R-project.org/package=renv">renv</a></em> package manages a single environment per R project.</p>
+<p>As such, for each environment that I want participants to use for a set of exercise, I create a new R project, under the main Git repository, setting up a new <code>renv</code> library for that project.</p>
+<ul>
+<li>In RStudio, create a new project for the environment, <em>directly within the main repository</em>.
+<ul>
+<li><em>Do not</em> use <code>git</code></li>
+<li>Use <code>renv</code></li>
+</ul></li>
+</ul>
+<p>We don’t initialise a new Git repository this time, as all the environments are managed by the main Git repository that we created in step 1.</p>
+<p><img src="img/new_environment_project.png" /><!-- --></p>
+</div>
+<div id="step-3.-write-an-r-script-using-all-relevant-packages" class="section level2">
+<h2>Step 3. Write an R script using all relevant packages</h2>
+<p>The <em><a href="https://CRAN.R-project.org/package=renv">renv</a></em> package is capable of detecting the packages needed to run all the scripts in an R project, usually with a bit of extra help.</p>
+<p>I leverage that feature, writing a script that outlines my own rough version of the code that I expect participants to write; but more importantly this script also contains the statements loading all the packages that I expect participants to use.
+This allows <em><a href="https://CRAN.R-project.org/package=renv">renv</a></em> to detect adn record all the packages that I load in the script, their own dependencies, and the version of all those packages that I used to run and test my script.</p>
+<p>As such, participants should not need to install any packages at all; the environment should provide everything they need to write a script equivalent to my own.</p>
+<ul>
+<li>Launch the R project for the environment created at step 2.</li>
+<li>Create a script called <code>solutions.R</code>, <em>within in this project directory</em>.</li>
+<li>Write code that performs the tasks you expect participants to do themselves, loading all the packages that you expect them to use.</li>
+</ul>
+<p>For instance, the simple script below will allow me to create an environment that records the version of <em><a href="https://CRAN.R-project.org/package=ggplot2">ggplot2</a></em>, <em><a href="https://CRAN.R-project.org/package=cowplot">cowplot</a></em>, and their relevant dependencies in the project library used to run the script, so that I can provide a working environment that I have tested myself to participants.</p>
+</div>
+<div id="step-4.-record-the-environment" class="section level2">
+<h2>Step 4. Record the environment</h2>
+<p>Having saved the script in the environment project at step 3, I then use <em><a href="https://CRAN.R-project.org/package=ggplot2">ggplot2</a></em> to record the packages and versions that I used to write, and run the script to test the code.</p>
+<ul>
+<li><code>renv::hydrate()</code> to make sure all the packages that I need are installed</li>
+<li><code>renv::clean()</code>, to remove packages that I may have installed in the environment, but that are not used by my script any more.
+<ul>
+<li>When prompted, answer “no” to the first question (don’t delete packages from your system R library), answer “yes” to the second question (delete packages in your project library that are not needed to run the script).</li>
+<li>When including Bioconductor packages in the environment, you can answer “no” to the second question when the only packages suggested for removal are <code>BiocStyle::Biocpkg("BiocVersion")</code> and <code>BiocStyle::Biocpkg("BiocManager")</code>.</li>
+</ul></li>
+<li><code>renv::snapshot()</code> to record the current version of all the packages.</li>
+<li><code>renv::status()</code> to check that the environment recorded matches the packages and versions currently installed.</li>
+</ul>
+<p>You may need to repeat some of the commands above, as needed, until you are satisfied with your script, the packages installed in your environment, and <code>renv::status()</code> prints the following message:</p>
+<pre><code>* The project is already synchronized with the lockfile.</code></pre>
+</div>
+<div id="step-5.-commit-and-push" class="section level2">
+<h2>Step 5. Commit and push</h2>
+<p>Once I am satisfied with the environment, and the script runs in that environment, I am ready to commit the files that define the environment.</p>
+<ul>
+<li><code>git add .</code>, to stage all the changes (use with care if you’re editing multiple environments simultaneously)</li>
+</ul>
+<p>The first time I add files to an environment, this is the list of files that I typically see:</p>
+<pre><code>On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        new file:   .Rprofile
+        new file:   environment1.Rproj
+        new file:   renv.lock
+        new file:   renv/.gitignore
+        new file:   renv/activate.R
+        new file:   renv/settings.dcf</code></pre>
+<p>In particular, the <code>renv.lock</code> file is the one that contains the list of packages and versions in the environment.
+Other files - <code>.Rprofile</code> and those in the <code>renv/</code> subdirectory - are used by <em><a href="https://CRAN.R-project.org/package=renv">renv</a></em> to restore and load the environment in subsequent R sessions.</p>
+<ul>
+<li><code>git commit -m "added environment1"</code>, to commit the changes (with an appropriate message).</li>
+<li><code>git push</code>, to deploy the new/updated files an online repository I that participants hae access to (e.g. GitHub).</li>
+</ul>
+</div>
+<div id="caveats" class="section level2">
+<h2>Caveats</h2>
+<p>Ideally, I would argue that it is better to manage one R environment per Git repository, which would itself correspond to one R project.
+That way, users can clone each individual repository, and carry out exercises in the environment provided by the corresponding repository.
+Furthermore, users could also fork each original repository, to work and commit their own code for each project, independently.</p>
+<p>However, for practical reasons, my approach here is it to manage multiple environments in the same repository, with the following motivations:</p>
+<ul>
+<li>I would rather avoid participants having to clone one repository per day, every day, over the duration of the course.</li>
+<li>I don’t expect participants to fork, clone, and push in the original repository.</li>
+</ul>
+<p>Instead:</p>
+<ul>
+<li>At the start of the course, participants initially set up their own Git repository, where they store all the code they write throughout the course.</li>
+<li>I want to provide a single “read-only” repository where participants can find the files to recreated the environment</li>
+<li>Participants can then copy each from the “read-only” repository, to their own repository, restore the environment, set up the input data, and write and commit their own code in their own repository.</li>
+</ul>
 </div>
 
     </div>
@@ -816,9 +850,9 @@ software_monthly_stats %&gt;%
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/bioconductor/">Bioconductor</a>
+  <a class="badge badge-light" href="/tags/renv/">renv</a>
   
-  <a class="badge badge-light" href="/tags/package/">package</a>
+  <a class="badge badge-light" href="/tags/teaching/">teaching</a>
   
 </div>
 
@@ -835,7 +869,7 @@ software_monthly_stats %&gt;%
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/biocpkgtools/&amp;text=BiocPkgTools" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/create-renv-for-teaching/&amp;text=Create%20R%20environments%20for%20teaching" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -848,7 +882,7 @@ software_monthly_stats %&gt;%
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/biocpkgtools/&amp;t=BiocPkgTools" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/create-renv-for-teaching/&amp;t=Create%20R%20environments%20for%20teaching" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -861,7 +895,7 @@ software_monthly_stats %&gt;%
       
       
       <li>
-        <a href="mailto:?subject=BiocPkgTools&amp;body=/post/biocpkgtools/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Create%20R%20environments%20for%20teaching&amp;body=/post/create-renv-for-teaching/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -874,7 +908,7 @@ software_monthly_stats %&gt;%
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/biocpkgtools/&amp;title=BiocPkgTools" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/create-renv-for-teaching/&amp;title=Create%20R%20environments%20for%20teaching" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -887,7 +921,7 @@ software_monthly_stats %&gt;%
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=BiocPkgTools%20/post/biocpkgtools/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Create%20R%20environments%20for%20teaching%20/post/create-renv-for-teaching/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -900,7 +934,7 @@ software_monthly_stats %&gt;%
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/biocpkgtools/&amp;title=BiocPkgTools" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/create-renv-for-teaching/&amp;title=Create%20R%20environments%20for%20teaching" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1026,23 +1060,6 @@ software_monthly_stats %&gt;%
 
 
   
-  
-  <div class="article-widget content-widget-hr">
-    <h3>Related</h3>
-    <ul>
-      
-      <li><a href="/slides/bioc2019-flashtalk/">iSEE flashtalk | Bioconductor conference 2019</a></li>
-      
-      <li><a href="/post/isee-at-bioc2019/">iSEE workshop at Bioc2019!</a></li>
-      
-      <li><a href="/slides/bioc2019-workshop/">iSEE workshop | Bioconductor conference 2019</a></li>
-      
-      <li><a href="/talk/bioc2019-flashtalk/">iSEE - Bioconductor 2020 Flash Presentation</a></li>
-      
-      <li><a href="/talk/bioc2019-workshop/">iSEE - Bioconductor 2020 Workshop Presentation</a></li>
-      
-    </ul>
-  </div>
   
 
 

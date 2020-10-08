@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>teaching | Kevin Rue-Albrecht</title>
+    <link>/tags/teaching/</link>
+      <atom:link href="/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <description>teaching</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2020</copyright><lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/android-chrome-512x512.png</url>
+      <title>teaching</title>
+      <link>/tags/teaching/</link>
+    </image>
+    
+    <item>
+      <title>Create R environments for teaching</title>
+      <link>/post/create-renv-for-teaching/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/create-renv-for-teaching/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In this post, I’ll describe a use of &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to manage a collection of environments for a training course, in a single Git repository.&lt;/p&gt;
+&lt;p&gt;I will cover some caveats at the end of the post, so that you can decide whether this set up suits your own needs, but for now - before I give myself a chance to confuse you - I’ll just get straight into my process.&lt;/p&gt;
+&lt;div id=&#34;step-1.-set-up-the-main-git-repository&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1. Set up the main Git repository&lt;/h2&gt;
+&lt;p&gt;This Git repository is the one repository that I provide to the next group of participants to the course.
+It is intended as a read-only repository that participants are asked to clone, and where they’ll fetch the files to re-create the R environment that I prepared for them.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In RStudio, create a new project
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;renv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/new_main_project.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Edit the &lt;code&gt;.gitignore&lt;/code&gt; file.
+Add the following lines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;solutions.R
+data&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I’ll get a ahead of myself, for a moment here.
+These two lines tell &lt;code&gt;git&lt;/code&gt; to ignore files that don’t exist yet.
+I will create those in subsequent steps, so that I never accidentally commit and push them.
+Those files are useful to me, but I don’t want to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;commit (potentially large) data sets to the Git repository&lt;/li&gt;
+&lt;li&gt;give the solution to participants.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2.-create-an-project-environment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2. Create an project environment&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; package manages a single environment per R project.&lt;/p&gt;
+&lt;p&gt;As such, for each environment that I want participants to use for a set of exercise, I create a new R project, under the main Git repository, setting up a new &lt;code&gt;renv&lt;/code&gt; library for that project.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In RStudio, create a new project for the environment, &lt;em&gt;directly within the main repository&lt;/em&gt;.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Do not&lt;/em&gt; use &lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;renv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We don’t initialise a new Git repository this time, as all the environments are managed by the main Git repository that we created in step 1.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/new_environment_project.png&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3.-write-an-r-script-using-all-relevant-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3. Write an R script using all relevant packages&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; package is capable of detecting the packages needed to run all the scripts in an R project, usually with a bit of extra help.&lt;/p&gt;
+&lt;p&gt;I leverage that feature, writing a script that outlines my own rough version of the code that I expect participants to write; but more importantly this script also contains the statements loading all the packages that I expect participants to use.
+This allows &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to detect adn record all the packages that I load in the script, their own dependencies, and the version of all those packages that I used to run and test my script.&lt;/p&gt;
+&lt;p&gt;As such, participants should not need to install any packages at all; the environment should provide everything they need to write a script equivalent to my own.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Launch the R project for the environment created at step 2.&lt;/li&gt;
+&lt;li&gt;Create a script called &lt;code&gt;solutions.R&lt;/code&gt;, &lt;em&gt;within in this project directory&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Write code that performs the tasks you expect participants to do themselves, loading all the packages that you expect them to use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For instance, the simple script below will allow me to create an environment that records the version of &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=ggplot2&#34;&gt;ggplot2&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=cowplot&#34;&gt;cowplot&lt;/a&gt;&lt;/em&gt;, and their relevant dependencies in the project library used to run the script, so that I can provide a working environment that I have tested myself to participants.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4.-record-the-environment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 4. Record the environment&lt;/h2&gt;
+&lt;p&gt;Having saved the script in the environment project at step 3, I then use &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=ggplot2&#34;&gt;ggplot2&lt;/a&gt;&lt;/em&gt; to record the packages and versions that I used to write, and run the script to test the code.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;renv::hydrate()&lt;/code&gt; to make sure all the packages that I need are installed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;renv::clean()&lt;/code&gt;, to remove packages that I may have installed in the environment, but that are not used by my script any more.
+&lt;ul&gt;
+&lt;li&gt;When prompted, answer “no” to the first question (don’t delete packages from your system R library), answer “yes” to the second question (delete packages in your project library that are not needed to run the script).&lt;/li&gt;
+&lt;li&gt;When including Bioconductor packages in the environment, you can answer “no” to the second question when the only packages suggested for removal are &lt;code&gt;BiocStyle::Biocpkg(&#34;BiocVersion&#34;)&lt;/code&gt; and &lt;code&gt;BiocStyle::Biocpkg(&#34;BiocManager&#34;)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;renv::snapshot()&lt;/code&gt; to record the current version of all the packages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;renv::status()&lt;/code&gt; to check that the environment recorded matches the packages and versions currently installed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You may need to repeat some of the commands above, as needed, until you are satisfied with your script, the packages installed in your environment, and &lt;code&gt;renv::status()&lt;/code&gt; prints the following message:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* The project is already synchronized with the lockfile.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5.-commit-and-push&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 5. Commit and push&lt;/h2&gt;
+&lt;p&gt;Once I am satisfied with the environment, and the script runs in that environment, I am ready to commit the files that define the environment.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;, to stage all the changes (use with care if you’re editing multiple environments simultaneously)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first time I add files to an environment, this is the list of files that I typically see:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;On branch master
+Changes to be committed:
+  (use &amp;quot;git restore --staged &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+        new file:   .Rprofile
+        new file:   environment1.Rproj
+        new file:   renv.lock
+        new file:   renv/.gitignore
+        new file:   renv/activate.R
+        new file:   renv/settings.dcf&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In particular, the &lt;code&gt;renv.lock&lt;/code&gt; file is the one that contains the list of packages and versions in the environment.
+Other files - &lt;code&gt;.Rprofile&lt;/code&gt; and those in the &lt;code&gt;renv/&lt;/code&gt; subdirectory - are used by &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to restore and load the environment in subsequent R sessions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git commit -m &#34;added environment1&#34;&lt;/code&gt;, to commit the changes (with an appropriate message).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push&lt;/code&gt;, to deploy the new/updated files an online repository I that participants hae access to (e.g. GitHub).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;caveats&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Caveats&lt;/h2&gt;
+&lt;p&gt;Ideally, I would argue that it is better to manage one R environment per Git repository, which would itself correspond to one R project.
+That way, users can clone each individual repository, and carry out exercises in the environment provided by the corresponding repository.
+Furthermore, users could also fork each original repository, to work and commit their own code for each project, independently.&lt;/p&gt;
+&lt;p&gt;However, for practical reasons, my approach here is it to manage multiple environments in the same repository, with the following motivations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I would rather avoid participants having to clone one repository per day, every day, over the duration of the course.&lt;/li&gt;
+&lt;li&gt;I don’t expect participants to fork, clone, and push in the original repository.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Instead:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;At the start of the course, participants initially set up their own Git repository, where they store all the code they write throughout the course.&lt;/li&gt;
+&lt;li&gt;I want to provide a single “read-only” repository where participants can find the files to recreated the environment&lt;/li&gt;
+&lt;li&gt;Participants can then copy each from the “read-only” repository, to their own repository, restore the environment, set up the input data, and write and commit their own code in their own repository.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

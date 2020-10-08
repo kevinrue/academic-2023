@@ -276,7 +276,7 @@
   <meta property="og:description" content="Kevin Rue-Albrecht&#39;s GitHub blogdown using hugo-academic"><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="twitter:image" content="/img/android-chrome-512x512.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-05-24T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-10-05T00:00:00&#43;00:00">
   
 
   
@@ -1054,12 +1054,13 @@ A list of software packages that I maintain or contributed to is available on th
                 <span>Oxford</span>
               
             </div>
-            <div class="card-text">Responsibilities include:</p>
+            <div class="card-text"><p>Responsibilities include:</p>
 <ul>
 <li>Study the role of thymic epithelial cells (TEC) in shaping the T vell receptor (TCR) repertoire (consortium funded by <a href="https://www.sanger.ac.uk/science/projects/wellcome-trust-strategic-award-homunculus-our-thymus-cellular-genomics-approach">Wellcome Trust Strategic Award</a>)</li>
 <li>Study contest-specific changes in immune cell abundance and phenotype that underlie chronic inflammation (collaboration with the <a href="https://www.kennedy.ox.ac.uk/research/mucosal-immunology">Powrie group</a>)</li>
 <li>Write and maintain software pipelines and programs for data analysis</li>
-</ul></div>
+</ul>
+</div>
           </div>
         </div>
       </div>
@@ -1096,12 +1097,13 @@ A list of software packages that I maintain or contributed to is available on th
                 <span>Oxford</span>
               
             </div>
-            <div class="card-text">Responsibilities include:</p>
+            <div class="card-text"><p>Responsibilities include:</p>
 <ul>
 <li>Management, quality control, and integration of pan-genomic datasets encompassingn RNA-seq, ChIP-seq, DNAse/FAIRE/ATAC-seq, Capture-C,  microarrays, whole-genome sequencing and targeted re-sequencing</li>
 <li>Study transcriptional and epigenetic responses to hypoxia and their relation to cancer biology</li>
 <li>Experimental design, pipeline development, and publication</li>
-</ul></div>
+</ul>
+</div>
           </div>
         </div>
       </div>
@@ -1138,12 +1140,13 @@ A list of software packages that I maintain or contributed to is available on th
                 <span>London</span>
               
             </div>
-            <div class="card-text">Responsibilities include:</p>
+            <div class="card-text"><p>Responsibilities include:</p>
 <ul>
 <li>Analyze genetic, proteomic and metabolomics data and associated phenotype data</li>
 <li>Integrate and analysis of large-scale, complex, multi-sources medical data and multi-variate data</li>
 <li>Generate new knowledge on idiopathic pulmonary arterial hypertension (IPAH) disease aetiology, underlying biochemical pathways and mechanisms, to improve patient stratification, preventive strategies and treatments</li>
-</ul></div>
+</ul>
+</div>
           </div>
         </div>
       </div>
@@ -1446,13 +1449,13 @@ The course covers methods to process raw data from genome-wide mRNA expression s
   <div class="media-body">
 
     <h3 class="article-title mb-0 mt-0">
-      <a href="/post/biocpkgtools/" >BiocPkgTools</a>
+      <a href="/post/create-renv-for-teaching/" >Create R environments for teaching</a>
     </h3>
 
     
     <div class="article-style">
-      Motivation There are currently 5,656 packages on Bioconductor, broken down as follows:
-  Repository Packages    AnnotationData 2,653  ExperimentData 810  Software 2,193    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository.
+      In this post, I’ll describe a use of renv to manage a collection of environments for a training course, in a single Git repository.
+I will cover some caveats at the end of the post, so that you can decide whether this set up suits your own needs, but for now - before I give myself a chance to confuse you - I’ll just get straight into my process.
     </div>
     
 
@@ -1477,7 +1480,99 @@ The course covers methods to process raw data from genome-wide mRNA expression s
           Last updated on
       
     
-    Aug 6, 2020
+    Oct 8, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/r/">R</a></span>
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/biocpkgtools/" >BiocPkgTools</a>
+    </h3>
+
+    
+    <div class="article-style">
+      Motivation There are currently 5,707 packages on Bioconductor, broken down as follows:
+  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,238    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository.
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Oct 8, 2020
   </span>
   
 
@@ -1791,96 +1886,6 @@ A single .Rmd file can simultaneously generate both an HTML and a PDF version.
     <a href="/post/writing-my-cv-using-pagedown/" >
       <img src="/post/writing-my-cv-using-pagedown/featured_hu415bb52acda44839a73c9c4234bb7d44_345471_150x0_resize_lanczos_2.png" alt="">
     </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/" >Creating a dynamic Rmarkdown website for COVID-19 data</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Overview This post refers to code available online as a GitHub repository.
- Create a new RStudio project Open the RStudio “New Project…” menu -&gt; New Directory -&gt; Simple R Markdown Website -&gt; Type a folder name.
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Mar 13, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/r/">R</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
     
   </div>
 </div>
@@ -2628,6 +2633,11 @@ A single .Rmd file can simultaneously generate both an HTML and a PDF version.
           
           
           
+          <a href="/tags/renv/" style="font-size:0.8rem">renv</a>
+        
+          
+          
+          
           <a href="/tags/rmarkdown/" style="font-size:1.4055522180836377rem">rmarkdown</a>
         
           
@@ -2648,12 +2658,12 @@ A single .Rmd file can simultaneously generate both an HTML and a PDF version.
           
           
           
-          <a href="/tags/travis-ci/" style="font-size:0.8rem">Travis-CI</a>
+          <a href="/tags/teaching/" style="font-size:0.8rem">teaching</a>
         
           
           
           
-          <a href="/tags/twitter/" style="font-size:0.8rem">twitter</a>
+          <a href="/tags/travis-ci/" style="font-size:0.8rem">Travis-CI</a>
         
       </div>
     
