@@ -41,7 +41,7 @@ Add the following lines.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;solutions.R
 data&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I’ll get a ahead of myself, for a moment here.
+&lt;p&gt;I’ll get ahead of myself, for a moment here.
 These two lines tell &lt;code&gt;git&lt;/code&gt; to ignore files that don’t exist yet.
 I will create those in subsequent steps, so that I never accidentally commit and push them.
 Those files are useful to me, but I don’t want to:&lt;/p&gt;
@@ -53,7 +53,7 @@ Those files are useful to me, but I don’t want to:&lt;/p&gt;
 &lt;div id=&#34;step-2.-create-an-project-environment&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Step 2. Create an project environment&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; package manages a single environment per R project.&lt;/p&gt;
-&lt;p&gt;As such, for each environment that I want participants to use for a set of exercise, I create a new R project, under the main Git repository, setting up a new &lt;code&gt;renv&lt;/code&gt; library for that project.&lt;/p&gt;
+&lt;p&gt;As such, for each environment that I want participants to use for a set of exercises, I create a new R project, under the main Git repository, setting up a new &lt;code&gt;renv&lt;/code&gt; library for that project.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;In RStudio, create a new project for the environment, &lt;em&gt;directly within the main repository&lt;/em&gt;.
 &lt;ul&gt;
