@@ -118,17 +118,12 @@
   </url>
   
   <url>
-    <loc>/tags/bioinformatics/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/project/covid-19/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/miscellaneous/</loc>
+    <loc>/tags/miscellaneous/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -139,11 +134,6 @@
   
   <url>
     <loc>/project/reading-list/</loc>
-    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/single-cell/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
   

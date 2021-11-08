@@ -1,64 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects | Kevin Rue-Albrecht</title>
-    <link>/project/</link>
-      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
-    <description>Projects</description>
+    <title>miscellaneous | Kevin Rue-Albrecht</title>
+    <link>/tags/miscellaneous/</link>
+      <atom:link href="/tags/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
+    <description>miscellaneous</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2021</copyright><lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/android-chrome-512x512.png</url>
-      <title>Projects</title>
-      <link>/project/</link>
+      <title>miscellaneous</title>
+      <link>/tags/miscellaneous/</link>
     </image>
-    
-    <item>
-      <title>COVID-19 Website</title>
-      <link>/project/covid-19/</link>
-      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/project/covid-19/</guid>
-      <description>&lt;p&gt;I have developed 
-&lt;a href=&#34;/COVID-19-website/&#34;&gt;My COVID-19 Website&lt;/a&gt; using the data compiled and provided by
-the Center For Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU) to generate various interactive figure using the R packages &lt;code&gt;rmarkdown&lt;/code&gt;, &lt;code&gt;plotly&lt;/code&gt;, and more generally the &lt;code&gt;tidyverse&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;My COVID-19 Website&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;
-&lt;a href=&#34;/COVID-19-website/&#34;&gt;My COVID-19 Website&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Blog post&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;
-&lt;a href=&#34;/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/&#34;&gt;Creating a dynamic Rmarkdown website for COVID-19 data&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Source data&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34;&gt;https://github.com/CSSEGISandData/COVID-19&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;rmarkdown&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://rmarkdown.rstudio.com/%3E&#34;&gt;https://rmarkdown.rstudio.com/&amp;gt;&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;plotly&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://plotly.com/r/&#34;&gt;https://plotly.com/r/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.tidyverse.org/&#34;&gt;https://www.tidyverse.org/&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-    </item>
     
     <item>
       <title>Reading list</title>
@@ -107,18 +59,6 @@ practices in bioinformatics training for life scientists”. In:
 URL:
 &lt;a href=&#34;https://doi.org/10.1093/bib/bbt043&#34;&gt;https://doi.org/10.1093/bib/bbt043&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Twitter conference coverage</title>
-      <link>/project/twitter/</link>
-      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/project/twitter/</guid>
-      <description>&lt;p&gt;I have started collecting 
-&lt;a href=&#34;/twitter-stats/&#34;&gt;Twitter coverage&lt;/a&gt; for scientific conferences that I attended.&lt;/p&gt;
-&lt;p&gt;Credits to 
-&lt;a href=&#34;https://github.com/lazappi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Luke Zappia&lt;/a&gt; who did all the hard work!&lt;/p&gt;
 </description>
     </item>
     
