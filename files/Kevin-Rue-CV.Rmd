@@ -122,7 +122,7 @@ Strasbourg, France
 Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
 
-### Computational Biologist - Biomedical Data Science trainer
+### Postdoctoral Researcher - Computational Biologist
 
 [Sims Group](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology/groups/sims-group-computational-genomics), [MRC WIMM Centre for Computational Biology](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology),  [University of Oxford](http://www.ox.ac.uk/)
 
