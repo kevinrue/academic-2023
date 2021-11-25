@@ -225,18 +225,17 @@ software_monthly_stats &amp;lt;- software_stats %&amp;gt;%
 &lt;p&gt;I wanted to give an edge to packages more frequently downloaded, but without being overwhelmed by core packages that have excessively large download statistics.&lt;/p&gt;
 &lt;p&gt;To do so, I visualised the distribution of download stats, and I chose to weigh packages by the &lt;code&gt;log(x+1)&lt;/code&gt; transformation of the number of distinct IP addresses in their download statistics.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gg_dl &amp;lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(Nb_of_downloads)) +
-  theme_cowplot()
-gg_dl_log &amp;lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(log(Nb_of_downloads+1))) +
-  theme_cowplot()
+  geom_histogram(aes(Nb_of_downloads), color = &amp;quot;black&amp;quot;, fill = &amp;quot;grey&amp;quot;, size = 0.1) +
+  scale_x_log10() +
+  theme_cowplot() +
+  labs(
+    title = sprintf(&amp;quot;%s %s&amp;quot;, software_monthly_stats$Month, software_monthly_stats$Year)
+  )
 gg_ip &amp;lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(Nb_of_distinct_IPs)) +
+  geom_histogram(aes(Nb_of_distinct_IPs), color = &amp;quot;black&amp;quot;, fill = &amp;quot;grey&amp;quot;, size = 0.1) +
+  scale_x_log10() +
   theme_cowplot()
-gg_ip_log &amp;lt;- ggplot(software_monthly_stats) +
-  geom_histogram(aes(log(Nb_of_distinct_IPs+1))) +
-  theme_cowplot()
-plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)&lt;/code&gt;&lt;/pre&gt;
+plot_grid(gg_dl, gg_ip, nrow = 1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/biocpkgtools/index.en_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Finally, I set the random seed using the date of the day, and I randomly sample a package from the table, using the weight described above.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(as.numeric(Sys.Date()))
