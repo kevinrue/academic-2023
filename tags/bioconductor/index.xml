@@ -237,21 +237,21 @@ If you don&#39;t believe me, you can trust the RStudio team who declared iSEE wi
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       <guid>/post/isee-at-bioc2019/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/isee-at-bioc2019/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
 &lt;div id=&#34;what-to-expect&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;What to expect&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
 &lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
 &lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Workshop content&lt;/h1&gt;
-&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
+&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
 Next, we will walk participants through the various components of the graphical user interface (GUI).
-Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
 &lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomics data modalities:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
