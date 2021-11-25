@@ -24,8 +24,8 @@
   
     
   
-  <meta name="description" content="Motivation There are currently 5,711 packages on Bioconductor, broken down as follows:
-  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,242    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository.">
+  <meta name="description" content="Motivation There are currently 6,096 packages on Bioconductor, broken down as follows:
+  Repository Packages    data-annotation 2,693  data-experiment 855  software 2,516  workflows 32    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/biocpkgtools/">
@@ -268,14 +268,14 @@
   <meta property="og:site_name" content="Kevin Rue-Albrecht">
   <meta property="og:url" content="/post/biocpkgtools/">
   <meta property="og:title" content="BiocPkgTools | Kevin Rue-Albrecht">
-  <meta property="og:description" content="Motivation There are currently 5,711 packages on Bioconductor, broken down as follows:
-  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,242    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository."><meta property="og:image" content="/img/android-chrome-512x512.png">
+  <meta property="og:description" content="Motivation There are currently 6,096 packages on Bioconductor, broken down as follows:
+  Repository Packages    data-annotation 2,693  data-experiment 855  software 2,516  workflows 32    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository."><meta property="og:image" content="/img/android-chrome-512x512.png">
   <meta property="twitter:image" content="/img/android-chrome-512x512.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-05-24T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-10-12T09:22:36&#43;01:00">
+    <meta property="article:modified_time" content="2021-11-25T09:22:37&#43;01:00">
   
 
   
@@ -304,7 +304,7 @@
   "headline": "BiocPkgTools",
   
   "datePublished": "2020-05-24T00:00:00Z",
-  "dateModified": "2020-10-12T09:22:36+01:00",
+  "dateModified": "2021-11-25T09:22:37+01:00",
   
   "author": {
     "@type": "Person",
@@ -319,7 +319,7 @@
       "url": "/images/icon_hu5425813ec227b47c182a9e128571e52c_364989_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Motivation There are currently 5,711 packages on Bioconductor, broken down as follows:\n  Repository Packages    AnnotationData 2,653  ExperimentData 816  Software 2,242    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository."
+  "description": "Motivation There are currently 6,096 packages on Bioconductor, broken down as follows:\n  Repository Packages    data-annotation 2,693  data-experiment 855  software 2,516  workflows 32    In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the BiocPkgTools package to develop a website updated daily and feature packages selected randomly from each repository."
 }
 </script>
 
@@ -692,7 +692,7 @@
           Last updated on
       
     
-    Oct 12, 2020
+    Nov 25, 2021
   </span>
   
 
@@ -742,12 +742,12 @@
 
     <div class="article-style">
       
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/post/biocpkgtools/index.en_files/header-attrs/header-attrs.js"></script>
 
 
 <div id="motivation" class="section level2">
 <h2>Motivation</h2>
-<p>There are currently 5,711 packages on Bioconductor, broken down as follows:</p>
+<p>There are currently 6,096 packages on Bioconductor, broken down as follows:</p>
 <table>
 <thead>
 <tr class="header">
@@ -757,20 +757,24 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">AnnotationData</td>
-<td align="left">2,653</td>
+<td align="left">data-annotation</td>
+<td align="left">2,693</td>
 </tr>
 <tr class="even">
-<td align="left">ExperimentData</td>
-<td align="left">816</td>
+<td align="left">data-experiment</td>
+<td align="left">855</td>
 </tr>
 <tr class="odd">
-<td align="left">Software</td>
-<td align="left">2,242</td>
+<td align="left">software</td>
+<td align="left">2,516</td>
+</tr>
+<tr class="even">
+<td align="left">workflows</td>
+<td align="left">32</td>
 </tr>
 </tbody>
 </table>
-<p>In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the <em><a href="https://bioconductor.org/packages/3.11/BiocPkgTools">BiocPkgTools</a></em> package to develop a website updated daily and feature packages selected randomly from each repository.</p>
+<p>In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the <em><a href="https://bioconductor.org/packages/3.14/BiocPkgTools">BiocPkgTools</a></em> package to develop a website updated daily and feature packages selected randomly from each repository.</p>
 <p>I have then set up a <a href="https://github.com/kevinrue/BiocRoulette/actions">GitHub Action</a> executed as a CRON job to update the website daily.</p>
 <p>The result is accessible at: <a href="https://kevinrue.github.io/BiocRoulette/" class="uri">https://kevinrue.github.io/BiocRoulette/</a>.</p>
 </div>
@@ -784,7 +788,7 @@ library(cowplot)</code></pre>
 <p>Then I fetch the data using <code>BiocPkgTools::biocDownloadStats()</code>.</p>
 <pre class="r"><code>download_stats &lt;- biocDownloadStats()</code></pre>
 <p>Next, I subset the download stats to a given repository.</p>
-<pre class="r"><code>software_stats &lt;- download_stats %&gt;% filter(repo == &quot;Software&quot;)</code></pre>
+<pre class="r"><code>software_stats &lt;- download_stats %&gt;% filter(pkgType == &quot;software&quot;)</code></pre>
 <p>Then, I identify the latest complete month with data in the download statistics.
 To do that, I look for the latest month with non-zero download statistics, and I take the month before that one.</p>
 <pre class="r"><code>latest_full_date &lt;- software_stats %&gt;% 
@@ -794,9 +798,8 @@ To do that, I look for the latest month with non-zero download statistics, and I
   arrange(desc(Date)) %&gt;% 
   head(2) %&gt;% 
   tail(1) %&gt;% 
-  pull(Date)</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre class="r"><code>software_monthly_stats &lt;- software_stats %&gt;% 
+  pull(Date)
+software_monthly_stats &lt;- software_stats %&gt;% 
   filter(Date == latest_full_date)</code></pre>
 <p>I wanted to give an edge to packages more frequently downloaded, but without being overwhelmed by core packages that have excessively large download statistics.</p>
 <p>To do so, I visualised the distribution of download stats, and I chose to weigh packages by the <code>log(x+1)</code> transformation of the number of distinct IP addresses in their download statistics.</p>
@@ -813,15 +816,15 @@ gg_ip_log &lt;- ggplot(software_monthly_stats) +
   geom_histogram(aes(log(Nb_of_distinct_IPs+1))) +
   theme_cowplot()
 plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)</code></pre>
-<p><img src="/post/2020-05-24-biocpkgtools/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/biocpkgtools/index.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Finally, I set the random seed using the date of the day, and I randomly sample a package from the table, using the weight described above.</p>
 <pre class="r"><code>set.seed(as.numeric(Sys.Date()))
 software_monthly_stats %&gt;% 
   sample_n(size = 1, replace = FALSE, weight = log(Nb_of_distinct_IPs + 1))</code></pre>
-<pre><code>## # A tibble: 1 x 7
-##   Package     Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
-##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;              &lt;int&gt;           &lt;int&gt; &lt;chr&gt;    &lt;date&gt;    
-## 1 rSFFreader  2020 Sep                    4              14 Software 2020-09-01</code></pre>
+<pre><code>## # A tibble: 1 × 7
+##   pkgType  Package  Year Month Nb_of_distinct_IPs Nb_of_downloads Date      
+##   &lt;chr&gt;    &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;              &lt;int&gt;           &lt;int&gt; &lt;date&gt;    
+## 1 software Qtlizer  2021 Oct                   51              92 2021-10-01</code></pre>
 </div>
 
     </div>

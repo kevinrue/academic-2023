@@ -18,7 +18,7 @@
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       <guid>/post/create-renv-for-teaching/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/create-renv-for-teaching/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;In this post, I’ll describe a use of &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=renv&#34;&gt;renv&lt;/a&gt;&lt;/em&gt; to manage a collection of environments for a training course, in a single Git repository.&lt;/p&gt;
@@ -163,12 +163,12 @@ Furthermore, users could also fork each original repository, to work and commit 
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       <guid>/post/biocpkgtools/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/biocpkgtools/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;motivation&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Motivation&lt;/h2&gt;
-&lt;p&gt;There are currently 5,711 packages on Bioconductor, broken down as follows:&lt;/p&gt;
+&lt;p&gt;There are currently 6,096 packages on Bioconductor, broken down as follows:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
@@ -178,20 +178,24 @@ Furthermore, users could also fork each original repository, to work and commit 
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;AnnotationData&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2,653&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;data-annotation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,693&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;ExperimentData&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;816&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;data-experiment&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;855&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;Software&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2,242&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;software&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2,516&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;workflows&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;32&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/BiocPkgTools&#34;&gt;BiocPkgTools&lt;/a&gt;&lt;/em&gt; package to develop a website updated daily and feature packages selected randomly from each repository.&lt;/p&gt;
+&lt;p&gt;In an effort to motivate myself to keep an eye out for interesting packages - both new and old - I have used the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/BiocPkgTools&#34;&gt;BiocPkgTools&lt;/a&gt;&lt;/em&gt; package to develop a website updated daily and feature packages selected randomly from each repository.&lt;/p&gt;
 &lt;p&gt;I have then set up a &lt;a href=&#34;https://github.com/kevinrue/BiocRoulette/actions&#34;&gt;GitHub Action&lt;/a&gt; executed as a CRON job to update the website daily.&lt;/p&gt;
 &lt;p&gt;The result is accessible at: &lt;a href=&#34;https://kevinrue.github.io/BiocRoulette/&#34; class=&#34;uri&#34;&gt;https://kevinrue.github.io/BiocRoulette/&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -205,7 +209,7 @@ library(cowplot)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then I fetch the data using &lt;code&gt;BiocPkgTools::biocDownloadStats()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;download_stats &amp;lt;- biocDownloadStats()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next, I subset the download stats to a given repository.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;software_stats &amp;lt;- download_stats %&amp;gt;% filter(repo == &amp;quot;Software&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;software_stats &amp;lt;- download_stats %&amp;gt;% filter(pkgType == &amp;quot;software&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then, I identify the latest complete month with data in the download statistics.
 To do that, I look for the latest month with non-zero download statistics, and I take the month before that one.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;latest_full_date &amp;lt;- software_stats %&amp;gt;% 
@@ -215,9 +219,8 @@ To do that, I look for the latest month with non-zero download statistics, and I
   arrange(desc(Date)) %&amp;gt;% 
   head(2) %&amp;gt;% 
   tail(1) %&amp;gt;% 
-  pull(Date)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## `summarise()` ungrouping output (override with `.groups` argument)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;software_monthly_stats &amp;lt;- software_stats %&amp;gt;% 
+  pull(Date)
+software_monthly_stats &amp;lt;- software_stats %&amp;gt;% 
   filter(Date == latest_full_date)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I wanted to give an edge to packages more frequently downloaded, but without being overwhelmed by core packages that have excessively large download statistics.&lt;/p&gt;
 &lt;p&gt;To do so, I visualised the distribution of download stats, and I chose to weigh packages by the &lt;code&gt;log(x+1)&lt;/code&gt; transformation of the number of distinct IP addresses in their download statistics.&lt;/p&gt;
@@ -234,15 +237,15 @@ gg_ip_log &amp;lt;- ggplot(software_monthly_stats) +
   geom_histogram(aes(log(Nb_of_distinct_IPs+1))) +
   theme_cowplot()
 plot_grid(gg_dl, gg_dl_log, gg_ip, gg_ip_log)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-05-24-biocpkgtools/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/biocpkgtools/index.en_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Finally, I set the random seed using the date of the day, and I randomly sample a package from the table, using the weight described above.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(as.numeric(Sys.Date()))
 software_monthly_stats %&amp;gt;% 
   sample_n(size = 1, replace = FALSE, weight = log(Nb_of_distinct_IPs + 1))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 1 x 7
-##   Package     Year Month Nb_of_distinct_IPs Nb_of_downloads repo     Date      
-##   &amp;lt;chr&amp;gt;      &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;    &amp;lt;date&amp;gt;    
-## 1 rSFFreader  2020 Sep                    4              14 Software 2020-09-01&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 1 × 7
+##   pkgType  Package  Year Month Nb_of_distinct_IPs Nb_of_downloads Date      
+##   &amp;lt;chr&amp;gt;    &amp;lt;chr&amp;gt;   &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;              &amp;lt;int&amp;gt;           &amp;lt;int&amp;gt; &amp;lt;date&amp;gt;    
+## 1 software Qtlizer  2021 Oct                   51              92 2021-10-01&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -253,9 +256,9 @@ software_monthly_stats %&amp;gt;%
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/post/making-a-map-of-covid-19-cases/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/post/making-a-map-of-covid-19-cases/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/post/making-a-map-of-covid-19-cases/index.en_files/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;/post/making-a-map-of-covid-19-cases/index.en_files/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
 
 
 &lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
@@ -325,7 +328,7 @@ All other circles are resized proportionally using the same multiplier.&lt;/p&gt
       <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/post/transiton-from-travis-ci-to-github-actions/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/transiton-from-travis-ci-to-github-actions/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
@@ -453,9 +456,9 @@ deploy:
       <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/post/writing-my-cv-using-pagedown/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;link href=&#34;/rmarkdown-libs/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/post/writing-my-cv-using-pagedown/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/post/writing-my-cv-using-pagedown/index.en_files/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;/post/writing-my-cv-using-pagedown/index.en_files/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
 
 
 &lt;div id=&#34;wow&#34; class=&#34;section level2&#34;&gt;
@@ -536,7 +539,7 @@ I’ve opened another issue &lt;a href=&#34;https://github.com/rstudio/pagedown/
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
@@ -641,7 +644,7 @@ If I didn’t delete the previous version each time, the &lt;code&gt;git&lt;/cod
       <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
       <guid>/post/how-to-datapasta/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/how-to-datapasta/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;I was recently told about &lt;em&gt;&lt;a href=&#34;https://CRAN.R-project.org/package=datapasta&#34;&gt;datapasta&lt;/a&gt;&lt;/em&gt;, a jewel of a package that provides RStudio addins and functions to freely copy-paste data in and out of a source editor, formatted for immediate use.&lt;/p&gt;
@@ -782,21 +785,21 @@ If you don&#39;t believe me, you can trust the RStudio team who declared iSEE wi
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       <guid>/post/isee-at-bioc2019/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/post/isee-at-bioc2019/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package will be presented as a workshop at the &lt;a href=&#34;https://bioc2019.bioconductor.org&#34;&gt;Bioconductor 2019 conference&lt;/a&gt; in New York City!&lt;/p&gt;
 &lt;div id=&#34;what-to-expect&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;What to expect&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://csoneson.github.io&#34;&gt;Charlotte Soneson&lt;/a&gt; and I will be conducting a workshop that demonstrates the many features and usages of the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; package.&lt;/p&gt;
 &lt;p&gt;With the help of the &lt;a href=&#34;https://github.com/csoneson/iSEE/graphs/contributors&#34;&gt;iSEE team&lt;/a&gt;, we have prepared a &lt;a href=&#34;https://kevinrue.github.io/Bioc2019-iSEE-workshop/articles/iSEE-lab.html&#34;&gt;vignette&lt;/a&gt; demonstrating the integration of the package functionality into an example single-cell RNA-sequencing workflow.&lt;/p&gt;
 &lt;p&gt;The workshop was designed to cater for the needs of users at all levels of familiarity with &lt;a href=&#34;https://cran.r-project.org&#34;&gt;R&lt;/a&gt; and the &lt;a href=&#34;https://www.bioconductor.org&#34;&gt;Bioconductor&lt;/a&gt; project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;workshop-content&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Workshop content&lt;/h1&gt;
-&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
+&lt;p&gt;We will first take time to introduce users to the &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/SummarizedExperiment&#34;&gt;SummarizedExperiment&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/SingleCellExperiment&#34;&gt;SingleCellExperiment&lt;/a&gt;&lt;/em&gt; classes in the context of a single-cell RNA-sequencing workflow.
 Next, we will walk participants through the various components of the graphical user interface (GUI).
-Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.11/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
+Finally, we will demonstrate how individual instances of &lt;em&gt;&lt;a href=&#34;https://bioconductor.org/packages/3.14/iSEE&#34;&gt;iSEE&lt;/a&gt;&lt;/em&gt; applications can be preconfigured to save time and share insights with others.&lt;/p&gt;
 &lt;p&gt;Throughout the workshop, we will showcase key features of the package that make it a great companion for interactive and reproducible analysis for a variety of genomics data modalities:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A multi-panel layout to simultaneously visualise multiple aspects of the dataset.&lt;/li&gt;
