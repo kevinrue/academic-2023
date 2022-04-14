@@ -244,13 +244,24 @@ the commercial software [MED-SuMo](http://medit-pharma.com/index.php?page=med-su
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
+### Co-supervision for MSc summer intership
+
+[Lisa Guzzi](https://www.linkedin.com/in/lisa-guzzi-3687731b7), [The Carpentries](https://carpentries.org/)
+
+Google Meet (online)
+
+Jun. 2021 - Aug. 2021
+
+Development of scripts and pipelines for the study of transcriptional regulation
+in the _Drosophila melanogaster_ midbrain using single-cell genomics.
+
 ### Bioconductor teaching committee
 
 [Bioconductor](https://bioconductor.org/), [The Carpentries](https://carpentries.org/)
 
 Google Meet (online)
 
-2021 - present
+Aug. 2020 - present
 
 Development of online lessons in [The Carpentries lesson incubator](https://github.com/carpentries-incubator/).
 Lead developer of the lesson [The Bioconductor project](https://carpentries-incubator.github.io/bioc-project/).
@@ -383,6 +394,39 @@ Dublin, Ireland
 
 Organiser and Chair {data-icon=calendar}
 --------------------------------------------------------------------------------
+
+### Bioconductor Multilingual Working Group
+
+Working group of the [Bioconductor Community Advisory Board](https://bioconductor.org/about/community-advisory-board/).
+
+Zoom (online)
+
+2021 - present
+
+Co-organiser and reviewer of applications from prospective mentors and mentees.
+Lead developer of the [Multilingual Bioconductor Code of Conduct](https://bioconductor.github.io/bioc_coc_multilingual/).
+
+### Bioconductor New Developer Program
+
+[Program website](http://bioconductor.org/developers/new-developer-program/).
+
+Zoom (online)
+
+2021 - present
+
+Co-organiser and reviewer of applications from prospective mentors and mentees.
+Lead developer of the [Bioconductor Guidelines for Mentors and Mentees](https://bioconductor.github.io/bioc_mentorship_docs/).
+
+### Bioconductor Package Review Working Group
+
+Working group of the [Bioconductor Community Advisory Board](https://bioconductor.org/about/community-advisory-board/).
+
+Zoom (online)
+
+Feb. 2021 - present
+
+Recruitment of volunteer package reviewers in the Bioconductor community.
+Lead developer of [Bioconductor Packages: Development, Maintenance, and Peer Review](http://contributions.bioconductor.org/).
 
 ### Bioconductor conference 2021
 
@@ -586,7 +630,7 @@ Professional memberships {data-icon=id-badge}
 
 N/A
 
-2021 - present
+Apr. 2021 - present
 
 ### International Society for Computational Biology (ISCB)
 
