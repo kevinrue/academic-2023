@@ -1,274 +1,164 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/courses/resources/</loc>
     <lastmod>2019-11-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/</loc>
     <lastmod>2021-11-25T15:14:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/</loc>
     <lastmod>2021-11-25T15:14:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/2021-11-25-test/</loc>
     <lastmod>2021-11-25T15:14:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
     <lastmod>2021-11-25T09:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/create-renv-for-teaching/</loc>
     <lastmod>2020-10-05T09:22:36+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/r/</loc>
     <lastmod>2021-11-25T09:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/renv/</loc>
     <lastmod>2020-10-05T09:22:36+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2021-11-25T09:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/teaching/</loc>
     <lastmod>2020-10-05T09:22:36+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/bioconductor/</loc>
     <lastmod>2021-11-25T09:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/biocpkgtools/</loc>
     <lastmod>2021-11-25T09:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/package/</loc>
     <lastmod>2021-11-25T09:22:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/covid-19/</loc>
     <lastmod>2020-04-05T12:31:48+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/leaflet/</loc>
     <lastmod>2020-04-05T12:31:48+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/making-a-map-of-covid-19-cases/</loc>
     <lastmod>2020-04-05T12:31:48+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/gh-actions/</loc>
     <lastmod>2020-04-04T15:09:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/github/</loc>
     <lastmod>2020-04-04T15:09:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/transiton-from-travis-ci-to-github-actions/</loc>
     <lastmod>2020-04-04T15:09:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/travis-ci/</loc>
     <lastmod>2020-04-04T15:09:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/pagedown/</loc>
     <lastmod>2020-03-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/r/</loc>
     <lastmod>2020-03-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/rmarkdown/</loc>
     <lastmod>2020-03-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/writing-my-cv-using-pagedown/</loc>
     <lastmod>2020-03-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/covid-19/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/miscellaneous/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/reading-list/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/twitter/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/twitter/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/gh-pages/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/git/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/git2r/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/courses/</loc>
     <lastmod>2019-11-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/how-to-datapasta/</loc>
     <lastmod>2019-10-12T15:09:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/rstudio/</loc>
     <lastmod>2019-10-12T15:09:46+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/</loc>
     <lastmod>2019-06-26T15:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/charlotte-soneson/</loc>
     <lastmod>2019-06-26T15:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/bioc2019-workshop/</loc>
     <lastmod>2019-06-26T15:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/kevin-rue-albrecht/</loc>
     <lastmod>2019-06-26T15:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/</loc>
     <lastmod>2019-06-26T15:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/shiny/</loc>
     <lastmod>2019-06-26T15:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/bioc2019-flashtalk/</loc>
     <lastmod>2019-06-24T10:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/isee/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/slides/bioc2019-flashtalk/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/slides/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/isee-at-bioc2019/</loc>
     <lastmod>2019-05-11T15:14:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/slides/bioc2019-workshop/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/kevin/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/bibliography/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/conferences/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication_types/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/software/</loc>
   </url>
-  
 </urlset>

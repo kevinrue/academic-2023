@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2022</copyright><lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Kevin Rue-Albrecht 2019-2023</copyright><lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/android-chrome-512x512.png</url>
       <title>Projects</title>
@@ -24,36 +24,40 @@ the Center For Systems Science and Engineering (CSSE) at Johns Hopkins Universit
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;My COVID-19 Website&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;My COVID-19 Website&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;
 &lt;a href=&#34;/COVID-19-website/&#34;&gt;My COVID-19 Website&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Blog post&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Blog post&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;
 &lt;a href=&#34;/post/creating-a-dynamic-rmarkdown-website-for-covid-19-data/&#34;&gt;Creating a dynamic Rmarkdown website for COVID-19 data&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Source data&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34;&gt;https://github.com/CSSEGISandData/COVID-19&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Source data&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;
+&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/CSSEGISandData/COVID-19&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;rmarkdown&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://rmarkdown.rstudio.com/%3E&#34;&gt;https://rmarkdown.rstudio.com/&amp;gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;rmarkdown&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;
+&lt;a href=&#34;https://rmarkdown.rstudio.com/%3e&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://rmarkdown.rstudio.com/&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;plotly&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://plotly.com/r/&#34;&gt;https://plotly.com/r/&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;plotly&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;
+&lt;a href=&#34;https://plotly.com/r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://plotly.com/r/&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.tidyverse.org/&#34;&gt;https://www.tidyverse.org/&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;
+&lt;a href=&#34;https://www.tidyverse.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.tidyverse.org/&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -66,7 +70,6 @@ the Center For Systems Science and Engineering (CSSE) at Johns Hopkins Universit
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/project/reading-list/</guid>
       <description>
-&lt;script src=&#34;/project/reading-list/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;biorxiv&#34; class=&#34;section level2&#34;&gt;
